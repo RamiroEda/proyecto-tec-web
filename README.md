@@ -23,7 +23,7 @@ Una vez accedido ejecutar el siguiente comando para abrir un servidor:
 php artisan serve
 ```
 Y se abrirá un servidor en el [localhost en el puerto 8000](http://localhost:8000/) por defecto.
-## Primer avance
+## Primer avance ([PDF](DOCS/PROYECTO_FINAL_PRIMER_ENTREGA.pdf))
 - 27 de Marzo del 2019 **Front end**
   - Modulo del administrador.
     - [ ] Pantalla de inicio de sesión.
