@@ -22,6 +22,8 @@ Una vez accedido tendremos que inicializar el proyecto con los siguientes comand
 ```
 composer update
 php artisan key:generate
+php artisan cache:clear
+
 ```
 Ya inicializado el proyecto, ejecutar el siguiente comando para abrir un servidor:
 ```
