@@ -26,24 +26,24 @@ Y se abrirá un servidor en el [localhost en el puerto 8000](http://localhost:80
 ## Primer avance ([PDF](DOCS/PROYECTO_FINAL_PRIMER_ENTREGA.pdf))
 - 27 de Marzo del 2019 **Front end**
   - Modulo del administrador.
-    - [X] Pantalla de inicio de sesión.
-    - [X] Menú de administrador.
-    - [X] Alta de prácticas y visitas escolares. Requisitos:
-      - [X] Consecutivo de la Práctica (1,2,3…total de prácticas)
-      - [X] Programa académico
-      - [X] Nombre de la razón social
-      - [X] Nombre del profesor responsable
-      - [X] Fecha de realización
-      - [X] Total alumnos
-      - [X] Total Profesores
-      - [X] Presupuesto
-      - [X] Acciones (E = Editar y X = Eliminar). Se abre la ventana Modal
+    - Pantalla de inicio de sesión.
+    - Menú de administrador.
+    - Alta de prácticas y visitas escolares. Requisitos:
+      - Consecutivo de la Práctica (1,2,3…total de prácticas)
+      - Programa académico
+      - Nombre de la razón social
+      - Nombre del profesor responsable
+      - Fecha de realización
+      - Total alumnos
+      - Total Profesores
+      - Presupuesto
+      - Acciones (E = Editar y X = Eliminar). Se abre la ventana Modal
 - 18 de Abril del 2019 **Back end**
-  - [ ] Primer diseño de la base de datos.
-  - [ ] Iniciar sesión.
-  - [ ] El menú de administrador puede navegar.
-  - [ ] El Modal de agregar o editar prácticas y visitas escolares funciona.
-  - [ ] Se pueden borrar prácticas y visitas escolares.
+  - Primer diseño de la base de datos.
+  - Iniciar sesión.
+  - El menú de administrador puede navegar.
+  - El Modal de agregar o editar prácticas y visitas escolares funciona.
+  - Se pueden borrar prácticas y visitas escolares.
   
 
 ### Consideraciones:
