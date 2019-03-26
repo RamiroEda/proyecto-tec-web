@@ -1,0 +1,10 @@
+.new {
+    position: absolute;
+    right: 20px;
+    margin-bottom: 10px;
+}
+
+.hid{
+    margin-bottom: 10px;
+    visibility: hidden;
+}
