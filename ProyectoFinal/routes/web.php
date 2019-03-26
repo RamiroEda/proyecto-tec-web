@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/tabla', function () {
     return view('tablas');
 });
+
+Route::get('/inicio', function () {
+    return view('menu');
+});
