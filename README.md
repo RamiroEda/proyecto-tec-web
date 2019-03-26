@@ -21,8 +21,7 @@ C:\Users\ramir\Desktop\Gestion> #El Command Prompt accedió al directorio del pr
 Una vez accedido tendremos que inicializar el proyecto con los siguientes comandos:
 ```
 composer update
-composer install
-composer key:generate
+php artisan key:generate
 ```
 Ya inicializado el proyecto, ejecutar el siguiente comando para abrir un servidor:
 ```
