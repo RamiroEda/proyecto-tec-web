@@ -18,7 +18,13 @@ C:\Users\ramir>cd C:/Users/ramir/Desktop/Gestion #cd es el comando usado para ac
 
 C:\Users\ramir\Desktop\Gestion> #El Command Prompt accedió al directorio del proyecto.
 ```
-Una vez accedido ejecutar el siguiente comando para abrir un servidor:
+Una vez accedido tendremos que inicializar el proyecto con los siguientes comandos:
+```
+composer update
+composer install
+composer key:generate
+```
+Ya inicializado el proyecto, ejecutar el siguiente comando para abrir un servidor:
 ```
 php artisan serve
 ```
