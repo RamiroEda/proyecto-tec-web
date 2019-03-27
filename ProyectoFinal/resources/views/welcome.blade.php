@@ -17,16 +17,17 @@
                     <div class="sign-avatar">
                         <img src="{{asset('/img/avatar-sign.png')}}" alt="">
                     </div>
-                    <header class="sign-title">Sign In</header>
+                    <header class="sign-title">Iniciar sesión</header>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Usuario"/>
                     </div>
                     <div class="form-group">
-                        <!input type="password" class="form-control" placeholder="Contraseña"/>
-                        {!!Form::text('usuario', null, ['class'=>'form-control', 'placeholder'=>'Usuario', 'id'=>'usuario'])!!}
+                        <input type="password" class="form-control" placeholder="Contraseña"/>
+
+                       <!-- {!!Form::text('usuario', null, ['class'=>'form-control', 'placeholder'=>'Usuario', 'id'=>'usuario'])!!}-->
                     </div>
-                    <button type="submit" class="btn btn-rounded">Sign in</button>
-                    <p class="sign-note"><a href="sign-up.html">Sign up</a></p>
+                    <button type="submit" class="btn btn-rounded">Iniciar Sesión</button>
+                    <p class="sign-note"><a href="sign-up.html">Registrarse</a></p>
                     <!--<button type="button" class="close">
                         <span aria-hidden="true">&times;</span>
                     </button>-->

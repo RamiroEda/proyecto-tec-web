@@ -325,6 +325,10 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label for="sems">Semestre</label>
+                        <input type="text" name="semestre" id="sems" class="form-control">
+                    </div>
+                    <div class="form-group">
                         <label for="exampleFormControlTextarea1">Nombre de la razón social</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
