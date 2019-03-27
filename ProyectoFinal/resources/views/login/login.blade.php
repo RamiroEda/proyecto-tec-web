@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
-    <title>Login</title>
+    <title>login</title>
 @endsection
 
 @section('css')
@@ -17,13 +17,13 @@
                     <div class="sign-avatar">
                         <img src="{{asset('/img/avatar-sign.png')}}" alt="">
                     </div>
-                    <header class="sign-title">Sign In</header>
+                    <header class="sign-title">Iniciar Sesión</header>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Usuario"/>
                     </div>
                     <div class="form-group">
                         <!input type="password" class="form-control" placeholder="Contraseña"/>
-                        {!!Form::text('usuario', null, ['class'=>'form-control', 'placeholder'=>'Usuario', 'id'=>'usuario'])!!}
+                        {!!Form::text('contrasena', null, ['class'=>'form-control', 'placeholder'=>'Contraseña', 'id'=>'usuario'])!!}
                     </div>
                     <button type="submit" class="btn btn-rounded">Sign in</button>
                     <p class="sign-note"><a href="sign-up.html">Sign up</a></p>
