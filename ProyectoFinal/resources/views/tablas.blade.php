@@ -301,7 +301,7 @@
 
 
     <!-- ---------------------------- AÑADIR ---------------------------------------------- -->
-
+    
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -312,7 +312,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-
+                {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Programa académico</label>
@@ -326,7 +326,18 @@
                     </div>
                     <div class="form-group">
                         <label for="sems">Semestre</label>
-                        <input type="text" name="semestre" id="sems" class="form-control">
+                        <!input type="text" name="semestre" id="sems" class="form-control">
+                        {!!Form::text( 'semestre', null, ['id'=>'sems', 'class'=>'form-control'])!!}
+                    </div>
+                    <div class="form-group">
+                        <label for="grupo">Grupo</label>
+                        <!input type="text" name="grupo(s)" id="grupo" class="form-control">
+                        {!!Form::text( 'grupo',null,['id'=>'grupo', 'class'=>'form-control'] )!!}
+                    </div>
+                    <div class="form-group">
+                        <label for="no_practica">No. Práctica y visita escolar</label>
+                        <!input type="text" name="no_practica" id="no_practica" class="form-control">
+                        {!!Form::text( 'no_practica', null, ['id'=>'no_practica', 'class'=>'form-control'])}
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Nombre de la razón social</label>
@@ -358,9 +369,11 @@
                         <input type="number" class="form-control" id="exampleFormControlInput4" min="0" value="0" step="0.1">
                     </div>
                 </div>
+                {!!Form::close()!!}
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary">Añadir</button>
                 </div>
+
 				
             </div>
         </div>

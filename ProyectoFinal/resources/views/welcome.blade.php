@@ -19,12 +19,13 @@
                     </div>
                     <header class="sign-title">Iniciar sesión</header>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Usuario"/>
+                        <!input type="text" class="form-control" placeholder="Usuario"/>
+                        {!!Form::text('usuario', null ,['class'=>'form-control', 'placeholder'=>'Usuario', 'id'=>'usuario'])!!}
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Contraseña"/>
+                        <!input type="password" class="form-control" placeholder="Contraseña"/>
 
-                       <!-- {!!Form::text('usuario', null, ['class'=>'form-control', 'placeholder'=>'Usuario', 'id'=>'usuario'])!!}-->
+                        {!!Form::password('pass', ['class'=>'form-control', 'placeholder'=>'Contreseña', 'id'=>'pass'])!!}
                     </div>
                     <button type="submit" class="btn btn-rounded">Iniciar Sesión</button>
                     <p class="sign-note"><a href="sign-up.html">Registrarse</a></p>
