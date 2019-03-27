@@ -337,7 +337,7 @@
                     <div class="form-group">
                         <label for="no_practica">No. Práctica y visita escolar</label>
                         <!input type="text" name="no_practica" id="no_practica" class="form-control">
-                        {!!Form::text( 'no_practica', null, ['id'=>'no_practica', 'class'=>'form-control'])}
+                        {!!Form::text( 'no_practica', null, ['id'=>'no_practica', 'class'=>'form-control'])!!}
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Nombre de la razón social</label>

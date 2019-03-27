@@ -13,7 +13,7 @@
         <div class="page-center-in">
             <div class="container-fluid">
                 <!form class="sign-box">
-                {!!Form::open(array('class'=>'sign-box', 'method'=>'post'))!!}
+                {!!Form::open(array('url'=>'/inicio','class'=>'sign-box', 'method'=>'get'))!!}
                     <div class="sign-avatar">
                         <img src="{{asset('/img/avatar-sign.png')}}" alt="">
                     </div>
