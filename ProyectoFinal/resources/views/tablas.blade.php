@@ -1,26 +1,16 @@
+@extends('menu')
 <!DOCTYPE html>
-<html>
 
-<head lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+  @section('title')
     <title>Alta de prácticas y visitas escolares</title>
+  @endsection
 
-    <link href="img/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
-    <link href="img/favicon.114x114.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
-    <link href="img/favicon.72x72.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
-    <link href="img/favicon.57x57.png" rel="apple-touch-icon" type="image/png">
-    <link href="img/favicon.png" rel="icon" type="image/png">
-    <link href="img/favicon.ico" rel="shortcut icon">
-
+  @section('css')
     <link rel="stylesheet" href="css/lib/datatables-net/datatables.min.css">
+  @stop
 
-    <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
-    <link rel="stylesheet" href="css/main.css">
-</head>
 
-<body>
+  @section('content')
     <div class="page-content">
         <div class="container-fluid">
             <header class="section-header">
@@ -49,7 +39,7 @@
 								<th></th>
                             </tr>
                         </thead>
-    
+
                         <tbody>
                             <tr>
                                 <td>11</td>
@@ -277,13 +267,15 @@
             </section>
         </div>
     </div>
+  @stop
 
-    <script src="js/lib/jquery/jquery.min.js"></script>
-    <script src="js/lib/tether/tether.min.js"></script>
-    <script src="js/lib/bootstrap/bootstrap.min.js"></script>
-    <script src="js/plugins.js"></script>
-
-    <script src="js/lib/datatables-net/datatables.min.js"></script>
+  @section('scripts')
+  <script src="js/lib/jquery/jquery.min.js"></script>
+	<script src="js/lib/tether/tether.min.js"></script>
+	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/app.js"></script>
+  <script src="js/lib/datatables-net/datatables.min.js"></script>
 
     <script>
         $(function () {
@@ -293,8 +285,4 @@
         });
 
     </script>
-
-    <script src="js/app.js"></script>
-</body>
-
-</html>
+  @stop

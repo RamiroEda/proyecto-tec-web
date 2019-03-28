@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>StartUI - Premium Bootstrap 4 Admin Dashboard Template</title>
+	@yield('title')
 
 	<link href="img/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
 	<link href="img/favicon.114x114.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
@@ -20,7 +20,9 @@
 	<![endif]-->
     <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
+		@yield('css')
 </head>
+@yield('popUp')
 
 <body class="with-side-menu dark-theme dark-theme-blue">
 
@@ -107,19 +109,16 @@
 
 	    </ul>
 	</nav><!--.side-menu-->
-
-	<div class="page-content">
-	    <div class="container-fluid">
-	        <div class="row dahsboard-column" >
-            holi
-	        </div><!--.row-->
-	    </div><!--.container-fluid-->
+	<div>
+					<h3 class="with-border text-center">@yield('subHead')</h3>
+						@yield('content')
 	</div><!--.page-content-->
 
 	<script src="js/lib/jquery/jquery.min.js"></script>
 	<script src="js/lib/tether/tether.min.js"></script>
 	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
 	<script src="js/plugins.js"></script>
+		@yield('scripts')
 	<script src="js/app.js"></script>
 
 </body>
