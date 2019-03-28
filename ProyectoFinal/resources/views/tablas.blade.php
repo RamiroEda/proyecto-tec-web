@@ -1,4 +1,4 @@
-@extends('menu')
+@extends('layouts.menu')
 <!DOCTYPE html>
 
   @section('title')
