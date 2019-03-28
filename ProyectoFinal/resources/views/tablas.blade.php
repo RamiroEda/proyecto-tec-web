@@ -476,12 +476,35 @@
 	<script src="js/app.js"></script>
   <script src="js/lib/datatables-net/datatables.min.js"></script>
 
-    <script>
-        $(function () {
-            $('#alta').DataTable({
-                responsive: true
-            });
-        });
+  <script>
+      $(function () {
+          $('#alta').DataTable({
+              responsive: true,
+              order: [
+                  [0, "desc"]
+              ],
+              columns: [
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  {
+                      "orderable": false
+                  },
+                  {
+                      "orderable": false
+                  }
+              ]
+          });
 
-    </script>
+          $('#datetimepicker1').datetimepicker({
+              format: 'DD/MM/YYYY'
+          });
+      });
+
+  </script>
   @stop
