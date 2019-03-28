@@ -114,7 +114,7 @@
 
 
                 @yield('content')
-	        
+
 </body>
 
 <script src="js/lib/jquery/jquery.min.js"></script>
