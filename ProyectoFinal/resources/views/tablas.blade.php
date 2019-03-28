@@ -301,7 +301,7 @@
 
 
     <!-- ---------------------------- AÑADIR ---------------------------------------------- -->
-    
+
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -374,11 +374,11 @@
                     <button type="button" class="btn btn-primary">Añadir</button>
                 </div>
 
-				
+
             </div>
         </div>
 	</div>
-	
+
 	 <!-- ---------------------------- EDITAR ---------------------------------------------- -->
 
 	 <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"
@@ -436,11 +436,11 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary">Guardar</button>
                 </div>
-				
+
             </div>
         </div>
 	</div>
-	
+
 	<!-- ---------------------------- ELIMINAR ---------------------------------------------- -->
 
 	<div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog"
@@ -461,7 +461,7 @@
 					<button type="button" class="btn btn-default" class="close" data-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-danger">Borrar</button>
                 </div>
-				
+
             </div>
         </div>
     </div>
