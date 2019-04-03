@@ -45,6 +45,17 @@ Y se abrirá un servidor en el [localhost en el puerto 8000](http://localhost:80
       - Total Profesores
       - Presupuesto
       - Acciones (E = Editar y X = Eliminar). Se abre la ventana Modal
+- 05 de Abril del 2019 **Front end** ([PDF](DOCS/PROYECTO_FINAL_SEGUNDA_ENTREGA.pdf))
+  - Catalogos
+    - Programa Academico
+    - Semestre
+    - Nivel
+    - Grupo
+    - Tipo de práctica
+    - Entidad federativa**
+    - Unidad de aprendisaje
+    - Profesor
+  - Catalogos contienen Datatable, agregar, editar y borrar.
 - 18 de Abril del 2019 **Back end**
   - Primer diseño de la base de datos.
   - Iniciar sesión.
