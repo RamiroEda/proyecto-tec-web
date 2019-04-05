@@ -30,7 +30,7 @@
 
 	<header class="site-header">
 	    <div class="container-fluid">
-	        <a href="#" class="site-logo-text">I was here</a>
+	        <a href="#" class="site-logo-text">Menu principal</a>
 	        <button class="hamburger hamburger--htla">
 	            <span>toggle menu</span>
 	        </button>
@@ -81,33 +81,66 @@
 	        <li class="brown">
 	            <a href="tabla">
 	                <i class="font-icon font-icon-chart-2"></i>
-	                <span class="lbl">Alta de prácticas escolares</span>
+	                <span class="lbl">Busca docente/administrador</span>
 	            </a>
 	        </li>
 	        <li class="green">
 	            <a href="#">
 	                <i class="font-icon font-icon-mail"></i>
-	                <span class="lbl">Mandar SMS y Correos</span>
+	                <span class="lbl">Buscar cursos capturados</span>
 	            </a>
 	        </li>
 	        <li class="gold">
 	            <a href="#">
 	                <i class="font-icon font-icon-zigzag"></i>
-	                <span class="lbl">Imprimir reportes</span>
+	                <span class="lbl">Registrar Docentes/Administrativos</span>
 	            </a>
 	        </li>
-	        <li class="blue">
-	            <a href="#">
-	                <i class="font-icon font-icon-widget"></i>
-	                <span class="lbl">Catálogos</span>
-	            </a>
-	        </li>
-	        <li class="purple">
+					<li class="purple">
 	            <a href="#">
 	                <i class="font-icon font-icon-cogwheel"></i>
-	                <span class="lbl">Configuraciones</span>
+	                <span class="lbl">Situación laboral</span>
 	            </a>
 	        </li>
+					<li class="purple">
+	            <a href="#">
+	                <i class="font-icon font-icon-cogwheel"></i>
+	                <span class="lbl">Listado general del escalfón</span>
+	            </a>
+	        </li>
+					<li class="purple">
+	            <a href="#">
+	                <i class="font-icon font-icon-cogwheel"></i>
+	                <span class="lbl">Imprimir listado basificados</span>
+	            </a>
+	        </li>
+					<li class="purple">
+	            <a href="#">
+	                <i class="font-icon font-icon-cogwheel"></i>
+	                <span class="lbl">Imprimir listado Homologados</span>
+	            </a>
+	        </li>
+					<li class="purple">
+	            <a href="#">
+	                <i class="font-icon font-icon-cogwheel"></i>
+	                <span class="lbl">Integrantes de la comisión</span>
+	            </a>
+	        </li>
+					<li class="blue with-sub">
+							<span>
+								<i class="font-icon font-icon-widget"></i>
+								<span class="lbl">Catálogos</span>
+							</span>
+							<ul>
+									<li><a href="#"><span class="lbl">Ciclo escolar</span></a></li>
+									<li><a href="#"><span class="lbl">Ciclo escolar vigente</span></a></li>
+									<li><a href="#"><span class="lbl">Estatus del trabajador</span></a></li>
+									<li><a href="#"><span class="lbl">Fecha de cálculo de antigüedad</span></a></li>
+									<li><a href="#"><span class="lbl">Tipos de homologación</span></a></li>
+									<li><a href="#"><span class="lbl">Planteles/Centros</span></a></li>
+							</ul>
+	        </li>
+
 
 	    </ul>
 	</nav><!--.side-menu-->
