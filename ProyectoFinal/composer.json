@@ -61,8 +61,7 @@
         ],
         "post-update-cmd": [
         	"php artisan clear-compiled",
-        	"php artisan optimize",
-            "php artisan asset:publish vendor/package"
+        	"php artisan optimize"
         ]
     }
 }

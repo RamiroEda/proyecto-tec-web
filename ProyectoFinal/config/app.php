@@ -166,6 +166,7 @@ return [
          * Servicios añadidos
          */
         Collective\Html\HtmlServiceProvider::class,
+        App\Providers\BootstrapServiceProvider::class,
 
         /*
          * Package Service Providers...
