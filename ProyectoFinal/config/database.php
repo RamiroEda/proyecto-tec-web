@@ -46,7 +46,7 @@ return [
             //'port' => env('DB_PORT', '3306'),
             'database' => 'tec-web-final',
             'username' => 'root',
-            'password' => 'Tuiolosega50?',
+            'password' => '',
             //'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
