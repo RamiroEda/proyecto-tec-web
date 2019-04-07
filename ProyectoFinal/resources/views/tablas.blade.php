@@ -57,13 +57,15 @@
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Nombre del profesor responsable</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1">
+                    <label for="name_profesor">Nombre del profesor responsable</label>
+                    <!input type="text" class="form-control" id="exampleFormControlInput1">
+                    {!!Form::text('name_profesor', null, ['id'=>'name_profesor', 'class'=>'form-control'])!!}
                 </div>
                 <div class="form-group">
                     <label for="datePickerAdd">Fecha</label>
                     <div class='input-group date' id='datetimepicker1'>
-                        <input type='text' class="form-control" />
+                        <!input type='text' class="form-control" />
+                        {!!Form::text('datetimepicker1', 'null', ['id'=>'datetimepicker1', 'class'=>'form-control'])!!}
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -71,15 +73,18 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput2">Numero total de alumnos</label>
-                    <input type="number" class="form-control" id="exampleFormControlInput2" min="0" value="0">
+                    <!input type="number" class="form-control" id="exampleFormControlInput2" min="0" value="0">
+                    {!!Form::number('exampleFormControlInput2', '0', ['id'=>'exampleFormControlInput2', 'min'=>'0', 'value'=>'0', 'class'=>'form-control'])!!}
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput3" >Numero total de profesores</label>
-                    <input type="number" class="form-control" id="exampleFormControlInput3" min="0" value="0">
+                    <!input type="number" class="form-control" id="exampleFormControlInput3" min="0" value="0">
+                    {!!Form::number('exampleFormControlInput3', '0', ['id'=>'exampleFormControlInput3', 'min'=>'0', 'value'=>'0', 'class'=>'form-control'])!!}
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput4" >Presupuesto</label>
-                    <input type="number" class="form-control" id="exampleFormControlInput4" min="0" value="0" step="0.1">
+                    <!input type="number" class="form-control" id="exampleFormControlInput4" min="0" value="0" step="0.1">
+                    {!!Form::number('exampleFormControlInput4', '0', ['id'=>'exampleFormControlInput4', 'min'=>'0', 'value'=>'0', 'class'=>'form-control'])!!}
                 </div>
             </div>
             {!!Form::close()!!}
