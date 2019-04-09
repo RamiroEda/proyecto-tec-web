@@ -27,7 +27,7 @@
             </div>
             {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
             <div class="modal-body">
-                <div class="form-group">
+                <div class="form-group"><!- Viene de catalogo->
                     <label for="exampleFormControlSelect1">Programa académico</label>
                     <select class="form-control" id="exampleFormControlSelect1">
                         <option value="SIS">Sistemas Computacionales</option>
@@ -38,12 +38,12 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="sems">Semestre</label>
+                    <label for="sems">Semestre</label><!- Viene de catalogo->
                     <!input type="text" name="semestre" id="sems" class="form-control">
                     {!!Form::text( 'semestre', null, ['id'=>'sems', 'class'=>'form-control'])!!}
                 </div>
                 <div class="form-group">
-                    <label for="grupo">Grupo(S)</label>
+                    <label for="grupo">Grupo(S)</label><!- Viene de catalogo->
                     <!input type="text" name="grupo(s)" id="grupo" class="form-control">
                     {!!Form::text( 'grupo',null,['id'=>'grupo', 'class'=>'form-control'] )!!}
                 </div>
@@ -52,20 +52,38 @@
                     {!!Form::select('tipo', array('F' => 'Foráneo', 'M' => 'Metropolitana'), 'F', ['class'=>'form-control', 'id'=>'tipo'] );!!}
                 </div>
                 <div class="form-group">
-                    <label for="comprentencia">Competencias a Desarrollar</label>
-                    {!!Form::text('competencia',null,['id'=>'competencia', 'class'=>'form-control'])!!}
+                    <label for="estrategia">Estrategia a Desarrollar</label>
+                    {!!Form::textarea('estrategia', null, ['id'=>'estrategia', 'class'=>'form-control', 'rows'=>'3'])!!}
+                    
                 </div>
                 <div class="form-group">
+                    <label for="compentencia">Competencias a Desarrollar</label>
+                    {!!Form::text( 'compentencia', null, ['id'=>'compentencia', 'class'=>'form-control']) !!}
+                    
+                </div>
+                <div class="form-group">
+                    <label for="Unidad">Unidad de aprenfizaje</label>
+                </div>
+                <div class="form-group"><!- Se genera por fecha->
                     <label for="no_practica">No. Práctica y visita escolar</label>
                     <!input type="text" name="no_practica" id="no_practica" class="form-control">
                     {!!Form::text( 'no_practica', null, ['id'=>'no_practica', 'class'=>'form-control'])!!}
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Nombre de la , Empresa, Institución o Razón Social</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label for="objetivo">Objetivo</label>
+                    {!!Form::textarea('objetivo', null, ['id'=>'objetivo', 'class'=>'form-control', 'rows'=>'3'])!!}
+                </div>
+                <div class="formgroup">
+                    <label for="entidad">Entidad</label><!- Viene de catalogo->
+                    {!!Form::text('entidad',null,['id'=>'objetivo', 'class'=>'form-control'])!!}
                 </div>
                 <div class="form-group">
-                    <label for="name_profesor">Nombre del profesor responsable</label>
+                    <label for="exampleFormControlTextarea1">Nombre de la Empresa, Institución o Razón Social</label>
+                    <!textarea class="form-control" id="exampleFormControlTextarea1" rows="3"><!/textarea>
+                    {!!Form::text('exampleFormControlTextarea1',null,['id'=>'exampleFormControlTextarea1', 'class'=>'form-control'])!!}
+                </div>
+                <div class="form-group">
+                    <label for="name_profesor">Nombre del profesor responsable</label><!- viene por catalogo>
                     <!input type="text" class="form-control" id="exampleFormControlInput1">
                     {!!Form::text('name_profesor', null, ['id'=>'name_profesor', 'class'=>'form-control'])!!}
                 </div>
