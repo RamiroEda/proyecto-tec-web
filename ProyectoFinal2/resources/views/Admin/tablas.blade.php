@@ -228,7 +228,7 @@
                     <button class="btn btn-primary hid">.</button>
                     <button class="btn btn-primary new" data-toggle="modal"
                         data-target="#exampleModalCenter">Nuevo</button>
-                    <table id="alta" class="display table table-bordered" cellspacing="0" width="100%">
+                    <table id="alta" class="display table table-bordered" cellspacing="0" width="70%">
                         <thead>
                             <tr>
                                 <th>No.</th>

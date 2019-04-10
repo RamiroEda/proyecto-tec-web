@@ -22,3 +22,7 @@ Route::get('/inicio', function() {
 Route::get('/tabla', function() {
     return view('Admin.tablas');
 });
+
+Route::get('/catalogos/plantel', function(){
+    return view('Admin.catalogos.plantel');
+});
