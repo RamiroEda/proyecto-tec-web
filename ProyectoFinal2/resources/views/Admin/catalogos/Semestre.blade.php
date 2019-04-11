@@ -154,16 +154,16 @@
                         <table id="alta" class="display table table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Nombre del plantel</th>
-                                    <th>Clave SEP</th>
-                                    <th><b>Editar</b></th>
-                                    <th><b>Eliminar</b></td>
+                                    <th>Semestre</th>
+                                    <th>Programa Academico</th>
+                                    <td><b>Editar</b></td>
+                                    <td><b>Eliminar</b></td>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 <tr>
-                                    <td>CECyTEZ3</td>
+                                    <td>Sistemas Computacionales</td>
                                     <td>32CXB4332C</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-toggle="modal"
