@@ -20,7 +20,9 @@
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
     <link rel="stylesheet" href="{{asset('Template/css/lib/font-awesome/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{asset('Template/css/main.css')}}">
+	<link rel="stylesheet" href="{{asset('Template/css/main.css')}}">
+	<link rel="stylesheet" href="{{asset('Template/css/tablas.css')}}">
+	<link rel="stylesheet" href="{{asset('Template/css/lib/datatables-net/datatables.min.css')}}">
 
     @yield('css')
 </head>
@@ -79,7 +81,7 @@
 	    </div>
 	    <ul class="side-menu-list">
 	        <li class="brown">
-	            <a href="tabla">
+	            <a onclick="cambiarPagina('/tabla')">
 	                <i class="font-icon font-icon-chart-2"></i>
 	                <span class="lbl">Alta de prácticas escolares</span>
 	            </a>
@@ -97,10 +99,22 @@
 	            </a>
 	        </li>
 	        <li class="blue">
-	            <a href="#">
+	            <a href="#catalogos" data-toggle="collapse">
 	                <i class="font-icon font-icon-widget"></i>
-	                <span class="lbl">Catálogos</span>
-	            </a>
+					<span class="lbl">Catálogos</span>
+				</a>
+				<div class="collapse" id="catalogos">
+					<div class="list-group">
+						<a onclick="cambiarPagina('/catalogos/plantel')" class="list-group-item list-group-item-action">Programa Académico</a>
+						<a onclick="cambiarPagina('/catalogos/semestre')" class="list-group-item list-group-item-action">Semestre</a>
+						<a href="#" class="list-group-item list-group-item-action">Nivel</a>
+						<a href="#" class="list-group-item list-group-item-action">Grupo</a>
+						<a onclick="cambiarPagina('/catalogos/tipo_practica')" class="list-group-item list-group-item-action">Tipo de práctica</a>
+						<a onclick="cambiarPagina('/catalogos/entidad_federativa')" class="list-group-item list-group-item-action">Entidad federativa</a>
+						<a onclick="cambiarPagina('/catalogos/unidad_aprendizaje')" class="list-group-item list-group-item-action">Unidad de aprendizaje</a>
+						<a onclick="cambiarPagina('/catalogos/profesor')" class="list-group-item list-group-item-action">Profesor</a>
+					</div>
+				</div>
 	        </li>
 	        <li class="purple">
 	            <a href="#">
@@ -113,6 +127,9 @@
 	</nav><!--.side-menu-->
 
 
+	
+
+
                 @yield('content')
 
 </body>
@@ -120,8 +137,10 @@
 <script src="{{asset('Template/js/lib/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('Template/js/lib/tether/tether.min.js')}}"></script>
 <script src="{{asset('Template/js/lib/bootstrap/bootstrap.min.js')}}"></script>
+<script src="{{asset('Template/js/lib/datatables-net/datatables.min.js')}}"></script>
 <script src="{{asset('Template/js/plugins.js')}}"></script>
 <script src="{{asset('Template/js/app.js')}}"></script>
+<script src="{{asset('Template/js/spa.js')}}"></script>
 
 @yield('scripts')
 

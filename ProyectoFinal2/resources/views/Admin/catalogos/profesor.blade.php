@@ -205,7 +205,7 @@
                 <div class="tbl">
                     <div class="tbl-row">
                         <div class="tbl-cell">
-                            <h2>Alta de practicas y visitas escolares</h2>
+                            <h2>Unidad de aprendizaje</h2>
                         </div>
                     </div>
                 </div>
@@ -480,9 +480,8 @@
             </section>
         </div>
     </div>
-
-    
-<script>
+  
+    <script>
         $(function () {
             $('#alta').DataTable({
                 responsive: true,

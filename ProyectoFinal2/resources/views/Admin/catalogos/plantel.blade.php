@@ -1,15 +1,4 @@
-@extends('layouts.menuLayout')
 
-@section('title')
-    <title>Alta de prácticas y visitas escolares</title>
-@endsection
-
-@section('css')
-    <link rel="stylesheet" href="{{asset('Template/css/lib/datatables-net/datatables.min.css')}}">
-    <link rel="stylesheet" href="{{asset('Template/css/tablas.css')}}">
-@endsection
-
-@section('popUp')
 <!-- ---------------------------- MODALS ---------------------------------------------- -->
 
 
@@ -134,8 +123,7 @@
     </div>
 </div>
 
-@section('content')
-    <div class="page-content">
+    <div class="content">
         <div class="container-fluid">
             <header class="section-header">
                 <div class="tbl">
@@ -217,10 +205,6 @@
             </section>
         </div>
     </div>
-@endsection
-
-@section('scripts')
-    <script src="{{asset('Template/js/lib/datatables-net/datatables.min.js')}}"></script>
 
     <script>
         $(function () {
@@ -230,12 +214,6 @@
                     [0, "desc"]
                 ],
                 columns: [
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
                     null,
                     null,
                     {
@@ -253,4 +231,4 @@
         });
 
     </script>
-@endsection
+
