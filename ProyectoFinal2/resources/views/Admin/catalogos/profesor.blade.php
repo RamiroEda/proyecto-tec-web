@@ -205,7 +205,7 @@
                 <div class="tbl">
                     <div class="tbl-row">
                         <div class="tbl-cell">
-                            <h2>Unidad de aprendizaje</h2>
+                            <h2>Profesor</h2>
                         </div>
                     </div>
                 </div>
