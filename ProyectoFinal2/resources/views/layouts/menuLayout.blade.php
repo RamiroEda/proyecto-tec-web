@@ -28,11 +28,46 @@
 </head>
 @yield('popUp')
 
-<body class="with-side-menu dark-theme dark-theme-blue">
 
+
+<body class="with-side-menu dark-theme dark-theme-green">
+	<!-- ---------------------------- INFORMES ACADEMICOS ---------------------------------------------- -->
+
+	<div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog"
+	    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	    <div class="modal-dialog modal-dialog-centered" role="document">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <h5 class="modal-title" style="display: inline">Informes académicos</h5>
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                    <span aria-hidden="true">&times;</span>
+	                </button>
+	            </div>
+
+	            <div class="modal-body">
+	                <p>¿Considera usted, qué se cumplió el objetivo deseado?
+									<input type="text" class="form-control" id="inputPassword" placeholder="Text"></p>
+									<p>¿Por qué?
+									<input type="text" class="form-control" id="inputPassword" placeholder="Text"></p>
+									<p>Describe brevemente la actividad desarrollada y/o los beneficios obtenidos:
+									<textarea rows="1" class="form-control" placeholder="Textarea"></textarea></p>
+									<p>Concluciones:
+									<textarea rows="1" class="form-control" placeholder="Textarea"></textarea></p>
+									<p>Observaciones:
+									<textarea rows="1" class="form-control" placeholder="Textarea"></textarea></p>
+	            </div>
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-default" class="close" data-dismiss="modal">Cancelar</button>
+	                <button type="button" class="btn btn-success">Wops</button>
+	            </div>
+
+	        </div>
+	    </div>
+	</div>
+	<!---------------------------------------------------------------------------------->
 	<header class="site-header">
 	    <div class="container-fluid">
-	        <a href="#" class="site-logo-text">I was here</a>
+	        <a href="#" class="site-logo-text">Menu principal</a>
 	        <button class="hamburger hamburger--htla">
 	            <span>toggle menu</span>
 	        </button>
@@ -40,17 +75,17 @@
 	            <div class="site-header-content-in">
 	                <div class="site-header-shown">
 
-	                    <div class="dropdown user-menu">
-	                        <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                            <img src="{{asset('Template/img/avatar-2-64.png')}}" alt="">
-	                        </button>
-	                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
-	                            <a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-user"></span>Perfil</a>
-	                            <a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-screenshot"></span>Holi</a>
-	                            <div class="dropdown-divider"></div>
-	                            <a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-log-out"></span>Salir</a>
-	                        </div>
-	                    </div>
+										<div class="dropdown user-menu">
+												<button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+														<img src="{{asset('Template/img/avatar-2-64.png')}}" alt="">
+												</button>
+												<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
+														<a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-user"></span>Perfil</a>
+														<a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-screenshot"></span>Holi</a>
+														<div class="dropdown-divider"></div>
+														<a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-log-out"></span>Salir</a>
+												</div>
+										</div>
 	                </div><!--.site-header-shown-->
 
 	                <div class="mobile-menu-right-overlay"></div>
@@ -79,55 +114,67 @@
 	            <img src="{{asset('Template/img/avatar-1-256.png')}}" alt="">
 	        </div>
 	    </div>
+
 	    <ul class="side-menu-list">
+				<li class="brown">
+						<a onclick="cambiarPagina('/tabla')">
+								<i class="font-icon font-icon-chart-2"></i>
+								<span class="lsl">Alta de prácticas escolares</span>
+						</a>
+				</li>
+
 	        <li class="brown">
-	            <a onclick="cambiarPagina('/tabla')">
-	                <i class="font-icon font-icon-chart-2"></i>
-	                <span class="lbl">Alta de prácticas escolares</span>
+	            <a href="#">
+	                <i class="font-icon font-icon-chart"></i>
+	                <span class="lbl">Captura de nominas</span>
 	            </a>
 	        </li>
-	        <li class="green">
+
+					<li class="green">
 	            <a href="#">
-	                <i class="font-icon font-icon-mail"></i>
-	                <span class="lbl">Mandar SMS y Correos</span>
+	                <i class="font-icon font-icon-tablet"></i>
+									<span class="lbl" data-toggle="modal" data-target="#exampleModalCenter3">Captura de informes académicos</span>
 	            </a>
 	        </li>
-	        <li class="gold">
+
+					<li class="red">
+						 <a href="#">
+								 <i class="font-icon font-icon-mail"></i>
+								 <span class="lbl">Mandar SMS y Correos</span>
+						 </a>
+				 </li>
+					<li class="gold">
 	            <a href="#">
-	                <i class="font-icon font-icon-zigzag"></i>
+	                <i class="font-icon font-icon-notebook"></i>
 	                <span class="lbl">Imprimir reportes</span>
 	            </a>
 	        </li>
-	        <li class="blue">
+					<li class="blue">
 	            <a href="#catalogos" data-toggle="collapse">
 	                <i class="font-icon font-icon-widget"></i>
-					<span class="lbl">Catálogos</span>
-				</a>
-				<div class="collapse" id="catalogos">
-					<div class="list-group">
-						<a onclick="cambiarPagina('/catalogos/plantel')" class="list-group-item list-group-item-action">Programa Académico</a>
-						<a onclick="cambiarPagina('/catalogos/semestre')" class="list-group-item list-group-item-action">Semestre</a>
-						<a href="#" class="list-group-item list-group-item-action">Nivel</a>
-						<a href="#" class="list-group-item list-group-item-action">Grupo</a>
-						<a onclick="cambiarPagina('/catalogos/tipo_practica')" class="list-group-item list-group-item-action">Tipo de práctica</a>
-						<a onclick="cambiarPagina('/catalogos/entidad_federativa')" class="list-group-item list-group-item-action">Entidad federativa</a>
-						<a onclick="cambiarPagina('/catalogos/unidad_aprendizaje')" class="list-group-item list-group-item-action">Unidad de aprendizaje</a>
-						<a onclick="cambiarPagina('/catalogos/profesor')" class="list-group-item list-group-item-action">Profesor</a>
-					</div>
-				</div>
+										<span class="lbl">Catálogos</span>
+							</a>
+							<div class="collapse" id="catalogos">
+								<div class="list-group">
+									<a onclick="cambiarPagina('/catalogos/plantel')" class="list-group-item list-group-item-action">Programa Académico</a>
+									<a onclick="cambiarPagina('/catalogos/semestre')" class="list-group-item list-group-item-action">Semestre</a>
+									<a href="#" class="list-group-item list-group-item-action">Nivel</a>
+									<a href="#" class="list-group-item list-group-item-action">Grupo</a>
+									<a onclick="cambiarPagina('/catalogos/tipo_practica')" class="list-group-item list-group-item-action">Tipo de práctica</a>
+									<a onclick="cambiarPagina('/catalogos/entidad_federativa')" class="list-group-item list-group-item-action">Entidad federativa</a>
+									<a onclick="cambiarPagina('/catalogos/unidad_aprendizaje')" class="list-group-item list-group-item-action">Unidad de aprendizaje</a>
+									<a onclick="cambiarPagina('/catalogos/profesor')" class="list-group-item list-group-item-action">Profesor</a>
+								</div>
+							</div>
 	        </li>
-	        <li class="purple">
+					<li class="purple">
 	            <a href="#">
 	                <i class="font-icon font-icon-cogwheel"></i>
 	                <span class="lbl">Configuraciones</span>
 	            </a>
 	        </li>
-
 	    </ul>
 	</nav><!--.side-menu-->
-
-
-	
 
 
                 @yield('content')
