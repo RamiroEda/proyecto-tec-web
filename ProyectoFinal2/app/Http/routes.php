@@ -22,3 +22,27 @@ Route::get('/inicio', function() {
 Route::get('/tabla', function() {
     return view('Admin.tablas');
 });
+
+Route::get('/catalogos/plantel', function(){
+    return view('Admin.catalogos.plantel');
+});
+
+Route::get('/catalogos/semestre', function(){
+    return view('Admin.catalogos.Semestre');
+});
+
+Route::get('/catalogos/tipo_practica', function(){
+    return view('Admin.catalogos.tipo_practica');
+});
+
+Route::get('/catalogos/entidad_federativa', function(){
+    return view('Admin.catalogos.entidad_federativa');
+});
+
+Route::get('/catalogos/unidad_aprendizaje', function(){
+    return view('Admin.catalogos.unidad_aprendizaje');
+});
+
+Route::get('/catalogos/profesor', function(){
+    return view('Admin.catalogos.profesor');
+});

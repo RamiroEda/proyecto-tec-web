@@ -1,0 +1,13 @@
+.hid{
+    visibility: hidden;
+}
+
+.new{
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.side-menu-list ul{
+    display: inherit;
+}
