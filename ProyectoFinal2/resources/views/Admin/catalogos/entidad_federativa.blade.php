@@ -26,8 +26,6 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">Añadir</button>
             </div>
-
-
         </div>
     </div>
 </div>

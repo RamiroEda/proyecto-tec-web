@@ -1,7 +1,7 @@
 @extends('layouts.menuLayout')
 
 @section('title')
-	<title>El sistema weon</title>
+	<title>SiPraViE</title>
 @endsection
 
 @section('css')
