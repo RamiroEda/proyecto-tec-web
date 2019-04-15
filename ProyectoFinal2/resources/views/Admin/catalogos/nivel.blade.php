@@ -17,12 +17,8 @@
             {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="NombrePlantel">Nombre del Plantel</label>
-                    {!!Form::text('NombrePlantel',null,['id'=>'NombrePlantel','class'=>'form-control'])!!}
-                </div>
-                <div class="form-group">
-                    <label for="ClaveSEP">Clave SEP</label>
-                    {!!Form::text('ClaveSEP',null,['id'=>'ClaveSEP','class'=>'form-control'])!!}
+                    <label for="nivel">nivel</label>
+                    {!!Form::text('nivel',null,['id'=>'nivel','class'=>'form-control'])!!}
                 </div>
             </div>
             {!!Form::close()!!}
@@ -49,19 +45,17 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
             {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="NombrePlantel">Nombre del Plantel</label>
-                    {!!Form::text('NombrePlantel',null,['id'=>'NombrePlantel','class'=>'form-control'])!!}
-                </div>
-                <div class="form-group">
-                    <label for="ClaveSEP">Clave SEP</label>
-                    {!!Form::text('ClaveSEP',null,['id'=>'ClaveSEP','class'=>'form-control'])!!}
+                    <label for="nivel">nivel</label>
+                    {!!Form::text('nivel',null,['id'=>'nivel','class'=>'form-control'])!!}
                 </div>
             </div>
             {!!Form::close()!!}
+
+
+        </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">Guardar</button>
             </div>
@@ -100,7 +94,7 @@
                 <div class="tbl">
                     <div class="tbl-row">
                         <div class="tbl-cell">
-                            <h2>Catalogo de Plantel Educativo</h2>
+                            <h2>Nivel</h2>
                         </div>
                     </div>
                 </div>

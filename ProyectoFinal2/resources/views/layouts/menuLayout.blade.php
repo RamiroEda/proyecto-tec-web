@@ -158,8 +158,8 @@
 								<div class="list-group">
 									<a onclick="cambiarPagina('/catalogos/plantel')" class="list-group-item list-group-item-action">Programa Académico</a>
 									<a onclick="cambiarPagina('/catalogos/semestre')" class="list-group-item list-group-item-action">Semestre</a>
-									<a href="#" class="list-group-item list-group-item-action">Nivel</a>
-									<a href="#" class="list-group-item list-group-item-action">Grupo</a>
+									<a onclick="cambiarPagina('/catalogos/nivel')" class="list-group-item list-group-item-action">Nivel</a>
+									<a onclick="cambiarPagina('/catalogos/grupo')" class="list-group-item list-group-item-action">Grupo</a>
 									<a onclick="cambiarPagina('/catalogos/tipo_practica')" class="list-group-item list-group-item-action">Tipo de práctica</a>
 									<a onclick="cambiarPagina('/catalogos/entidad_federativa')" class="list-group-item list-group-item-action">Entidad federativa</a>
 									<a onclick="cambiarPagina('/catalogos/unidad_aprendizaje')" class="list-group-item list-group-item-action">Unidad de aprendizaje</a>

@@ -17,12 +17,8 @@
             {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="NombrePlantel">Nombre del Plantel</label>
-                    {!!Form::text('NombrePlantel',null,['id'=>'NombrePlantel','class'=>'form-control'])!!}
-                </div>
-                <div class="form-group">
-                    <label for="ClaveSEP">Clave SEP</label>
-                    {!!Form::text('ClaveSEP',null,['id'=>'ClaveSEP','class'=>'form-control'])!!}
+                    <label for="grupo">Grupo</label>
+                    {!!Form::text('grupo',null,['id'=>'grupo','class'=>'form-control'])!!}
                 </div>
             </div>
             {!!Form::close()!!}
@@ -53,12 +49,8 @@
             {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="NombrePlantel">Nombre del Plantel</label>
-                    {!!Form::text('NombrePlantel',null,['id'=>'NombrePlantel','class'=>'form-control'])!!}
-                </div>
-                <div class="form-group">
-                    <label for="ClaveSEP">Clave SEP</label>
-                    {!!Form::text('ClaveSEP',null,['id'=>'ClaveSEP','class'=>'form-control'])!!}
+                    <label for="grupo">Grupo</label>
+                    {!!Form::text('grupo',null,['id'=>'grupo','class'=>'form-control'])!!}
                 </div>
             </div>
             {!!Form::close()!!}
@@ -100,7 +92,7 @@
                 <div class="tbl">
                     <div class="tbl-row">
                         <div class="tbl-cell">
-                            <h2>Catalogo de Plantel Educativo</h2>
+                            <h2>Grupo</h2>
                         </div>
                     </div>
                 </div>
@@ -113,8 +105,8 @@
                         <table id="alta" class="display table table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th style="width: 50%">Nombre del plantel</th>
-                                    <th style="width: 50%">Clave SEP</th>
+                                    <th>No.</th>
+                                    <th style="width: 50%">Grupo</th>
                                     <th><b>Editar</b></th>
                                     <th><b>Eliminar</b></td>
                                 </tr>
@@ -122,8 +114,8 @@
 
                             <tbody>
                                 <tr>
-                                    <td>CECyTEZ3</td>
-                                    <td>32CXB4332C</td>
+                                    <td>1</td>
+                                    <td>GRUPO1</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-toggle="modal"
                                             data-target="#exampleModalCenter2">
@@ -138,8 +130,8 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>CECyTEZ3</td>
-                                    <td>32CXB4332C</td>
+                                    <td>2</td>
+                                    <td>Grupo2</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-toggle="modal"
                                             data-target="#exampleModalCenter2">
@@ -154,8 +146,8 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>CECyTEZ3</td>
-                                    <td>32CXB4332C</td>
+                                    <td>3</td>
+                                    <td>Grupo3</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-toggle="modal"
                                             data-target="#exampleModalCenter2">

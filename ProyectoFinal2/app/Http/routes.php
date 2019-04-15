@@ -31,6 +31,14 @@ Route::get('/catalogos/semestre', function(){
     return view('Admin.catalogos.Semestre');
 });
 
+Route::get('/catalogos/nivel', function(){
+    return view('Admin.catalogos.nivel');
+});
+
+Route::get('/catalogos/grupo', function(){
+    return view('Admin.catalogos.grupo');
+});
+
 Route::get('/catalogos/tipo_practica', function(){
     return view('Admin.catalogos.tipo_practica');
 });

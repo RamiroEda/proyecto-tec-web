@@ -1,15 +1,4 @@
-@extends('layouts.menuLayout')
 
-@section('title')
-    <title>Alta de prácticas y visitas escolares</title>
-@endsection
-
-@section('css')
-    <link rel="stylesheet" href="{{asset('Template/css/lib/datatables-net/datatables.min.css')}}">
-    <link rel="stylesheet" href="{{asset('Template/css/tablas.css')}}">
-@endsection
-
-@section('popUp')
 <!-- ---------------------------- MODALS ---------------------------------------------- -->
 
 
@@ -28,12 +17,8 @@
             {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="NombrePlantel">Nombre del Plantel</label>
-                    {!!Form::text('NombrePlantel',null,['id'=>'NombrePlantel','class'=>'form-control'])!!}
-                </div>
-                <div class="form-group">
-                    <label for="ClaveSEP">Clave SEP</label>
-                    {!!Form::text('ClaveSEP',null,['id'=>'ClaveSEP','class'=>'form-control'])!!}
+                    <label for="semestre">Semestre</label>
+                    {!!Form::text('semestre',null,['id'=>'semestre','class'=>'form-control'])!!}
                 </div>
             </div>
             {!!Form::close()!!}
@@ -60,48 +45,17 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
+            {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Programa académico</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option value="SIS">Sistemas Computacionales</option>
-                        <option value="MEC">Mecatrónica</option>
-                        <option value="ALI">Alimentos</option>
-                        <option value="AMB">Ambiental</option>
-                        <option value="MET">Metalúrgica</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Nombre de la razón social</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">Nombre del profesor responsable</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1">
-                </div>
-                <div class="form-group">
-                    <label for="datePickerAdd">Fecha</label>
-                    <div class='input-group date' id='datetimepicker1'>
-                        <input type='text' class="form-control" />
-                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar"></span>
-                        </span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput2">Numero total de alumnos</label>
-                    <input type="number" class="form-control" id="exampleFormControlInput2" min="0" value="0">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput3" >Numero total de profesores</label>
-                    <input type="number" class="form-control" id="exampleFormControlInput3" min="0" value="0">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput4" >Presupuesto</label>
-                    <input type="number" class="form-control" id="exampleFormControlInput4" min="0" value="0" step="0.1">
+                    <label for="semestre">Semestre</label>
+                    {!!Form::text('semestre',null,['id'=>'semestre','class'=>'form-control'])!!}
                 </div>
             </div>
+            {!!Form::close()!!}
+
+
+        </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">Guardar</button>
             </div>
@@ -134,14 +88,13 @@
     </div>
 </div>
 
-@section('content')
-    <div class="page-content">
+    <div class="content">
         <div class="container-fluid">
             <header class="section-header">
                 <div class="tbl">
                     <div class="tbl-row">
                         <div class="tbl-cell">
-                            <h2>Catalogo de Plantel Educativo</h2>
+                            <h2>Semestre</h2>
                         </div>
                     </div>
                 </div>
@@ -154,17 +107,17 @@
                         <table id="alta" class="display table table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Semestre</th>
-                                    <th>Programa Academico</th>
-                                    <td><b>Editar</b></td>
-                                    <td><b>Eliminar</b></td>
+                                    <th>No.</th>
+                                    <th style="width: 100%">Semestre</th>
+                                    <th><b>Editar</b></th>
+                                    <th><b>Eliminar</b></td>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 <tr>
-                                    <td>Sistemas Computacionales</td>
-                                    <td>32CXB4332C</td>
+                                    <td>1</td>
+                                    <td>1er Semestre</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-toggle="modal"
                                             data-target="#exampleModalCenter2">
@@ -179,8 +132,8 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>CECyTEZ3</td>
-                                    <td>32CXB4332C</td>
+                                    <td>2</td>
+                                    <td>6to Semestre</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-toggle="modal"
                                             data-target="#exampleModalCenter2">
@@ -195,8 +148,8 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>CECyTEZ3</td>
-                                    <td>32CXB4332C</td>
+                                    <td>3</td>
+                                    <td>4to Semestre</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-toggle="modal"
                                             data-target="#exampleModalCenter2">
@@ -217,10 +170,6 @@
             </section>
         </div>
     </div>
-@endsection
-
-@section('scripts')
-    <script src="{{asset('Template/js/lib/datatables-net/datatables.min.js')}}"></script>
 
     <script>
         $(function () {
@@ -230,12 +179,6 @@
                     [0, "desc"]
                 ],
                 columns: [
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
                     null,
                     null,
                     {
@@ -253,4 +196,4 @@
         });
 
     </script>
-@endsection
+
