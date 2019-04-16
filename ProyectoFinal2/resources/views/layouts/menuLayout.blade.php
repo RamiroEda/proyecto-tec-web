@@ -116,7 +116,7 @@
 	    </div>
 
 	    <ul class="side-menu-list">
-				<li class="brown">
+				<li class="blue">
 						<a onclick="cambiarPagina('/tabla')">
 								<i class="font-icon font-icon-chart-2"></i>
 								<span class="lsl">Alta de prácticas escolares</span>
@@ -124,16 +124,16 @@
 				</li>
 
 	        <li class="brown">
-	            <a href="#">
+	            <a onclick="cambiarPagina('/nomina')">
 	                <i class="font-icon font-icon-chart"></i>
 	                <span class="lbl">Captura de nominas</span>
 	            </a>
 	        </li>
 
 					<li class="green">
-	            <a href="#">
+	            <a onclick="cambiarPagina('/informes')">
 	                <i class="font-icon font-icon-tablet"></i>
-									<span class="lbl" data-toggle="modal" data-target="#exampleModalCenter3">Captura de informes académicos</span>
+									<span class="lbl">Captura de informes académicos</span>
 	            </a>
 	        </li>
 

@@ -54,3 +54,10 @@ Route::get('/catalogos/unidad_aprendizaje', function(){
 Route::get('/catalogos/profesor', function(){
     return view('Admin.catalogos.profesor');
 });
+
+Route::get('/nomina', function() {
+    return view('Admin.Nomina');
+});
+Route::get('/informes', function() {
+    return view('Admin.InformesAcademicos');
+});
