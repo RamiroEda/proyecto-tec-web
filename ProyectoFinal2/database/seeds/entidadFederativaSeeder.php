@@ -11,15 +11,15 @@ class entidadFederativaSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('ent_fed')->insert([
+        DB::table('entidadFederativa')->insert([
             'entidad' => 'Zacatecas'
         ]);
 
-        DB::table('ent_fed')->insert([
+        DB::table('entidadFederativa')->insert([
             'entidad' => 'Fresnillo'
         ]);
 
-        DB::table('ent_fed')->insert([
+        DB::table('entidadFederativa')->insert([
             'entidad' => 'Calera'
         ]);
         //

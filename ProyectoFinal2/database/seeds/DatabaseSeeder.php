@@ -14,15 +14,19 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        $this->call(usuarioSeeder::class);
-        $this->call(alumnoSeeder::class);
-        $this->call(profesorSeeder::class);
-        $this->call(gruposSeeder::class);
-        $this->call(catalogoSeeder::class);
-        $this->call(unidadAprendizajeSeeder::class);
         $this->call(entidadFederativaSeeder::class);
         $this->call(nivelSeeder::class);
-        // $this->call(UsersTableSeeder::class);
+        $this->call(gruposSeeder::class);
+        $this->call(usuarioSeeder::class);
+        $this->call(adminSeeder::class);
+        $this->call(profesorSeeder::class);
+        $this->call(alumnoSeeder::class);
+        $this->call(unidadAprendizajeSeeder::class);
+        $this->call(practicaSeeder::class);
+        $this->call(atiendeSeeder::class);
+        $this->call(imparteSeeder::class);
+        $this->call(realizaSeeder::class);
+        
         Model::reguard();
     }
 }

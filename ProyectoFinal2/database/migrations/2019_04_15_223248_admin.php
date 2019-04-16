@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Catalogo extends Migration
+class Admin extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +12,13 @@ class Catalogo extends Migration
      */
     public function up()
     {
-        Schema::create('catalogo', function(Blueprint $table) {
+        //
+        Schema::create('admin', function(Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('tipo');
+            $table->unsignedBigInteger('usuario_id');
+            $table->foreign('usuario_id')->references('id')->on('usuario')->ondelete('cascade');
             $table->timestamps();
         });
-        //
     }
 
     /**

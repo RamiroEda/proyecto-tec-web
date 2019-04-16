@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class nivelSeeder extends Seeder
+class adminSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,11 +11,9 @@ class nivelSeeder extends Seeder
      */
     public function run()
     {
-        for($i=1;$i<=5;$i++) {
-            DB::table('nivel')->insert([
-                'nivel' => $i,
-            ]);
-        }
         //
+        DB::table('admin')->insert([
+            'usuario_id' => '1',
+        ]);
     }
 }

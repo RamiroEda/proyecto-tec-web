@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Practica extends Migration
+class Realiza extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +12,15 @@ class Practica extends Migration
      */
     public function up()
     {
-        Schema::create('practica', function(Blueprint $table) {
+        //
+        Schema::create('realiza', function(Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre');
-            $table->date('fechaEntrega');
-            $table->string('edc');
-            $table->string('objetivo');
-            $table->string('tipo');
-            $table->string('descripcion');
+            $table->unsignedBigInteger('grupo_id');
             $table->unsignedBigInteger('unidadAprendizaje_id');
+            $table->foreign('grupo_id')->references('id')->on('grupos')->ondelete('cascade');
             $table->foreign('unidadAprendizaje_id')->references('id')->on('unidadAprendizaje')->ondelete('cascade');
             $table->timestamps();
         });
-        //
     }
 
     /**

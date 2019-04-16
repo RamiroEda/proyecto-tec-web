@@ -12,7 +12,7 @@ class unidadAprendizajeSeeder extends Seeder
     public function run()
     {
         for($i=1;$i<=4;$i++) {
-            DB::table('un_apr')->insert([
+            DB::table('unidadAprendizaje')->insert([
                 'nombre' => 'Unidad '.$i,
             ]);
         }

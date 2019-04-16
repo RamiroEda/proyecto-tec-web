@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UnidadAprendizaje extends Migration
+class EntidadFederativa extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class UnidadAprendizaje extends Migration
      */
     public function up()
     {
-        Schema::create('unidadAprendizaje', function(Blueprint $table) {
+        Schema::create('entidadFederativa', function(Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre');
+            $table->string('entidad');
             $table->timestamps();
         });
         //

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class alumnoSeeder extends Seeder
+class atiendeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,12 +11,12 @@ class alumnoSeeder extends Seeder
      */
     public function run()
     {
-        for($i=1;$i<=9;$i++) {
-            DB::table('alumno')->insert([
-                'usuario_id' => $i,
+        //
+        for($i=1;$i<=4;$i++){
+            DB::table('atiende')->insert([
+                'profesor_id' => '1',
                 'grupo_id' => rand(1,4),
             ]);
         }
-        //
     }
 }

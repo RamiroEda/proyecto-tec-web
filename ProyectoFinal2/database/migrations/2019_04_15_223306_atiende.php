@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class EntidadFederativa extends Migration
+class Atiende extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +12,15 @@ class EntidadFederativa extends Migration
      */
     public function up()
     {
-        Schema::create('ent_fed', function(Blueprint $table) {
+        //
+        Schema::create('atiende', function(Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('entidad');
+            $table->unsignedBigInteger('profesor_id');
+            $table->unsignedBigInteger('grupo_id');
+            $table->foreign('profesor_id')->references('id')->on('profesor')->ondelete('cascade');
+            $table->foreign('grupo_id')->references('id')->on('grupos')->ondelete('cascade');
             $table->timestamps();
         });
-        //
     }
 
     /**
