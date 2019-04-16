@@ -31,7 +31,7 @@
 
 
 <body class="with-side-menu dark-theme dark-theme-green">
-	<!-- ---------------------------- INFORMES ACADEMICOS ---------------------------------------------- -->
+	<!-- ---------------------------- INFORMES ACADEMICOS ----------------------------------------------
 
 	<div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog"
 	    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -64,7 +64,7 @@
 	        </div>
 	    </div>
 	</div>
-	<!---------------------------------------------------------------------------------->
+	-------------------------------------------------------------------------------->
 	<header class="site-header">
 	    <div class="container-fluid">
 	        <a href="#" class="site-logo-text">Menu principal</a>

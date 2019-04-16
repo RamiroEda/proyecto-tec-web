@@ -26,6 +26,10 @@
                     <!input type="text" name="clave" id="clave" class="form-control">
                     {!!Form::text( 'clave', null, ['id'=>'clave', 'class'=>'form-control'])!!}
                 </div>
+                <div class="form-group">
+                    <label for="comentario">Comentarios</label>
+                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                </div>
             </div>
             {!!Form::close()!!}
             <div class="modal-footer">
@@ -59,6 +63,10 @@
                     <label for="entfed">Clave de trabajador</label><!- Viene de catalogo->
                     <!input type="text" name="clave" id="clave" class="form-control">
                     {!!Form::text( 'clave', null, ['id'=>'clave', 'class'=>'form-control'])!!}
+                </div>
+                <div class="form-group">
+                    <label for="comentario">Comentarios</label>
+                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
                 </div>
             </div>
             {!!Form::close()!!}

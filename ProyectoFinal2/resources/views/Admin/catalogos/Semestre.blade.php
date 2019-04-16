@@ -20,6 +20,10 @@
                     <label for="semestre">Semestre</label>
                     {!!Form::text('semestre',null,['id'=>'semestre','class'=>'form-control'])!!}
                 </div>
+                <div class="form-group">
+                    <label for="comentario">Comentarios</label>
+                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                </div>
             </div>
             {!!Form::close()!!}
             <div class="modal-footer">
@@ -51,11 +55,15 @@
                     <label for="semestre">Semestre</label>
                     {!!Form::text('semestre',null,['id'=>'semestre','class'=>'form-control'])!!}
                 </div>
+                <div class="form-group">
+                    <label for="comentario">Comentarios</label>
+                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                </div>
             </div>
             {!!Form::close()!!}
 
 
-        </div>
+        
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">Guardar</button>
             </div>
