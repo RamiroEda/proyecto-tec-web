@@ -105,8 +105,8 @@
                         <table id="alta" class="display table table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>No.</th>
-                                    <th style="width: 50%">Grupo</th>
+                                    <th style="width: 10%">No.</th>
+                                    <th style="width: 90%">Grupo</th>
                                     <th><b>Editar</b></th>
                                     <th><b>Eliminar</b></td>
                                 </tr>

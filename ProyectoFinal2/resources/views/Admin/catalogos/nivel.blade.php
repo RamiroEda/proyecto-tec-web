@@ -107,8 +107,7 @@
                         <table id="alta" class="display table table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th style="width: 50%">Nombre del plantel</th>
-                                    <th style="width: 50%">Clave SEP</th>
+                                    <th style="width: 100%">Niveles</th>
                                     <th><b>Editar</b></th>
                                     <th><b>Eliminar</b></td>
                                 </tr>
@@ -116,8 +115,7 @@
 
                             <tbody>
                                 <tr>
-                                    <td>CECyTEZ3</td>
-                                    <td>32CXB4332C</td>
+                                    <td>1</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-toggle="modal"
                                             data-target="#exampleModalCenter2">
@@ -132,8 +130,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>CECyTEZ3</td>
-                                    <td>32CXB4332C</td>
+                                    <td>2</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-toggle="modal"
                                             data-target="#exampleModalCenter2">
@@ -148,8 +145,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>CECyTEZ3</td>
-                                    <td>32CXB4332C</td>
+                                    <td>3</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-toggle="modal"
                                             data-target="#exampleModalCenter2">
