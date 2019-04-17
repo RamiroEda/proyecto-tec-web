@@ -11,13 +11,9 @@
 |
 */
 
-Route::get('/', function() {
-    return view('auth.login');
-});
+Route::get('/', 'welcomeController@index');
 
-Route::get('/inicio', function() {
-    return view('Admin.menu');
-});
+Route::get('/inicio', 'adminController@index');
 
 Route::get('/tabla', function() {
     return view('Admin.tablas');

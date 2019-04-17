@@ -1,43 +1,32 @@
-@extends('layouts.layout')
+@extends('barra.layout')
+<?php
+  $classSizeForms = "col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2";
+?>
 
 @section('title')
-    <title>Login</title>
-@endsection
+<title>Inicio Servicio</title>
+@stop
 
 @section('css')
-@endsection
-
-<!body>
+<link rel="stylesheet" href="{{asset('/Template/css/lib/bootstrap-sweetalert/sweetalert.css')}}"/>
+<link rel="stylesheet" href="{{asset('/Template/css/lib/clockpicker/bootstrap-clockpicker.min.css')}}"/>
+@stop
+@section('popUp')
+@stop
 @section('content')
-    <div class="page-center">
-        <div class="page-center-in">
-            <div class="container-fluid">
-                <!form class="sign-box">
-                {!!Form::open(array('url'=>'/inicio','class'=>'sign-box', 'method'=>'get'))!!}
-                    <div class="sign-avatar">
-                        <img src="{{asset('Template/img/avatar-sign.png')}}" alt="">
-                    </div>
-                    <header class="sign-title">Iniciar sesión</header>
-                    <div class="form-group">
-                        <!input type="text" class="form-control" placeholder="Usuario"/>
-                        {!!Form::text('usuario', null ,['class'=>'form-control', 'placeholder'=>'Usuario', 'id'=>'usuario'])!!}
-                    </div>
-                    <div class="form-group">
-                        <!input type="password" class="form-control" placeholder="Contraseña"/>
+Principal o.o
 
-                        {!!Form::password('pass', ['class'=>'form-control', 'placeholder'=>'Contreseña', 'id'=>'pass'])!!}
-                    </div>
-                    <button type="submit" class="btn btn-rounded">Iniciar Sesión</button>
-                    <p class="sign-note"><a href="sign-up.html">Registrarse</a></p>
-                    <!--<button type="button" class="close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>-->
-                {!!Form::close()!!}
-                <!/form>
-            </div>
-        </div>
-    </div><!--.page-center-->
-@endsection
+@stop
+@section('scripts')
 
-<!/body>
-</html>
+    <script src="{{asset('/Template/js/lib/bootstrap-sweetalert/sweetalert.min.js')}}"></script>
+    <script src="{{asset('/Template/js/custom/desabilitar.js')}}"></script>
+
+    <script src="{{asset('/Template/js/lib/bootstrap-select/bootstrap-select.min.js')}}"></script>
+    <script src="{{asset('/Template/js/lib/select2/select2.full.min.js')}}"></script>
+
+    <script src="{{asset('/Template/js/lib/clockpicker/bootstrap-clockpicker.min.js')}}"></script>
+    <script src="{{asset('/Template/js/lib/clockpicker/bootstrap-clockpicker-init.js')}}"></script>
+    <script src="{{asset('/Template/js/lib/daterangepicker/daterangepicker.js')}}"></script>
+
+@stop
