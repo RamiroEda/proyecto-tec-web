@@ -34,4 +34,48 @@ class adminController extends Controller
 
         return view('Admin.menu', $data);
     }
+
+    public function tablas() {
+        return view('Admin.tablas');
+    }
+
+    public function panel() {
+        return view('Admin.catalogos.plantel');
+    }
+
+    public function tablaSemestre() {
+        return view('Admin.catalogos.Semestre');
+    }
+
+    public function tablaNivel() {
+        return view('Admin.catalogos.nivel');
+    }
+
+    public function tablaGrupo() {
+        return view('Admin.catalogos.grupo');
+    }
+
+    public function tablaTipoPractica() {
+        return view('Admin.catalogos.tipo_practica');
+    }
+
+    public function tablaEntidadFederativa() {
+        return view('Admin.catalogos.entidad_federativa');
+    }
+
+    public function tablaUnidadAprendizaje() {
+        return view('Admin.catalogos.unidad_aprendizaje');
+    }
+
+    public function tablaProfesor() {
+        return view('Admin.catalogos.profesor');
+    }
+
+    public function nomina() {
+        return view('Admin.Nomina');
+    }
+
+    public function informesAcademicos() {
+        return view('Admin.InformesAcademicos');
+    }
 }
