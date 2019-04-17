@@ -20,6 +20,10 @@
                     <label for="grupo">Grupo</label>
                     {!!Form::text('grupo',null,['id'=>'grupo','class'=>'form-control'])!!}
                 </div>
+                <div class="form-group">
+                    <label for="comentario">Comentarios</label>
+                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                </div>
             </div>
             {!!Form::close()!!}
             <div class="modal-footer">
@@ -51,6 +55,10 @@
                 <div class="form-group">
                     <label for="grupo">Grupo</label>
                     {!!Form::text('grupo',null,['id'=>'grupo','class'=>'form-control'])!!}
+                </div>
+                <div class="form-group">
+                    <label for="comentario">Comentarios</label>
+                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
                 </div>
             </div>
             {!!Form::close()!!}
@@ -105,8 +113,8 @@
                         <table id="alta" class="display table table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>No.</th>
-                                    <th style="width: 50%">Grupo</th>
+                                    <th style="width: 10%">No.</th>
+                                    <th style="width: 90%">Grupo</th>
                                     <th><b>Editar</b></th>
                                     <th><b>Eliminar</b></td>
                                 </tr>

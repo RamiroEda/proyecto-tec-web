@@ -21,6 +21,10 @@
                     <!input type="text" name="entfed" id="entfed" class="form-control">
                     {!!Form::text( 'entfed', null, ['id'=>'entfed', 'class'=>'form-control'])!!}
                 </div>
+                <div class="form-group">
+                    <label for="comentario">Comentarios</label>
+                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                </div>
             </div>
             {!!Form::close()!!}
             <div class="modal-footer">
@@ -49,6 +53,10 @@
                     <label for="entfed">Entidad federativa</label><!- Viene de catalogo->
                     <!input type="text" name="entfed" id="entfed" class="form-control">
                     {!!Form::text( 'entfed', null, ['id'=>'entfed', 'class'=>'form-control'])!!}
+                </div>
+                <div class="form-group">
+                    <label for="comentario">Comentarios</label>
+                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
                 </div>
             </div>
             {!!Form::close()!!}
@@ -105,7 +113,7 @@
                         <thead>
                             <tr>
                                 <th>No.</th>
-                                <th style="width: 100%">Programa académico</th>
+                                <th style="width: 100%">Entidad Federatíva</th>
                                 <th></th>
                                 <th></th>
                             </tr>

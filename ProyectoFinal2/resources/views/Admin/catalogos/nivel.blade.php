@@ -20,6 +20,10 @@
                     <label for="nivel">nivel</label>
                     {!!Form::text('nivel',null,['id'=>'nivel','class'=>'form-control'])!!}
                 </div>
+                <div class="form-group">
+                    <label for="comentario">Comentarios</label>
+                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                </div>
             </div>
             {!!Form::close()!!}
             <div class="modal-footer">
@@ -48,14 +52,19 @@
             {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="nivel">nivel</label>
+                    <label for="nivel">Nivel</label>
                     {!!Form::text('nivel',null,['id'=>'nivel','class'=>'form-control'])!!}
+                </div>
+
+                <div class="form-group">
+                    <label for="comentario">Comentarios</label>
+                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
                 </div>
             </div>
             {!!Form::close()!!}
 
 
-        </div>
+        
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">Guardar</button>
             </div>
@@ -107,8 +116,7 @@
                         <table id="alta" class="display table table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th style="width: 50%">Nombre del plantel</th>
-                                    <th style="width: 50%">Clave SEP</th>
+                                    <th style="width: 100%">Niveles</th>
                                     <th><b>Editar</b></th>
                                     <th><b>Eliminar</b></td>
                                 </tr>
@@ -116,8 +124,7 @@
 
                             <tbody>
                                 <tr>
-                                    <td>CECyTEZ3</td>
-                                    <td>32CXB4332C</td>
+                                    <td>1</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-toggle="modal"
                                             data-target="#exampleModalCenter2">
@@ -132,8 +139,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>CECyTEZ3</td>
-                                    <td>32CXB4332C</td>
+                                    <td>2</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-toggle="modal"
                                             data-target="#exampleModalCenter2">
@@ -148,8 +154,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>CECyTEZ3</td>
-                                    <td>32CXB4332C</td>
+                                    <td>3</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-toggle="modal"
                                             data-target="#exampleModalCenter2">

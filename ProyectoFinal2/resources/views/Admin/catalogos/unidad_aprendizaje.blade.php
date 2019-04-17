@@ -29,6 +29,10 @@
                     <label for="entfed">Profesor</label><!- Viene de catalogo->
                     {!!Form::select('profe', array('1' => 'Profe 1', '2' => 'Profe 2'), 'F', ['class'=>'form-control', 'id'=>'profe'] );!!}
                 </div>
+                <div class="form-group">
+                    <label for="comentario">Comentarios</label>
+                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                </div>
             </div>
             {!!Form::close()!!}
             <div class="modal-footer">
@@ -65,6 +69,10 @@
                 <div class="form-group">
                     <label for="entfed">Profesor</label><!- Viene de catalogo->
                     {!!Form::select('profe', array('1' => 'Profe 1', '2' => 'Profe 2'), 'F', ['class'=>'form-control', 'id'=>'profe'] );!!}
+                </div>
+                <div class="form-group">
+                    <label for="comentario">Comentarios</label>
+                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
                 </div>
             </div>
             {!!Form::close()!!}

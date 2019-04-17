@@ -21,6 +21,10 @@
                     <!input type="text" name="tipo_prac" id="tipo_prac" class="form-control">
                     {!!Form::text( 'tipo_prac', null, ['id'=>'tipo_prac', 'class'=>'form-control'])!!}
                 </div>
+                <div class="form-group">
+                    <label for="comentario">Comentarios</label>
+                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                </div>
             </div>
             {!!Form::close()!!}
             <div class="modal-footer">
@@ -49,6 +53,10 @@
                     <label for="entfed">Tipo de práctica</label><!- Viene de catalogo->
                     <!input type="text" name="tipo_prac" id="tipo_prac" class="form-control">
                     {!!Form::text( 'tipo_prac', null, ['id'=>'tipo_prac', 'class'=>'form-control'])!!}
+                </div>
+                <div class="form-group">
+                    <label for="comentario">Comentarios</label>
+                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
                 </div>
             </div>
             {!!Form::close()!!}

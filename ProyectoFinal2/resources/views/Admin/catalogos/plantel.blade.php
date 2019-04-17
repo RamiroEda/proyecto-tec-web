@@ -24,6 +24,10 @@
                     <label for="ClaveSEP">Clave SEP</label>
                     {!!Form::text('ClaveSEP',null,['id'=>'ClaveSEP','class'=>'form-control'])!!}
                 </div>
+                <div class="form-group">
+                    <label for="comentario">Comentarios</label>
+                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                </div>
             </div>
             {!!Form::close()!!}
             <div class="modal-footer">
@@ -59,6 +63,10 @@
                 <div class="form-group">
                     <label for="ClaveSEP">Clave SEP</label>
                     {!!Form::text('ClaveSEP',null,['id'=>'ClaveSEP','class'=>'form-control'])!!}
+                </div>
+                <div class="form-group">
+                    <label for="comentario">Comentarios</label>
+                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
                 </div>
             </div>
             {!!Form::close()!!}
@@ -113,8 +121,9 @@
                         <table id="alta" class="display table table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th style="width: 50%">Nombre del plantel</th>
-                                    <th style="width: 50%">Clave SEP</th>
+                                    <th style="width: 10%">No.</th>
+                                    <th style="width: 70%">Nombre del plantel</th>
+                                    <th style="width: 20%">Clave SEP</th>
                                     <th><b>Editar</b></th>
                                     <th><b>Eliminar</b></td>
                                 </tr>
@@ -122,6 +131,7 @@
 
                             <tbody>
                                 <tr>
+                                    <td>1</td>
                                     <td>CECyTEZ3</td>
                                     <td>32CXB4332C</td>
                                     <td>
@@ -138,6 +148,7 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td>2</td>
                                     <td>CECyTEZ3</td>
                                     <td>32CXB4332C</td>
                                     <td>
@@ -154,6 +165,7 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td>3</td>
                                     <td>CECyTEZ3</td>
                                     <td>32CXB4332C</td>
                                     <td>
