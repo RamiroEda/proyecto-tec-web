@@ -23,6 +23,7 @@ class welcomeController extends Controller
         'index'=>$index,
         ]);
         */
-        return view('auth.login');
+       Auth::logout();
+       return redirect('/login');
     }
 }

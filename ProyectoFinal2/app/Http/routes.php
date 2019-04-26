@@ -11,7 +11,11 @@
 |
 */
 
+/*--------------------------------------------Auth-------------------------------------------------------------*/
 Route::get('/', 'welcomeController@index');
+Route::get('/login', 'Auth\AuthController@getLogin');
+Route::post('/login', 'Auth\AuthController@postLogin');
+Route::get('/logout', 'Auth\AuthController@getLogout');
 
 /*-------------------------------------------Admin------------------------------------------------------------*/
 Route::get('/inicio', 'adminController@index');

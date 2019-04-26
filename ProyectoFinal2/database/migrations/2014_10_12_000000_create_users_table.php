@@ -13,7 +13,7 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('usuario', function (Blueprint $table) {
+        Schema::create('User', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('usuario');
             $table->string('nombre');
@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('localidad');
             $table->foreign('localidad')->references('id')->on('entidadFederativa')->ondelete('cascade');
             $table->timestamps();
+            $table->rememberToken();
         });
     }
 

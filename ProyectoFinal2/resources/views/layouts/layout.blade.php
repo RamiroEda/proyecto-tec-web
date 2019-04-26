@@ -27,13 +27,13 @@
 
     <body>
 
-        @yield('content')
+        @yield('popUp')
 
         <script src="{{asset('Template/js/lib/jquery/jquery.min.js')}}"></script>
         <script src="{{asset('Template/js/lib/tether/tether.min.js')}}"></script>
         <script src="{{asset('Template/js/lib/bootstrap/bootstrap.min.js')}}"></script>
         <script src="{{asset('Templat/js/plugins.js')}}"></script>
         <script src="{{asset('Template/js/app.js')}}"></script>
-        @yield('scripts')
     </body>
 </html>
+@yield('scripts')

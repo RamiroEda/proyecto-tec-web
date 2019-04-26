@@ -1,32 +1,35 @@
-@extends('barra.layout')
-<?php
-  $classSizeForms = "col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2";
-?>
+@extends('layouts.layout')
 
 @section('title')
-<title>Inicio Servicio</title>
-@stop
+    <title>Login</title>
+@endsection
 
 @section('css')
-<link rel="stylesheet" href="{{asset('/Template/css/lib/bootstrap-sweetalert/sweetalert.css')}}"/>
-<link rel="stylesheet" href="{{asset('/Template/css/lib/clockpicker/bootstrap-clockpicker.min.css')}}"/>
-@stop
+@endsection
+
 @section('popUp')
-@stop
-@section('content')
-Principal o.o
+    <div class="page-center">
+        <div class="page-center-in">
+            <div class="container-fluid">
+                {!!Form::open(array('url'=>'/login','class'=>'sign-box', 'method'=>'post'))!!}
+                    <div class="sign-avatar">
+                        <img src="{{asset('Template/img/avatar-sign.png')}}" alt="">
+                    </div>
+                    <header class="sign-title">Iniciar sesión</header>
+                    <div class="form-group">
+                        {!!Form::text('usuario', null ,['class'=>'form-control', 'placeholder'=>'Usuario', 'id'=>'usuario'])!!}
+                    </div>
+                    <div class="form-group">
 
-@stop
+                        {!!Form::password('password', ['class'=>'form-control', 'placeholder'=>'Contreseña', 'id'=>'password'])!!}
+                    </div>
+                    <button type="submit" class="btn btn-rounded">Iniciar Sesión</button>
+                    <p class="sign-note"><a href="sign-up.html">Registrarse</a></p>
+                {!!Form::close()!!}
+            </div>
+        </div>
+    </div><!--.page-center-->
+@endsection
+
 @section('scripts')
-
-    <script src="{{asset('/Template/js/lib/bootstrap-sweetalert/sweetalert.min.js')}}"></script>
-    <script src="{{asset('/Template/js/custom/desabilitar.js')}}"></script>
-
-    <script src="{{asset('/Template/js/lib/bootstrap-select/bootstrap-select.min.js')}}"></script>
-    <script src="{{asset('/Template/js/lib/select2/select2.full.min.js')}}"></script>
-
-    <script src="{{asset('/Template/js/lib/clockpicker/bootstrap-clockpicker.min.js')}}"></script>
-    <script src="{{asset('/Template/js/lib/clockpicker/bootstrap-clockpicker-init.js')}}"></script>
-    <script src="{{asset('/Template/js/lib/daterangepicker/daterangepicker.js')}}"></script>
-
-@stop
+@endsection

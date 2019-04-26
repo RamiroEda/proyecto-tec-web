@@ -2,25 +2,51 @@
 
 namespace App;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Auth\Authenticatable;
 
-class User extends Authenticatable
+use Sofa\Eloquence\Eloquence;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Auth\Passwords\CanResetPassword;
+//use Illuminate\Contracts\Auth\CanResetPassword;
+use Illuminate\Foundation\Auth\Access\Authorizable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+
+class User extends Model implements AuthenticatableContract,
+                                       AuthorizableContract,
+                                       CanResetPasswordContract
 {
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    use Authenticatable, Authorizable, CanResetPassword;
+    use Eloquence;
+    //
+
+    protected $table = 'User';
+
     protected $fillable = [
-        'name', 'email', 'password',
+        'id',
+        'usuario',
+        'nombre',
+        'apPaterno',
+        'apMaterno',
+        'email',
+        'password',
+        'tipo',
+        'localidad',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    protected $hidden = ['password'];
+
+    public function __tostring() {
+        return $this->nombre.' '.$this->apPaterno.' '.$this->apMaterno;
+    }
+
+    public function entidad() {
+        return $this->belongsTo(entidadFederativa::class, 'localidad');
+    }
+
+    public function tipo() {
+        return $this->tipo;
+    }
 }

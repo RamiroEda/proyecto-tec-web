@@ -11,7 +11,7 @@ class usuarioSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('usuario')->insert([
+        DB::table('User')->insert([
             'usuario' => '201800217',
             'nombre' => 'Orlando Odiseo',
             'apPaterno' => 'Belmonte',
@@ -42,7 +42,7 @@ class usuarioSeeder extends Seeder
                 $nombre .= substr(str_shuffle($word), 0, rand (5 , 10)).' ';
             }
 
-            DB::table('usuario')->insert([
+            DB::table('User')->insert([
                 'usuario' => '2018'.rand(10 , 30).rand(10 , 70).rand(10 , 60),
                 'nombre' => $nombre,
                 'apPaterno' => $apP,

@@ -17,7 +17,7 @@ class Alumno extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('usuario_id');
             $table->unsignedBigInteger('grupo_id');
-            $table->foreign('usuario_id')->references('id')->on('usuario')->ondelete('cascade');
+            $table->foreign('usuario_id')->references('id')->on('User')->ondelete('cascade');
             $table->foreign('grupo_id')->references('id')->on('grupos')->ondelete('cascade');
             $table->timestamps();
         });
