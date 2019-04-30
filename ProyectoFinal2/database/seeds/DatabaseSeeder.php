@@ -14,8 +14,6 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        $this->call(entidadFederativaSeeder::class);
-        $this->call(nivelSeeder::class);
         $this->call(gruposSeeder::class);
         $this->call(usuarioSeeder::class);
         $this->call(adminSeeder::class);
@@ -26,7 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(atiendeSeeder::class);
         $this->call(imparteSeeder::class);
         $this->call(realizaSeeder::class);
-        
+
         Model::reguard();
     }
 }

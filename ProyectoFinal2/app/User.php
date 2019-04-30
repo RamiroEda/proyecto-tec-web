@@ -42,10 +42,6 @@ class User extends Model implements AuthenticatableContract,
         return $this->nombre.' '.$this->apPaterno.' '.$this->apMaterno;
     }
 
-    public function entidad() {
-        return $this->belongsTo(entidadFederativa::class, 'localidad');
-    }
-
     public function tipo() {
         return $this->tipo;
     }

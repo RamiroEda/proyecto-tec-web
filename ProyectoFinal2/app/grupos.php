@@ -15,15 +15,11 @@ class grupos extends Model
     protected $fillable = [
         'id',
         'grupo',
-        'nivel_id',
+        'nivel',
     ];
 
     public function __toString() {
         return $this->grupo;
-    }
-
-    public function nivel() {
-        return $this->belongsTo(nivel::class, 'nivel_id');
     }
 
     public function ua() {

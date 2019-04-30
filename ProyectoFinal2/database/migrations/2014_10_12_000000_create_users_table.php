@@ -22,8 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('email');
             $table->string('password');
             $table->integer('tipo');
-            $table->unsignedBigInteger('localidad');
-            $table->foreign('localidad')->references('id')->on('entidadFederativa')->ondelete('cascade');
+            $table->string('localidad');
             $table->timestamps();
             $table->rememberToken();
         });
