@@ -78,4 +78,8 @@ class adminController extends Controller
     public function informesAcademicos() {
         return view('Admin.InformesAcademicos');
     }
+
+    public function configuracion() {
+        return view('Admin.configuraciones.configuracion');
+    }
 }

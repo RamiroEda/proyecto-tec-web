@@ -191,42 +191,41 @@
 
 
 <script>
-        $(function () {
-            $('#nomina').DataTable({
-                responsive: true,
-                order: [
-                    [0, "desc"]
-                ],
-                columns: [
-                    null,
-                    null,
-                    null,
-                    {
-                        "orderable": false
-                    },
-                    {
-                        "orderable": false
-                    }
-                ]
-            });
-            $('#seguro').DataTable({
-                responsive: false,
-                order: [
-                    [0, "desc"]
-                ],
-                columns: [
-                    null,
-                    null,
-                    null,
-                    {
-                        "orderable": false
-                    }
-                ]
-            });
-
-            $('#datetimepicker1').datetimepicker({
-                format: 'DD/MM/YYYY'
-            });
+    $(function () {
+        $('#nomina').DataTable({
+            responsive: true,
+            order: [
+                [0, "desc"]
+            ],
+            columns: [
+                null,
+                null,
+                null,
+                {
+                    "orderable": false
+                },
+                {
+                    "orderable": false
+                }
+            ]
+        });
+        $('#seguro').DataTable({
+            responsive: false,
+            order: [
+                [0, "desc"]
+            ],
+            columns: [
+                null,
+                null,
+                null,
+                {
+                    "orderable": false
+                }
+            ]
         });
 
-    </script>
+        $('#datetimepicker1').datetimepicker({
+            format: 'DD/MM/YYYY'
+        });
+    });
+</script>

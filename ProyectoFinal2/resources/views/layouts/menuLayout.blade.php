@@ -130,10 +130,10 @@
 	            </a>
 	        </li>
 
-					<li class="green">
+			<li class="green">
 	            <a onclick="cambiarPagina('/informes')">
 	                <i class="font-icon font-icon-tablet"></i>
-									<span class="lbl">Captura de informes académicos</span>
+					<span class="lbl">Captura de informes académicos</span>
 	            </a>
 	        </li>
 
@@ -168,7 +168,7 @@
 							</div>
 	        </li>
 					<li class="purple">
-	            <a href="#">
+	            <a onclick="cambiarPagina('/configuracion');">
 	                <i class="font-icon font-icon-cogwheel"></i>
 	                <span class="lbl">Configuraciones</span>
 	            </a>
@@ -177,7 +177,7 @@
 	</nav><!--.side-menu-->
 
 
-                @yield('content')
+    @yield('content')
 
 </body>
 

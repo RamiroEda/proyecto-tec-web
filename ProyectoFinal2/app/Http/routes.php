@@ -30,6 +30,7 @@ Route::get('/catalogos/unidad_aprendizaje', 'adminController@tablaUnidadAprendiz
 Route::get('/catalogos/profesor', 'adminController@tablaProfesor');
 Route::get('/nomina', 'adminController@nomina');
 Route::get('/informes', 'adminController@informesAcademicos');
+Route::get('/configuracion', 'adminController@configuracion');
 /*------------------------------------------Profesor----------------------------------------------------------*/
 
 /*-------------------------------------------Alumno-----------------------------------------------------------*/
