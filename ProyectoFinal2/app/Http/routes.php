@@ -20,6 +20,7 @@ Route::get('/logout', 'Auth\AuthController@getLogout');
 /*-------------------------------------------Admin------------------------------------------------------------*/
 Route::get('/inicio', 'adminController@index');
 Route::get('/tabla', 'adminController@tablas');
+Route::get('/home', 'adminController@home');
 Route::get('/catalogos/plantel', 'adminController@panel');
 Route::get('/catalogos/semestre', 'adminController@tablaSemestre');
 Route::get('/catalogos/nivel', 'adminController@tablaNivel');

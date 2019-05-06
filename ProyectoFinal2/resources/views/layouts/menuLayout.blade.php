@@ -23,6 +23,7 @@
 	<link rel="stylesheet" href="{{asset('Template/css/main.css')}}">
 	<link rel="stylesheet" href="{{asset('Template/css/tablas.css')}}">
 	<link rel="stylesheet" href="{{asset('Template/css/lib/datatables-net/datatables.min.css')}}">
+	<link rel="stylesheet" href="{{asset('Template/css/lib/fullcalendar/fullcalendar.min.css')}}">
 
     @yield('css')
 </head>
@@ -31,43 +32,9 @@
 
 
 <body class="with-side-menu dark-theme dark-theme-green">
-	<!-- ---------------------------- INFORMES ACADEMICOS ----------------------------------------------
-
-	<div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog"
-	    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-	    <div class="modal-dialog modal-dialog-centered" role="document">
-	        <div class="modal-content">
-	            <div class="modal-header">
-	                <h5 class="modal-title" style="display: inline">Informes académicos</h5>
-	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	                    <span aria-hidden="true">&times;</span>
-	                </button>
-	            </div>
-
-	            <div class="modal-body">
-	                <p>¿Considera usted, qué se cumplió el objetivo deseado?
-									<input type="text" class="form-control" id="inputPassword" placeholder="Text"></p>
-									<p>¿Por qué?
-									<input type="text" class="form-control" id="inputPassword" placeholder="Text"></p>
-									<p>Describe brevemente la actividad desarrollada y/o los beneficios obtenidos:
-									<textarea rows="1" class="form-control" placeholder="Textarea"></textarea></p>
-									<p>Concluciones:
-									<textarea rows="1" class="form-control" placeholder="Textarea"></textarea></p>
-									<p>Observaciones:
-									<textarea rows="1" class="form-control" placeholder="Textarea"></textarea></p>
-	            </div>
-	            <div class="modal-footer">
-	                <button type="button" class="btn btn-default" class="close" data-dismiss="modal">Cancelar</button>
-	                <button type="button" class="btn btn-success">Wops</button>
-	            </div>
-
-	        </div>
-	    </div>
-	</div>
-	-------------------------------------------------------------------------------->
 	<header class="site-header">
 	    <div class="container-fluid">
-	        <a href="#" class="site-logo-text">Menu principal</a>
+	        <a onclick="cambiarPagina('/home')" class="site-logo-text">Menu principal</a>
 	        <button class="hamburger hamburger--htla">
 	            <span>toggle menu</span>
 	        </button>
@@ -185,6 +152,8 @@
 <script src="{{asset('Template/js/lib/tether/tether.min.js')}}"></script>
 <script src="{{asset('Template/js/lib/bootstrap/bootstrap.min.js')}}"></script>
 <script src="{{asset('Template/js/lib/datatables-net/datatables.min.js')}}"></script>
+<script src="{{asset('Template/js/lib/moment/moment.min.js')}}"></script>
+<script src="{{asset('Template/js/lib/fullcalendar/fullcalendar.min.js')}}"></script>
 <script src="{{asset('Template/js/plugins.js')}}"></script>
 <script src="{{asset('Template/js/app.js')}}"></script>
 <script src="{{asset('Template/js/spa.js')}}"></script>
