@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Admin extends Migration
+class TipoPractica extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class Admin extends Migration
     public function up()
     {
         //
-        Schema::create('admin', function(Blueprint $table) {
+        Schema::create('tipoPractica', function(Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('usuario_id');
-            $table->foreign('usuario_id')->references('id')->on('usuario')->ondelete('cascade');
+            $table->string('tipo');
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@ class practicaSeeder extends Seeder
                 'fechaEntrega' => rand(1,30)."/".rand(1,12)."/2019",
                 'edc' => 'edc ejemplo',
                 'objetivo' => 'objetivo ejemplo',
-                'tipo' => 'investigacion',
+                'tipo' => rand(1,3),
                 'descripcion' => 'descripcion de ejemlo',
                 'unidadAprendizaje_id' => rand(1,4),
             ]);

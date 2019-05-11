@@ -16,7 +16,8 @@ class Grupos extends Migration
         Schema::create('grupos', function(Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('grupo');
-            $table->Integer('nivel');
+            $table->unsignedBigInteger('nivel_id');
+            $table->foreign('nivel_id')->references('id')->on('nivel')->ondelete('cascade');
             $table->timestamps();
         });
         //

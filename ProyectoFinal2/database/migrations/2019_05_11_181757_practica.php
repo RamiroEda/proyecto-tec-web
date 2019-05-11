@@ -19,10 +19,11 @@ class Practica extends Migration
             $table->date('fechaEntrega');
             $table->string('edc');
             $table->string('objetivo');
-            $table->string('tipo');
+            $table->unsignedBigInteger('tipo');
             $table->string('descripcion');
             $table->unsignedBigInteger('unidadAprendizaje_id');
             $table->foreign('unidadAprendizaje_id')->references('id')->on('unidadAprendizaje')->ondelete('cascade');
+            $table->foreign('tipo')->references('id')->on('tipoPractica')->ondelete('cascade');
             $table->timestamps();
         });
         //
