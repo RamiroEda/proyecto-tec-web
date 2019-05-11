@@ -35,6 +35,10 @@ class adminController extends Controller
         return view('Admin.menu', $data);
     }
 
+    public function home() {
+        return view('Admin.home');
+    }
+
     public function tablas() {
         return view('Admin.tablas');
     }

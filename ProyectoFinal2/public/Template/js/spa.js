@@ -20,4 +20,4 @@ function cambiarPagina(url, method, data){
     });
 }
 
-cambiarPagina("/tabla");
+cambiarPagina("/home");
