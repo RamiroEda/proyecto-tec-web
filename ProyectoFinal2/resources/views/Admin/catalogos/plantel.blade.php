@@ -14,27 +14,27 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
+            {!!Form::open(array ('url'=>'/catalogos/plantel','class'=>'form-group', 'method'=>'post'))!!}
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="NombrePlantel">Nombre del Plantel</label>
-                    {!!Form::text('NombrePlantel',null,['id'=>'NombrePlantel','class'=>'form-control'])!!}
+                    <label for="NombrePlantel1">Nombre del Plantel</label>
+                    {!!Form::text('NombrePlantel1',null,['id'=>'NombrePlantel1','class'=>'form-control'])!!}
                 </div>
                 <div class="form-group">
-                    <label for="ClaveSEP">Clave SEP</label>
-                    {!!Form::text('ClaveSEP',null,['id'=>'ClaveSEP','class'=>'form-control'])!!}
+                    <label for="ClaveSEP1">Clave SEP</label>
+                    {!!Form::text('ClaveSEP1',null,['id'=>'ClaveSEP1','class'=>'form-control'])!!}
                 </div>
                 <div class="form-group">
                     <label for="comentario">Comentarios</label>
-                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                    {!!Form::textarea('comentario1',null,['id'=>'comentario1','class'=>'form-control', 'rows' => 3])!!}
                 </div>
             </div>
-            {!!Form::close()!!}
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Agregar</button>
+                <button type="submit" class="btn btn-primary">Agregar</button>
                 <button class="btn btn-primary" data-toggle="modal"
-                        data-target="#agregar">Cancelar</button><br><br>
+                data-target="#agregar">Cancelar</button><br><br>
             </div>
+            {!!Form::close()!!}
 
 
         </div>
@@ -54,25 +54,27 @@
                 </button>
             </div>
 
-            {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
+            {!!Form::open(array('url'=>'/catalogos/plantel', 'class'=>'form-group', 'method'=>'patch'))!!}
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="NombrePlantel">Nombre del Plantel</label>
-                    {!!Form::text('NombrePlantel',null,['id'=>'NombrePlantel','class'=>'form-control'])!!}
+                    <label for="NombrePlantel2">Nombre del Plantel</label>
+                    {!!Form::text('NombrePlantel2',null,array('class'=>'form-control','id'=>'NombrePlantel2'))!!}
                 </div>
                 <div class="form-group">
-                    <label for="ClaveSEP">Clave SEP</label>
-                    {!!Form::text('ClaveSEP',null,['id'=>'ClaveSEP','class'=>'form-control'])!!}
+                    <label for="ClaveSEP2">Clave SEP</label>
+                    {!!Form::text('ClaveSEP2',null,['id'=>'ClaveSEP2','class'=>'form-control'])!!}
                 </div>
                 <div class="form-group">
                     <label for="comentario">Comentarios</label>
-                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                    {!!Form::textarea('comentario2',null,['id'=>'comentario2','class'=>'form-control', 'rows' => 3])!!}
                 </div>
+
+                <input type="hidden" name="plantelId" id="plantelId">
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
             {!!Form::close()!!}
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Guardar</button>
-            </div>
 
         </div>
     </div>
@@ -89,15 +91,16 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
+            {!!Form::open(array('url'=>'catalogos/plantel', 'class'=>'form-group', 'method'=>'delete'))!!}
             <div class="modal-body">
-                ¿Está seguro de eliminar este elemento permanentemente?
+                <label class="modal-label" style="text-align:center" id="mensaje">Eliminar</label>
             </div>
+            <input type="hidden" name="plantelElmID" id="plantelElmID">
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" class="close" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-danger">Borrar</button>
+                <button type="submit" class="btn btn-danger">Borrar</button>
             </div>
-
+            {!!Form::close()!!}
         </div>
     </div>
 </div>
@@ -115,7 +118,7 @@
             </header>
             <section class="card">
                 <div class="card-block">
-                    
+
                     <button class="btn btn-primary pull-right" data-toggle="modal"
                         data-target="#agregar">Nuevo</button><br><br>
                         <table id="alta" class="display table table-bordered" cellspacing="0" width="100%">
@@ -130,58 +133,33 @@
                             </thead>
 
                             <tbody>
+                                <?php
+                                    $num = 1;
+                                ?>
+                                @foreach($planteles as $plantel)
                                 <tr>
-                                    <td>1</td>
-                                    <td>CECyTEZ3</td>
-                                    <td>32CXB4332C</td>
+                                    <td>{{$num}}</td>
+                                    <td>{{$plantel->programa}}</td>
+                                    <td>{{$plantel->clave}}</td>
                                     <td>
-                                        <button class="btn btn-primary btn-sm" data-toggle="modal"
-                                            data-target="#exampleModalCenter2">
+                                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                                        onclick="modificarPlantel({{$plantel->id}},'{{$plantel->programa}}','{{$plantel->clave}}','{{$plantel->comentario}}');"
+                                        data-target="#exampleModalCenter2">
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </button>
                                     </td>
                                     <td>
-                                        <button class="btn btn-danger btn-sm" data-toggle="modal"
-                                            data-target="#exampleModalCenter3">
+                                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                        data-target="#exampleModalCenter3"
+                                        onclick="eliminarPlantel({{$plantel->id}},'{{$plantel->programa}}');">
                                             <span class="glyphicon glyphicon-trash"></span>
                                         </button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>CECyTEZ3</td>
-                                    <td>32CXB4332C</td>
-                                    <td>
-                                        <button class="btn btn-primary btn-sm" data-toggle="modal"
-                                            data-target="#exampleModalCenter2">
-                                            <span class="glyphicon glyphicon-pencil"></span>
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-danger btn-sm" data-toggle="modal"
-                                            data-target="#exampleModalCenter3">
-                                            <span class="glyphicon glyphicon-trash"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>CECyTEZ3</td>
-                                    <td>32CXB4332C</td>
-                                    <td>
-                                        <button class="btn btn-primary btn-sm" data-toggle="modal"
-                                            data-target="#exampleModalCenter2">
-                                            <span class="glyphicon glyphicon-pencil"></span>
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-danger btn-sm" data-toggle="modal"
-                                            data-target="#exampleModalCenter3">
-                                            <span class="glyphicon glyphicon-trash"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-
+                                <?php
+                                    $num++;
+                                ?>
+                                @endforeach
                             </tbody>
                         </table>
                 </div>
@@ -189,6 +167,9 @@
         </div>
     </div>
 
+    <script src="{{asset('/Template/js/custom/catalogo.js')}}"></script>
+    <script src="{{asset('/Template/js/lib/select2/select2.full.min.js')}}"></script>
+    <script src="{{asset('/Template/js/lib/colorpicker/bootstrap-colorpicker.min.js')}}"></script>
     <script>
         $(function () {
             $('#alta').DataTable({
@@ -214,4 +195,3 @@
         });
 
     </script>
-

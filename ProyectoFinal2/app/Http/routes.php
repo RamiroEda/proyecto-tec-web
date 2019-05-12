@@ -21,7 +21,12 @@ Route::get('/logout', 'Auth\AuthController@getLogout');
 Route::get('/inicio', 'adminController@index');
 Route::get('/tabla', 'adminController@tablas');
 Route::get('/home', 'adminController@home');
+
 Route::get('/catalogos/plantel', 'adminController@panel');
+Route::post('/catalogos/plantel', 'adminController@nuevoPlantel');
+Route::patch('/catalogos/plantel', 'adminController@patchPlantel');
+Route::delete('/catalogos/plantel', 'adminController@deletePlantel');
+
 Route::get('/catalogos/semestre', 'adminController@tablaSemestre');
 Route::get('/catalogos/nivel', 'adminController@tablaNivel');
 Route::get('/catalogos/grupo', 'adminController@tablaGrupo');

@@ -20,10 +20,12 @@ class CreateUsersTable extends Migration
             $table->string('apPaterno');
             $table->string('apMaterno');
             $table->string('email');
+            $table->unsignedBigInteger('programaAcademico_id');
             $table->string('password');
             $table->integer('tipo');
             $table->unsignedBigInteger('localidad');
             $table->foreign('localidad')->references('id')->on('entidadFederativa')->ondelete('cascade');
+            $table->foreign('programaAcademico_id')->references('id')->on('programaAcademico')->ondelete('cascade');
             $table->timestamps();
         });
     }

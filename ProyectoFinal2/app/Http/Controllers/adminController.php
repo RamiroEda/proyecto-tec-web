@@ -44,7 +44,54 @@ class adminController extends Controller
     }
 
     public function panel() {
-        return view('Admin.catalogos.plantel');
+        $planteles = \App\programaAcademico::all();
+
+        $data = [
+            'planteles' => $planteles
+        ];
+
+        return view('Admin.catalogos.plantel', $data);
+    }
+
+    public function nuevoPlantel(Request $request) {
+        $this->validate($request, [
+            'NombrePlantel1' => 'required',
+            'ClaveSEP1' => 'required',
+            'comentario1',
+        ]);
+
+        $plantel = \App\programaAcademico::create([
+            'programa' => $request->NombrePlantel1,
+            'clave' => $request->ClaveSEP1,
+            'comentario' => $request->comentario1,
+        ]);
+
+        return redirect('/inicio');
+    }
+
+    public function patchPlantel(Request $request) {
+        $this->validate($request, [
+            'plantelId' => 'required',
+            'NombrePlantel2' => 'required',
+            'ClaveSEP2' =>'required',
+            'comentario'
+        ]);
+
+        $plantel = \App\programaAcademico::find($request->plantelId);
+        $plantel->update([
+            'programa' => $request->NombrePlantel2,
+            'clave' => $request->ClaveSEP2,
+            'comentario' => $request->comentario2,
+        ]);
+
+        return redirect('/inicio');
+    }
+
+    public function deletePlantel(Request $request) {
+        $plantel = \App\programaAcademico::find($request->plantelElmID);
+        $plantel->delete();
+
+        return redirect('/inicio');
     }
 
     public function tablaSemestre() {
