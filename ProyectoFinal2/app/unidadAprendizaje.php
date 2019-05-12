@@ -21,7 +21,7 @@ class unidadAprendizaje extends Model
         return $this->nombre;
     }
 
-    public function profesor() {
+    public function impartido() {
         return $this->hasOne(imparte::class, 'unidadAprendizaje_id');
     }
 }

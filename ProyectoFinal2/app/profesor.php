@@ -18,7 +18,7 @@ class profesor extends Model
     ];
 
     public function usuario() {
-        return $this->belongsTo(usuario::class, 'usuario_id');
+        return $this->belongsTo(User::class, 'usuario_id');
     }
 
     public function grupos() {

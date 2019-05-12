@@ -99,27 +99,61 @@ class adminController extends Controller
     }
 
     public function tablaNivel() {
-        return view('Admin.catalogos.nivel');
+        $nivel = \App\nivel::all();
+
+        $data = [
+            'nivel' => $nivel,
+        ];
+
+        return view('Admin.catalogos.nivel', $data);
     }
 
     public function tablaGrupo() {
-        return view('Admin.catalogos.grupo');
+        $grupo = \App\grupos::all();
+
+        $data = [
+            'grupo' => $grupo,
+        ];
+        return view('Admin.catalogos.grupo', $data);
     }
 
     public function tablaTipoPractica() {
-        return view('Admin.catalogos.tipo_practica');
+        $tPractica = \App\tipoPractica::all();
+
+        $data = [
+            'tPractica' => $tPractica,
+        ];
+
+        return view('Admin.catalogos.tipo_practica', $data);
     }
 
     public function tablaEntidadFederativa() {
-        return view('Admin.catalogos.entidad_federativa');
+        $entidad = \App\entidadFederativa::all();
+
+        $data = [
+            'entidad' => $entidad,
+        ];
+
+        return view('Admin.catalogos.entidad_federativa', $data);
     }
 
     public function tablaUnidadAprendizaje() {
-        return view('Admin.catalogos.unidad_aprendizaje');
+        $unidad = \App\unidadAprendizaje::all();
+
+        $data = [
+            'unidad' => $unidad,
+        ];
+        return view('Admin.catalogos.unidad_aprendizaje', $data);
     }
 
     public function tablaProfesor() {
-        return view('Admin.catalogos.profesor');
+        $profesor = \App\profesor::all();
+
+        $data = [
+            'profesor' => $profesor
+        ];
+
+        return view('Admin.catalogos.profesor', $data);
     }
 
     public function nomina() {

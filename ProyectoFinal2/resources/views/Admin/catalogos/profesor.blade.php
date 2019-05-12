@@ -131,10 +131,14 @@
                         </thead>
 
                         <tbody>
+                            <?php
+                                $cont = 1;
+                            ?>
+                            @foreach($profesor as $p)
                             <tr>
-                                <td>1</td>
-                                <td>Ing. Profesor Ejemplo</td>
-                                <td>ABCDEFG12345</td>
+                                <td>{{$cont}}</td>
+                                <td>{{$p->usuario}}</td>
+                                <td>{{$p->usuario->usuario}}</td>
                                 <td>
                                     <button class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#exampleModalCenter2">
                                         <span class="glyphicon glyphicon-pencil"></span>
@@ -146,119 +150,14 @@
                                     </button>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Ing. Profesor Ejemplo</td>
-                                <td>ABCDEFG12345</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Ing. Profesor Ejemplo</td>
-                                <td>ABCDEFG12345</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Ing. Profesor Ejemplo</td>
-                                <td>ABCDEFG12345</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Ing. Profesor Ejemplo</td>
-                                <td>ABCDEFG12345</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>Ing. Profesor Ejemplo</td>
-                                <td>ABCDEFG12345</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>Ing. Profesor Ejemplo</td>
-                                <td>ABCDEFG12345</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>Ing. Profesor Ejemplo</td>
-                                <td>ABCDEFG12345</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
-
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </section>
         </div>
     </div>
-  
+
     <script>
         $(function () {
             $('#alta').DataTable({

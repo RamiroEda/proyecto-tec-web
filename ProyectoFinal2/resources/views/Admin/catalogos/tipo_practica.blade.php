@@ -120,9 +120,13 @@
                         </thead>
 
                         <tbody>
+                            <?php
+                                $cont = 1;
+                            ?>
+                            @foreach($tPractica as $t)
                             <tr>
-                                <td>1</td>
-                                <td>Tipo de practica de ejmplo</td>
+                                <td>{{$cont}}</td>
+                                <td>{{$t->tipo}}</td>
                                 <td>
                                     <button class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#exampleModalCenter2">
                                         <span class="glyphicon glyphicon-pencil"></span>
@@ -134,83 +138,17 @@
                                     </button>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Tipo de practica de ejmplo</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Tipo de practica de ejmplo</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Tipo de practica de ejmplo</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Tipo de practica de ejmplo</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>Tipo de practica de ejmplo</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
+                            <?php
+                                $cont++;
+                            ?>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </section>
         </div>
     </div>
-    
+
     <script>
         $(function () {
             $('#alta').DataTable({

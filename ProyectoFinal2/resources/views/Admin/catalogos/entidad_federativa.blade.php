@@ -120,9 +120,13 @@
                         </thead>
 
                         <tbody>
+                            <?php
+                                $cont = 1;
+                            ?>
+                            @foreach($entidad as $e)
                             <tr>
-                                <td>1</td>
-                                <td>Entidad federativa ejemplo</td>
+                                <td>{{$cont}}</td>
+                                <td>{{$e->entidad}}</td>
                                 <td>
                                     <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalCenter2">
                                         <span class="glyphicon glyphicon-pencil"></span>
@@ -133,126 +137,18 @@
                                         <span class="glyphicon glyphicon-trash"></span>
                                     </button>
                                 </td>
+                                <?php
+                                    $cotn++;
+                                ?>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Entidad federativa ejemplo</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Entidad federativa ejemplo</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Entidad federativa ejemplo</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Entidad federativa ejemplo</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>Entidad federativa ejemplo</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>Entidad federativa ejemplo</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>Entidad federativa ejemplo</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>Entidad federativa ejemplo</td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalCenter2">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </section>
         </div>
     </div>
-   
+
     <script>
         $(function () {
             $('#alta').DataTable({

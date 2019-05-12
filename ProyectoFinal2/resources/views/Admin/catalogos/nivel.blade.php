@@ -64,7 +64,7 @@
             {!!Form::close()!!}
 
 
-        
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">Guardar</button>
             </div>
@@ -110,7 +110,7 @@
             </header>
             <section class="card">
                 <div class="card-block">
-                    
+
                     <button class="btn btn-primary pull-right" data-toggle="modal"
                         data-target="#agregar">Nuevo</button><br><br>
                         <table id="alta" class="display table table-bordered" cellspacing="0" width="100%">
@@ -123,8 +123,9 @@
                             </thead>
 
                             <tbody>
+                                @foreach($nivel as $n)
                                 <tr>
-                                    <td>1</td>
+                                    <td>{{$n->nivel}}</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-toggle="modal"
                                             data-target="#exampleModalCenter2">
@@ -138,37 +139,7 @@
                                         </button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>
-                                        <button class="btn btn-primary btn-sm" data-toggle="modal"
-                                            data-target="#exampleModalCenter2">
-                                            <span class="glyphicon glyphicon-pencil"></span>
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-danger btn-sm" data-toggle="modal"
-                                            data-target="#exampleModalCenter3">
-                                            <span class="glyphicon glyphicon-trash"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>
-                                        <button class="btn btn-primary btn-sm" data-toggle="modal"
-                                            data-target="#exampleModalCenter2">
-                                            <span class="glyphicon glyphicon-pencil"></span>
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-danger btn-sm" data-toggle="modal"
-                                            data-target="#exampleModalCenter3">
-                                            <span class="glyphicon glyphicon-trash"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-
+                                @endforeach
                             </tbody>
                         </table>
                 </div>
@@ -201,4 +172,3 @@
         });
 
     </script>
-

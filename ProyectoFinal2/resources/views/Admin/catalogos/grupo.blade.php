@@ -107,7 +107,7 @@
             </header>
             <section class="card">
                 <div class="card-block">
-                    
+
                     <button class="btn btn-primary pull-right" data-toggle="modal"
                         data-target="#agregar">Nuevo</button><br><br>
                         <table id="alta" class="display table table-bordered" cellspacing="0" width="100%">
@@ -121,9 +121,13 @@
                             </thead>
 
                             <tbody>
+                                <?php
+                                    $cont = 1;
+                                ?>
+                                @foreach($grupo as $g)
                                 <tr>
-                                    <td>1</td>
-                                    <td>GRUPO1</td>
+                                    <td>{{$cont}}</td>
+                                    <td>{{$g}}</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-toggle="modal"
                                             data-target="#exampleModalCenter2">
@@ -137,39 +141,10 @@
                                         </button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Grupo2</td>
-                                    <td>
-                                        <button class="btn btn-primary btn-sm" data-toggle="modal"
-                                            data-target="#exampleModalCenter2">
-                                            <span class="glyphicon glyphicon-pencil"></span>
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-danger btn-sm" data-toggle="modal"
-                                            data-target="#exampleModalCenter3">
-                                            <span class="glyphicon glyphicon-trash"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Grupo3</td>
-                                    <td>
-                                        <button class="btn btn-primary btn-sm" data-toggle="modal"
-                                            data-target="#exampleModalCenter2">
-                                            <span class="glyphicon glyphicon-pencil"></span>
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-danger btn-sm" data-toggle="modal"
-                                            data-target="#exampleModalCenter3">
-                                            <span class="glyphicon glyphicon-trash"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-
+                                <?php
+                                    $cont++;
+                                ?>
+                                @endforeach
                             </tbody>
                         </table>
                 </div>
@@ -202,4 +177,3 @@
         });
 
     </script>
-
