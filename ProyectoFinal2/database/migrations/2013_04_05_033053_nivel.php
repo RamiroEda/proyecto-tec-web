@@ -16,6 +16,7 @@ class Nivel extends Migration
         Schema::create('nivel', function(Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nivel');
+            $table->string('comentario')->nullable();
             $table->timestamps();
         });
         //

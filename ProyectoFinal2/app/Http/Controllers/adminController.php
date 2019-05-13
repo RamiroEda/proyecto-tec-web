@@ -74,7 +74,7 @@ class adminController extends Controller
             'plantelId' => 'required',
             'NombrePlantel2' => 'required',
             'ClaveSEP2' =>'required',
-            'comentario'
+            'comentario2'
         ]);
 
         $plantel = \App\programaAcademico::find($request->plantelId);
@@ -106,6 +106,44 @@ class adminController extends Controller
         ];
 
         return view('Admin.catalogos.nivel', $data);
+    }
+
+    public function nuevoNivel(Request $request) {
+        $this->validate($request, [
+            'nivel' => 'required',
+            'comentario1',
+        ]);
+
+        $nivel = \App\nivel::create([
+            'nivel' => $request->nivel,
+            'comentario' => $request->comentario1
+        ]);
+
+        return redirect('/inicio');
+    }
+
+    public function patchNivel(Request $request) {
+        $this->validate($request, [
+            'Id' => 'required',
+            'nivel2' => 'required',
+            'comentario2'
+        ]);
+
+        $nivel = \App\nivel::find($request->Id);
+        $nivel->update([
+            'nivel' => $request->nivel2,
+            'comentario' => $request->comentario2,
+        ]);
+
+
+        return redirect('/inicio');
+    }
+
+    public function deleteNivel(Request $request) {
+        $plantel = \App\nivel::find($request->nivelElmID);
+        $plantel->delete();
+
+        return redirect('/inicio');
     }
 
     public function tablaGrupo() {

@@ -63,7 +63,7 @@
             {!!Form::close()!!}
 
 
-        
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">Guardar</button>
             </div>
@@ -109,7 +109,7 @@
             </header>
             <section class="card">
                 <div class="card-block">
-                    
+
                     <button class="btn btn-primary pull-right" data-toggle="modal"
                         data-target="#agregar">Nuevo</button><br><br>
                         <table id="alta" class="display table table-bordered" cellspacing="0" width="100%">
@@ -204,4 +204,3 @@
         });
 
     </script>
-

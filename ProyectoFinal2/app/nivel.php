@@ -14,6 +14,7 @@ class nivel extends Model
 
     protected $fillable = [
         'id',
-        'nivel'
+        'nivel',
+        'comentario'
     ];
 }
