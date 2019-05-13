@@ -27,13 +27,27 @@ Route::post('/catalogos/plantel', 'adminController@nuevoPlantel');
 Route::patch('/catalogos/plantel', 'adminController@patchPlantel');
 Route::delete('/catalogos/plantel', 'adminController@deletePlantel');
 
+/*_________________________________________________________________*/
 Route::get('/catalogos/semestre', 'adminController@tablaSemestre');
+/*_________________________________________________________________*/
+
 Route::get('/catalogos/nivel', 'adminController@tablaNivel');
+Route::post('/catalogos/nivel', 'adminController@nuevoNivel');
+Route::patch('/catalogos/nivel', 'adminController@patchNivel');
+Route::delete('/catalogos/nivel', 'adminController@deleteNivel');
+
 Route::get('/catalogos/grupo', 'adminController@tablaGrupo');
 Route::get('/catalogos/tipo_practica', 'adminController@tablaTipoPractica');
+
+/*_______________________________________________________________________________________*/
 Route::get('/catalogos/entidad_federativa', 'adminController@tablaEntidadFederativa');
+/*_______________________________________________________________________________________*/
+
 Route::get('/catalogos/unidad_aprendizaje', 'adminController@tablaUnidadAprendizaje');
+
+/*____________________________________________________________________*/
 Route::get('/catalogos/profesor', 'adminController@tablaProfesor');
+/*____________________________________________________________________*/
 Route::get('/nomina', 'adminController@nomina');
 Route::get('/informes', 'adminController@informesAcademicos');
 Route::get('/configuracion', 'adminController@configuracion');
