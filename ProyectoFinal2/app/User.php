@@ -34,6 +34,7 @@ class User extends Model implements AuthenticatableContract,
         'password',
         'tipo',
         'localidad',
+        'comentario',
     ];
 
     protected $hidden = ['password'];

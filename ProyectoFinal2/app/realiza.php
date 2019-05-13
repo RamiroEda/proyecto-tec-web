@@ -8,7 +8,7 @@ use Sofa\Eloquence\Eloquence;
 class realiza extends Model
 {
     //
-    use Eloquecne;
+    use Eloquence;
 
     protected $table = 'realiza';
 

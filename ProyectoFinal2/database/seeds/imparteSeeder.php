@@ -12,9 +12,11 @@ class imparteSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('imparte')->insert([
-            'profesor_id' => '1',
-            'unidadAprendizaje_id' => rand(1,4),
-        ]);
+        for($i=1;$i<=4;$i++) {
+            DB::table('imparte')->insert([
+                'profesor_id' => '1',
+                'unidadAprendizaje_id' => $i,
+            ]);
+        }
     }
 }

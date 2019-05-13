@@ -15,6 +15,7 @@ class unidadAprendizaje extends Model
     protected $fillable = [
         'id',
         'nombre',
+        'comentario',
     ];
 
     public function __toString() {
@@ -23,5 +24,9 @@ class unidadAprendizaje extends Model
 
     public function impartido() {
         return $this->hasOne(imparte::class, 'unidadAprendizaje_id');
+    }
+
+    public function realizado() {
+        return $this->hasMany(realiza::class, 'unidadAprendizaje_id');
     }
 }

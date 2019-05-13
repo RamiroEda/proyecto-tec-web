@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class realizaSeeder extends Seeder
+class semestreSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,10 +12,9 @@ class realizaSeeder extends Seeder
     public function run()
     {
         //
-        for($i=1;$i<=4;$i++) {
-            DB::table('realiza')->insert([
-                'grupo_id' => '1',
-                'unidadAprendizaje_id' => 1,
+        for($i=1;$i<=6;$i++) {
+            DB::table('semestre')->insert([
+                'semestre' => $i,
             ]);
         }
     }
