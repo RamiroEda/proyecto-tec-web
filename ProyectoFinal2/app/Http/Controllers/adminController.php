@@ -95,7 +95,12 @@ class adminController extends Controller
     }
 
     public function tablaSemestre() {
-        return view('Admin.catalogos.Semestre');
+        $semestre = \App\semestre::all();
+
+        $data = [
+            'semestre' => $semestre,
+        ];
+        return view('Admin.catalogos.Semestre', $data);
     }
 
     public function tablaNivel() {
