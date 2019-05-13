@@ -13,6 +13,12 @@ class Semestre extends Migration
     public function up()
     {
         //
+        Schema::create('semestre', function(Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('semestre');
+            $table->string('comentario')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,11 +29,6 @@ class Semestre extends Migration
     public function down()
     {
         //
-        Schema::create('semestre', function(Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('semestre');
-            $table->string('comentario')->nullable();
-            $table->timestamps();
-        });
+
     }
 }
