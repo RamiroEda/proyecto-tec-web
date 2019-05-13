@@ -94,6 +94,20 @@ class adminController extends Controller
         return redirect('/inicio');
     }
 
+    public function nuevoSemestre(Request $request) {
+        $this->validate($request, [
+            'semestre1' => 'required',
+            'comentario',
+        ]);
+
+        $semestre = \App\semestre::create([
+            'semestre' => $request->semestre1,
+            'comentario' => $request->comentario1
+        ]);
+
+        return redirect('/inicio');
+    }
+
     public function tablaSemestre() {
         $semestre = \App\semestre::all();
 
@@ -101,6 +115,29 @@ class adminController extends Controller
             'semestre' => $semestre,
         ];
         return view('Admin.catalogos.Semestre', $data);
+    }
+
+    public function patchSemestre(Request $request) {
+        $this->validate($request, [
+            'semestre2' => 'required',
+            'comentario2',
+        ]);
+
+        $semestre = \App\semestre::find($request->semestreID);
+
+        $semestre->update([
+            'semestre' => $request->semestre2,
+            'comentario' => $request->comentario2,
+        ]);
+
+        return redirect('/inicio');
+    }
+
+    public function deleteSemestre(Request $request) {
+        $semestre = \App\semestre::find($request->elmSemestre);
+        $semestre->delete();
+
+        return redirect('/inicio');
     }
 
     public function tablaNivel() {

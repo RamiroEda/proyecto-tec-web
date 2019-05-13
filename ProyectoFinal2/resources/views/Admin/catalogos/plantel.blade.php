@@ -170,6 +170,7 @@
     <script src="{{asset('/Template/js/custom/catalogo.js')}}"></script>
     <script src="{{asset('/Template/js/lib/select2/select2.full.min.js')}}"></script>
     <script src="{{asset('/Template/js/lib/colorpicker/bootstrap-colorpicker.min.js')}}"></script>
+
     <script>
         $(function () {
             $('#alta').DataTable({

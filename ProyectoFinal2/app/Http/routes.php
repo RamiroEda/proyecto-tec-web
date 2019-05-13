@@ -29,6 +29,9 @@ Route::delete('/catalogos/plantel', 'adminController@deletePlantel');
 
 /*_________________________________________________________________*/
 Route::get('/catalogos/semestre', 'adminController@tablaSemestre');
+Route::post('/catalogos/semestre', 'adminController@nuevoSemestre');
+Route::patch('/catalogos/semestre', 'adminController@patchSemestre');
+Route::delete('catalogos/semestre', 'adminController@deleteSemestre');
 /*_________________________________________________________________*/
 
 Route::get('/catalogos/nivel', 'adminController@tablaNivel');
