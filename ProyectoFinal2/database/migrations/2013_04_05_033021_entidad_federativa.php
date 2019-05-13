@@ -16,6 +16,7 @@ class EntidadFederativa extends Migration
         Schema::create('entidadFederativa', function(Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('entidad');
+            $table->string('comentario')->nullable();
             $table->timestamps();
         });
         //

@@ -144,9 +144,13 @@
                             @foreach($unidad as $u)
                             <tr>
                                 <td>{{$cont}}</td>
-                                <td>{{$u}}</td>
-                                <td>XEJEX</td>
-                                <td>Lic. Ejemplo Profe</td>
+                                <td>{{$u->nombre}}</td>
+                                <td>
+                                    @foreach($u->realizado as $r)
+                                    {{$r->grupo}}
+                                    @endforeach
+                                </td>
+                                <td>{{$u->impartido->profesor->usuario}}</td>
                                 <td>
                                     <button class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#exampleModalCenter2">
                                         <span class="glyphicon glyphicon-pencil"></span>

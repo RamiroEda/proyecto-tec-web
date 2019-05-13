@@ -138,7 +138,7 @@
                                     </button>
                                 </td>
                                 <?php
-                                    $cotn++;
+                                    $cont++;
                                 ?>
                             </tr>
                             @endforeach

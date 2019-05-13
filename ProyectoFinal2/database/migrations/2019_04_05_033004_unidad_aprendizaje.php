@@ -16,6 +16,7 @@ class UnidadAprendizaje extends Migration
         Schema::create('unidadAprendizaje', function(Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre');
+            $table->string('comentario')->nullable();
             $table->timestamps();
         });
         //

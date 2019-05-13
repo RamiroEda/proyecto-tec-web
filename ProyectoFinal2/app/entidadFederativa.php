@@ -15,5 +15,6 @@ class entidadFederativa extends Model
     protected $fillable = [
         'id',
         'entidad',
+        'comentario',
     ];
 }

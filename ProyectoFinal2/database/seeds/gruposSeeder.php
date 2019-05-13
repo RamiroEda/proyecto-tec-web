@@ -15,6 +15,7 @@ class gruposSeeder extends Seeder
             $niv = rand(1,5);
             DB::table('grupos')->insert([
                 'grupo' => $niv."cm".$i,
+                'semestre_id' => rand(1,6),
                 'nivel_id' => $niv,
             ]);
         }
