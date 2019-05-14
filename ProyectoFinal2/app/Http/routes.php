@@ -40,6 +40,10 @@ Route::patch('/catalogos/nivel', 'adminController@patchNivel');
 Route::delete('/catalogos/nivel', 'adminController@deleteNivel');
 
 Route::get('/catalogos/grupo', 'adminController@tablaGrupo');
+Route::post('/catalogos/grupo', 'adminController@nuevoGrupo');
+Route::patch('/catalogos/grupo', 'adminController@patchGrupo');
+Route::delete('/catalogos/grupo', 'adminController@deleteGrupo');
+
 Route::get('/catalogos/tipo_practica', 'adminController@tablaTipoPractica');
 
 /*_______________________________________________________________________________________*/

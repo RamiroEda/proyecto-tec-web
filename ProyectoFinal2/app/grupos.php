@@ -15,7 +15,7 @@ class grupos extends Model
     protected $fillable = [
         'id',
         'grupo',
-        'cometario',
+        'comentario',
         'semestre_id',
         'nivel_id',
     ];

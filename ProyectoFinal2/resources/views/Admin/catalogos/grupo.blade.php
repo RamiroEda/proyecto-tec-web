@@ -14,25 +14,33 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
+              {!!Form::open(array ('url'=>'/catalogos/grupo','class'=>'form-group', 'method'=>'post'))!!}
             <div class="modal-body">
                 <div class="form-group">
                     <label for="grupo">Grupo</label>
                     {!!Form::text('grupo',null,['id'=>'grupo','class'=>'form-control'])!!}
                 </div>
+
+                <div class="form-group">
+                    <label for="Semestre">Semestre</label>
+                    {!!Form::select('semestre',$grade, 1, ['class'=>'form-control', 'id'=>'semestre'])!!}
+                </div>
+                <div class="form-group">
+                    <label for="Nivel">Nivel</label>
+                    {!!Form::select('nivel',$level, 1, ['class'=>'form-control', 'id'=>'nivel'])!!}
+                </div>
                 <div class="form-group">
                     <label for="comentario">Comentarios</label>
-                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                    {!!Form::textarea('comentario1',null,['id'=>'comentario1','class'=>'form-control', 'rows' => 3])!!}
                 </div>
+
             </div>
-            {!!Form::close()!!}
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Agregar</button>
+                <button type="submit" class="btn btn-primary">Agregar</button>
                 <button class="btn btn-primary" data-toggle="modal"
                         data-target="#agregar">Cancelar</button><br><br>
             </div>
-
-
+            {!!Form::close()!!}
         </div>
     </div>
 </div>
@@ -50,22 +58,30 @@
                 </button>
             </div>
 
-            {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
+            {!!Form::open(array('url'=>'/catalogos/grupo', 'class'=>'form-group', 'method'=>'patch'))!!}
             <div class="modal-body">
                 <div class="form-group">
                     <label for="grupo">Grupo</label>
-                    {!!Form::text('grupo',null,['id'=>'grupo','class'=>'form-control'])!!}
+                    {!!Form::text('grupo2',null,['id'=>'grupo2','class'=>'form-control'])!!}
+                </div>
+                <div class="form-group">
+                    <label for="comentario">Semestre</label>
+                    {!!Form::select('semestre2',$grade, 1, ['class'=>'form-control', 'id'=>'semestre2'])!!}
+                </div>
+                <div class="form-group">
+                    <label for="comentario">Nivel</label>
+                    {!!Form::select('nivel2',$level, 1, ['class'=>'form-control', 'id'=>'nivel2'])!!}
                 </div>
                 <div class="form-group">
                     <label for="comentario">Comentarios</label>
-                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                    {!!Form::textarea('comentario2',null,['id'=>'comentario2','class'=>'form-control', 'rows' => 3])!!}
                 </div>
             </div>
-            {!!Form::close()!!}
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Guardar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
-
+            <input type="hidden" name="Id" id="Id">
+            {!!Form::close()!!}
         </div>
     </div>
 </div>
@@ -74,24 +90,27 @@
 <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" style="display: inline">Eliminar</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" style="display: inline">Eliminar</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
 
-            <div class="modal-body">
-                ¿Está seguro de eliminar este elemento permanentemente?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" class="close" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-danger">Borrar</button>
-            </div>
+          {!!Form::open(array('url'=>'/catalogos/grupo', 'class'=>'form-group', 'method'=>'delete'))!!}
+          <div class="modal-body">
+              <label class="modal-label" style="text-align:center" id="mensaje">Eliminar</label>
+          </div>
+          <input type="hidden" name="grupoElmID" id="grupoElmID">
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" class="close" data-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-danger">Borrar</button>
+          </div>
+          {!!Form::close()!!}
 
-        </div>
-    </div>
+      </div>
+  </div>
 </div>
 
     <div class="content">
@@ -121,29 +140,24 @@
                             </thead>
 
                             <tbody>
-                                <?php
-                                    $cont = 1;
-                                ?>
                                 @foreach($grupo as $g)
                                 <tr>
-                                    <td>{{$cont}}</td>
-                                    <td>{{$g}}</td>
+                                    <td>{{$g->id}}</td>
+                                    <td>{{$g->grupo}}</td>
                                     <td>
-                                        <button class="btn btn-primary btn-sm" data-toggle="modal"
+                                        <button class="btn btn-primary btn-sm" data-toggle="modal" onclick="modificarGrupo({{$g->id}},'{{$g->comentario}}', '{{$g->grupo}}');"
                                             data-target="#exampleModalCenter2">
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </button>
                                     </td>
                                     <td>
                                         <button class="btn btn-danger btn-sm" data-toggle="modal"
-                                            data-target="#exampleModalCenter3">
+                                            data-target="#exampleModalCenter3"
+                                            onclick="eliminarGrupo({{$g->id}},'{{$g->grupo}}');">
                                             <span class="glyphicon glyphicon-trash"></span>
                                         </button>
                                     </td>
                                 </tr>
-                                <?php
-                                    $cont++;
-                                ?>
                                 @endforeach
                             </tbody>
                         </table>
@@ -152,6 +166,9 @@
         </div>
     </div>
 
+    <script src="{{asset('/Template/js/custom/catalogo.js')}}"></script>
+    <script src="{{asset('/Template/js/lib/select2/select2.full.min.js')}}"></script>
+    <script src="{{asset('/Template/js/lib/colorpicker/bootstrap-colorpicker.min.js')}}"></script>
     <script>
         $(function () {
             $('#alta').DataTable({

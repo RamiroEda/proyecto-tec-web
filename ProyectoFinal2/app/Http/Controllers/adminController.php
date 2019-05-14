@@ -74,7 +74,7 @@ class adminController extends Controller
             'plantelId' => 'required',
             'NombrePlantel2' => 'required',
             'ClaveSEP2' =>'required',
-            'comentario2'
+            'comentario2',
         ]);
 
         $plantel = \App\programaAcademico::find($request->plantelId);
@@ -94,20 +94,6 @@ class adminController extends Controller
         return redirect('/inicio');
     }
 
-    public function nuevoSemestre(Request $request) {
-        $this->validate($request, [
-            'semestre1' => 'required',
-            'comentario',
-        ]);
-
-        $semestre = \App\semestre::create([
-            'semestre' => $request->semestre1,
-            'comentario' => $request->comentario1
-        ]);
-
-        return redirect('/inicio');
-    }
-
     public function tablaSemestre() {
         $semestre = \App\semestre::all();
 
@@ -116,7 +102,19 @@ class adminController extends Controller
         ];
         return view('Admin.catalogos.Semestre', $data);
     }
+    public function nuevoSemestre(Request $request) {
+        $this->validate($request, [
+            'semestre1' => 'required',
+            'c',
+        ]);
 
+        $semestre = \App\semestre::create([
+            'semestre' => $request->semestre1,
+            'comentario' => $request->c,
+        ]);
+
+        return redirect('/inicio');
+    }
     public function patchSemestre(Request $request) {
         $this->validate($request, [
             'semestre2' => 'required',
@@ -190,11 +188,61 @@ class adminController extends Controller
 
     public function tablaGrupo() {
         $grupo = \App\grupos::all();
+        $nivel = \App\nivel::lists('nivel','id');
+        $semestre = \App\semestre::lists('semestre','id');
 
         $data = [
             'grupo' => $grupo,
+            'grade' => $semestre,
+            'level' => $nivel,
         ];
         return view('Admin.catalogos.grupo', $data);
+    }
+    public function nuevoGrupo(Request $request) {
+        $this->validate($request, [
+            'grupo' => 'required',
+            'semestre'=>'required',
+            'nivel'=>'required',
+            'comentario1'
+        ]);
+
+        $grupos = \App\grupos::create([
+            'grupo' => $request->grupo,
+            'nivel_id' => $request->nivel,
+            'semestre_id' => $request->semestre,
+            'comentario' => $request->comentario1
+        ]);
+
+        return redirect('/inicio');
+    }
+
+    public function patchGrupo(Request $request) {
+        $this->validate($request, [
+            'Id' => 'required',
+            'grupo2' => 'required',
+            'nivel2' => 'required',
+            'semestre2' => 'required',
+            'comentario2',
+        ]);
+
+        $grupos = \App\grupos::find($request->Id);
+        $grupos->update([
+            'grupo'=> $request->grupo2,
+            'id_nivel' => $request->nivel2,
+            'id_semestre' => $request->semestre2,
+            'comentario' => $request->comentario2,
+
+        ]);
+
+
+        return redirect('/inicio');
+    }
+
+    public function deleteGrupo(Request $request) {
+        $grupos = \App\grupos::find($request->grupoElmID);
+        $grupos->delete();
+
+        return redirect('/inicio');
     }
 
     public function tablaTipoPractica() {

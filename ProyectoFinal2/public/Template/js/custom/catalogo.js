@@ -35,3 +35,14 @@ function eliminarNivel(id,nombre) {
     document.getElementById('mensaje').innerHTML = mensaje;
     document.getElementById('nivelElmID').value = id;
 }
+/*------------------------------------------------------------------------*/
+function modificarGrupo(id,comentario, grupo) {
+  document.getElementById('Id').value = id;
+    document.getElementById('grupo2').value = grupo;
+    document.getElementById('comentario2').value = comentario;
+}
+function eliminarGrupo(id,nombre) {
+    var mensaje = "¿Está seguro de eliminar el grupo "+nombre+" permanentemente?";
+    document.getElementById('mensaje').innerHTML = mensaje;
+    document.getElementById('grupoElmID').value = id;
+}

@@ -15,6 +15,6 @@ class semestre extends Model
     protected $fillable = [
         'id',
         'semestre',
-        'comentarios',
+        'comentario',
     ];
 }

@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-group">
                     <label for="comentario1">Comentarios</label>
-                    {!!Form::textarea('comentario1',null,['id'=>'comentario1','class'=>'form-control', 'rows' => 3])!!}
+                    {!!Form::textarea('c',null,['id'=>'c','class'=>'form-control', 'rows' => 3])!!}
                 </div>
             </div>
             <div class="modal-footer">
@@ -116,7 +116,7 @@
                         <table id="alta" class="display table table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>No.</th>
+                                    <th>id</th>
                                     <th style="width: 100%">Semestre</th>
                                     <th><b>Editar</b></th>
                                     <th><b>Eliminar</b></td>
@@ -124,17 +124,14 @@
                             </thead>
 
                             <tbody>
-                                <?php
-                                    $cont = 1;
-                                ?>
                                 @foreach($semestre as $s)
                                 <tr>
-                                    <td>{{$cont}}</td>
+                                    <td>{{$s->id}}</td>
                                     <td>{{$s->semestre}}</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-toggle="modal"
                                             data-target="#exampleModalCenter2"
-                                            onclick="modificarSemestre({{$s->id}},'{{$s->semestre}}',{{$s->comentario2}})">
+                                            onclick="modificarSemestre({{$s->id}},'{{$s->semestre}}','{{$s->comentario}}')">
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </button>
                                     </td>
@@ -146,9 +143,6 @@
                                         </button>
                                     </td>
                                 </tr>
-                                <?php
-                                    $cont++;
-                                ?>
                                 @endforeach
                             </tbody>
                         </table>
