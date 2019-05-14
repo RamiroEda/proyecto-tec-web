@@ -14,23 +14,31 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
+            {!!Form::open(array ('url'=>'/catalogos/grupo','class'=>'form-group', 'method'=>'post'))!!}
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="grupo">Grupo</label>
-                    {!!Form::text('grupo',null,['id'=>'grupo','class'=>'form-control'])!!}
+                    <label for="grupo1">Grupo</label>
+                    {!!Form::text('grupo1',null,['id'=>'grupo1','class'=>'form-control'])!!}
                 </div>
                 <div class="form-group">
-                    <label for="comentario">Comentarios</label>
-                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                    <label for="nivel1">Nivel</label>
+                    {!!Form::select('nivel1', $nivel, 0, ['id'=>'nivel1', 'class'=>'bootstrap-select bootstrap-select-arrow form-control'])!!}
+                </div>
+                <div class="form-group">
+                    <label for="semestre1">Semestre</label>
+                    {!!Form::select('semestre1', $semestre, 0, ['id'=>'semestre1', 'class'=>'bootstrap-select bootstrap-select-arrow form-control'])!!}
+                </div>
+                <div class="form-group">
+                    <label for="comentario1">Comentarios</label>
+                    {!!Form::textarea('comentario1',null,['id'=>'comentario1','class'=>'form-control', 'rows' => 3])!!}
                 </div>
             </div>
-            {!!Form::close()!!}
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Agregar</button>
+                <button type="submit" class="btn btn-primary">Agregar</button>
                 <button class="btn btn-primary" data-toggle="modal"
-                        data-target="#agregar">Cancelar</button><br><br>
+                data-target="#agregar">Cancelar</button><br><br>
             </div>
+            {!!Form::close()!!}
 
 
         </div>
@@ -50,21 +58,30 @@
                 </button>
             </div>
 
-            {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
+            {!!Form::open(array ('class'=>'form-group', 'method'=>'patch'))!!}
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="grupo">Grupo</label>
-                    {!!Form::text('grupo',null,['id'=>'grupo','class'=>'form-control'])!!}
+                    <label for="grupo2">Grupo</label>
+                    {!!Form::text('grupo2',null,['id'=>'grupo2','class'=>'form-control'])!!}
                 </div>
                 <div class="form-group">
-                    <label for="comentario">Comentarios</label>
-                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                    <label for="nivel2">Nivel</label>
+                    {!!Form::select('nivel2', $nivel, 0, ['id'=>'nivel2', 'class'=>'bootstrap-select bootstrap-select-arrow form-control'])!!}
                 </div>
+                <div class="form-group">
+                    <label for="semestre2">Semestre</label>
+                    {!!Form::select('semestre2', $semestre, 0, ['id'=>'semestre2', 'class'=>'bootstrap-select bootstrap-select-arrow form-control'])!!}
+                </div>
+                <div class="form-group">
+                    <label for="comentario2">Comentarios</label>
+                    {!!Form::textarea('comentario2',null,['id'=>'comentario2','class'=>'form-control', 'rows' => 3])!!}
+                </div>
+                <input type="hidden" name="GrupoID" id="GrupoID">
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
             {!!Form::close()!!}
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Guardar</button>
-            </div>
 
         </div>
     </div>
@@ -81,15 +98,16 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
+            {!!Form::open(array('url'=>'/catalogos/grupo', 'class'=>'form-group', 'method'=>'delete'))!!}
             <div class="modal-body">
-                ¿Está seguro de eliminar este elemento permanentemente?
+                <label class="modal-label" style="text-align:center" id="mensaje">Eliminar</label>
             </div>
+            <input type="hidden" name="elmGrupo" id="elmGrupo">
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" class="close" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-danger">Borrar</button>
+                <button type="submit" class="btn btn-danger">Borrar</button>
             </div>
-
+            {!!Form::close()!!}
         </div>
     </div>
 </div>
@@ -130,13 +148,15 @@
                                     <td>{{$g}}</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-toggle="modal"
-                                            data-target="#exampleModalCenter2">
+                                            data-target="#exampleModalCenter2"
+                                            onclick="modificarGrupo({{$g->id}},'{{$g}}',{{$g->semestre_id}},{{$g->nivel_id}},'{{$g->comentario}}')">
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </button>
                                     </td>
                                     <td>
                                         <button class="btn btn-danger btn-sm" data-toggle="modal"
-                                            data-target="#exampleModalCenter3">
+                                            data-target="#exampleModalCenter3"
+                                            onclick="eliminarGrupo({{$g->id}}, '{{$g}}');">
                                             <span class="glyphicon glyphicon-trash"></span>
                                         </button>
                                     </td>
@@ -151,6 +171,10 @@
             </section>
         </div>
     </div>
+
+    <script src="{{asset('/Template/js/custom/catalogo.js')}}"></script>
+    <script src="{{asset('/Template/js/lib/select2/select2.full.min.js')}}"></script>
+    <script src="{{asset('/Template/js/lib/colorpicker/bootstrap-colorpicker.min.js')}}"></script>
 
     <script>
         $(function () {

@@ -24,6 +24,8 @@
 	<link rel="stylesheet" href="{{asset('Template/css/tablas.css')}}">
 	<link rel="stylesheet" href="{{asset('Template/css/lib/datatables-net/datatables.min.css')}}">
 	<link rel="stylesheet" href="{{asset('Template/css/lib/fullcalendar/fullcalendar.min.css')}}">
+	<link rel="stylesheet" href="{{asset('/Template/css/lib/bootstrap-sweetalert/sweetalert.css')}}"/>
+	<link rel="stylesheet" href="{{asset('/Template/css/lib/clockpicker/bootstrap-clockpicker.min.css')}}"/>
 
     @yield('css')
 </head>

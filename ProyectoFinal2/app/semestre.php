@@ -17,4 +17,8 @@ class semestre extends Model
         'semestre',
         'comentarios',
     ];
+
+    public function __toString() {
+        return $this->semestre;
+    }
 }

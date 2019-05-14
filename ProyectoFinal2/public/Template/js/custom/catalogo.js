@@ -35,3 +35,19 @@ function eliminarNivel(id,nombre) {
     document.getElementById('mensaje').innerHTML = mensaje;
     document.getElementById('nivelElmID').value = id;
 }
+
+/*-----------------------------------Grupo-----------------------------------*/
+
+function modificarGrupo(id,grupo,semestre,nivel,comentario) {
+    document.getElementById('grupo2').value = grupo;
+    document.getElementById('nivel2').value = nivel-1;
+    document.getElementById('semestre2').value = semestre-1;
+    document.getElementById('comentario2').value = comentario;
+    document.getElementById('GrupoID').value = id;
+}
+
+function eliminarGrupo(id,grupo) {
+    var mensaje = "¿Estas seguro de eliminar el grupo "+grupo+" permanentemente?";
+    document.getElementById('mensaje').innerHTML = mensaje;
+    document.getElementById('elmGrupo').value = id;
+}

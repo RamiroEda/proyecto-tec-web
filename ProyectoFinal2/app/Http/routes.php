@@ -27,12 +27,10 @@ Route::post('/catalogos/plantel', 'adminController@nuevoPlantel');
 Route::patch('/catalogos/plantel', 'adminController@patchPlantel');
 Route::delete('/catalogos/plantel', 'adminController@deletePlantel');
 
-/*_________________________________________________________________*/
 Route::get('/catalogos/semestre', 'adminController@tablaSemestre');
 Route::post('/catalogos/semestre', 'adminController@nuevoSemestre');
 Route::patch('/catalogos/semestre', 'adminController@patchSemestre');
 Route::delete('catalogos/semestre', 'adminController@deleteSemestre');
-/*_________________________________________________________________*/
 
 Route::get('/catalogos/nivel', 'adminController@tablaNivel');
 Route::post('/catalogos/nivel', 'adminController@nuevoNivel');
@@ -40,6 +38,10 @@ Route::patch('/catalogos/nivel', 'adminController@patchNivel');
 Route::delete('/catalogos/nivel', 'adminController@deleteNivel');
 
 Route::get('/catalogos/grupo', 'adminController@tablaGrupo');
+Route::post('/catalogos/grupo', 'adminController@nuevoGrupo');
+Route::patch('/catalogos/grupo', 'adminController@patchGrupo');
+Route::delete('/catalogos/grupo', 'adminController@deleteGrupo');
+
 Route::get('/catalogos/tipo_practica', 'adminController@tablaTipoPractica');
 
 /*_______________________________________________________________________________________*/

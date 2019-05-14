@@ -24,6 +24,14 @@ class grupos extends Model
         return $this->grupo;
     }
 
+    public function nivel() {
+        return $this->belongsTo(nivel::class, 'nivel_id');
+    }
+
+    public function semestre() {
+        return $this->belongsTo(semestre::class, 'semestre_id');
+    }
+
     public function ua() {
         return $this->hasMany(realiza::class, 'grupo_id');
     }
