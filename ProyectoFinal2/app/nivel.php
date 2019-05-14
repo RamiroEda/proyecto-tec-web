@@ -17,4 +17,8 @@ class nivel extends Model
         'nivel',
         'comentario'
     ];
+
+    public function __toString() {
+        return $this->nivel;
+    }
 }

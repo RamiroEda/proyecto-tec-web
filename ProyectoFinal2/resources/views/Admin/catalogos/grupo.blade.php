@@ -17,8 +17,8 @@
               {!!Form::open(array ('url'=>'/catalogos/grupo','class'=>'form-group', 'method'=>'post'))!!}
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="grupo">Grupo</label>
-                    {!!Form::text('grupo',null,['id'=>'grupo','class'=>'form-control'])!!}
+                    <label for="grupo1">Grupo</label>
+                    {!!Form::text('grupo1',null,['id'=>'grupo1','class'=>'form-control'])!!}
                 </div>
 
                 <div class="form-group">
@@ -38,7 +38,7 @@
             <div class="modal-footer">
                 <button type="submit" class="btn btn-primary">Agregar</button>
                 <button class="btn btn-primary" data-toggle="modal"
-                        data-target="#agregar">Cancelar</button><br><br>
+                data-target="#agregar">Cancelar</button><br><br>
             </div>
             {!!Form::close()!!}
         </div>
@@ -76,6 +76,11 @@
                     <label for="comentario">Comentarios</label>
                     {!!Form::textarea('comentario2',null,['id'=>'comentario2','class'=>'form-control', 'rows' => 3])!!}
                 </div>
+                <div class="form-group">
+                    <label for="comentario2">Comentarios</label>
+                    {!!Form::textarea('comentario2',null,['id'=>'comentario2','class'=>'form-control', 'rows' => 3])!!}
+                </div>
+                <input type="hidden" name="GrupoID" id="GrupoID">
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-primary">Guardar</button>

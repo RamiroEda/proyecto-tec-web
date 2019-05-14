@@ -186,6 +186,24 @@ class adminController extends Controller
         return redirect('/inicio');
     }
 
+    public function nuevoGrupo(Request $request) {
+        $this->validate($request, [
+            'grupo1' => 'required',
+            'nivel1' => 'required',
+            'semestre1' => 'required',
+            'comentario1',
+        ]);
+
+        $grupo = \App\grupos::create([
+            'grupo' => $request->grupo1,
+            'semestre_id' => $request->semestre1+1,
+            'nivel_id' => $request->nivel1+1,
+            'comentario' => $request->comentario1
+        ]);
+
+        return redirect('/inicio');
+    }
+
     public function tablaGrupo() {
         $grupo = \App\grupos::all();
         $nivel = \App\nivel::lists('nivel','id');
@@ -245,6 +263,46 @@ class adminController extends Controller
         return redirect('/inicio');
     }
 
+    public function patchGrupo(Request $request) {
+        $this->validate($request, [
+            'grupo2' => 'required',
+            'semestre2' => 'required',
+            'nivel2' => 'required',
+            'comentario',
+        ]);
+
+        $grupo = \App\grupos::find($request->GrupoID);
+        $grupo->update([
+            'grupo' => $request->grupo2,
+            'semestre_id' => $request->semestre2,
+            'nivel_id' => $request->nivel2,
+            'comentario' => $request->comentario2
+        ]);
+
+        return redirect('/inicio');
+    }
+
+    public function deleteGrupo(Request $request) {
+        $grupo = \App\grupos::find($request->elmGrupo);
+        $grupo->delete();
+
+        return redirect('/inicio');
+    }
+
+    public function nuevoTipoPractica(Request $request) {
+        $this->validate($request,[
+            'tipoPrac1' => 'required',
+            'comentario1',
+        ]);
+
+        $tPractica = \App\tipoPractica::create([
+            'tipo' => $request->tipoPrac1,
+            'comentario' => $request->comentario1,
+        ]);
+
+        return redirect('/inicio');
+    }
+
     public function tablaTipoPractica() {
         $tPractica = \App\tipoPractica::all();
 
@@ -253,6 +311,44 @@ class adminController extends Controller
         ];
 
         return view('Admin.catalogos.tipo_practica', $data);
+    }
+
+    public function patchTipoPractica(Request $request) {
+        $this->validate($request, [
+            'tipoPracID' => 'required',
+            'tipoPrac2' => 'required',
+            'comentario2',
+        ]);
+
+        $tPractica = \App\tipoPractica::find($request->tipoPracID);
+
+        $tPractica->update([
+            'tipo' => $request->tipoPrac2,
+            'comentario' => $request->comentario2,
+        ]);
+
+        return redirect('/inicio');
+    }
+
+    public function deleteTipoPractica(Request $request) {
+        $tPractica = \App\tipoPractica::find($request->elmTipoPractica);
+        $tPractica->delete();
+
+        return redirect('/inicio');
+    }
+
+    public function nuevaEntidadFederativa(Request $request) {
+        $this->validate($request,[
+            'entfed1' => 'required',
+            'comentario1'
+        ]);
+
+        $entidad = \App\entidadFederativa::create([
+            'entidad' => $request->entfed1,
+            'comentrio' => $request->comentario1,
+        ]);
+
+        return redirect('/inicio');
     }
 
     public function tablaEntidadFederativa() {
@@ -265,11 +361,70 @@ class adminController extends Controller
         return view('Admin.catalogos.entidad_federativa', $data);
     }
 
+    public function patchEntidadFederativa(Request $request) {
+        $this->validate($request, [
+            'entidadID' => 'required',
+            'entfed2' => 'required',
+            'comentario2',
+        ]);
+
+        $entidad = \App\entidadFederativa::find($request->entidadID);
+        $entidad->update([
+            'entidad' => $request->entfed2,
+            'comentrio' => $request->comentario2,
+        ]);
+
+        return redirect('/inicio');
+    }
+
+    public function deleteEntidadFederatva(Request $request) {
+        $entidad = \App\entidadFederativa::find($request->elmEntidad);
+        $entidad->delete();
+
+        return redirect('/inicio');
+    }
+
+    public function nuevaUnidadAprendizaje(Request $request) {
+        $this->validate($request, [
+            'nombre1' => 'required',
+            'grupo1' => 'required',
+            'profe1' =>'required',
+            'comentario',
+        ]);
+
+        $usuario = \App\User::where('nombre','like','%'.$request->profe1.'%');
+        $id = $usuario->id;
+        $profesor = \App\profesor::where('usuario_id', $id);
+
+        $grupo = \App\grupos::where('grupo','like','%'.$request->grupo1.'%');
+
+        $ua = \App\unidadAprendizaje::create([
+            'nombre' => $request->nombre1,
+            'comentario' => $request->comentario1,
+        ]);
+
+        $imparte = \App\imparte::create([
+            'unidadAprendizaje_id' => $ua->id,
+            'profesor_id' => $profesor_id,
+        ]);
+
+        $reliza = \App\realiza::create([
+            'unidadAprendizaje_id' => $ua->id,
+            'grupo_id' => $grupo->id,
+        ]);
+
+        return redirec('/inicio');
+    }
+
     public function tablaUnidadAprendizaje() {
         $unidad = \App\unidadAprendizaje::all();
+        $grupo = \App\grupos::all();
+        $profesor = \App\profesor::all();
 
         $data = [
             'unidad' => $unidad,
+            'grupo' => $grupo,
+            'profesor' => $profesor,
         ];
         return view('Admin.catalogos.unidad_aprendizaje', $data);
     }

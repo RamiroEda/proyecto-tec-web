@@ -27,12 +27,10 @@ Route::post('/catalogos/plantel', 'adminController@nuevoPlantel');
 Route::patch('/catalogos/plantel', 'adminController@patchPlantel');
 Route::delete('/catalogos/plantel', 'adminController@deletePlantel');
 
-/*_________________________________________________________________*/
 Route::get('/catalogos/semestre', 'adminController@tablaSemestre');
 Route::post('/catalogos/semestre', 'adminController@nuevoSemestre');
 Route::patch('/catalogos/semestre', 'adminController@patchSemestre');
 Route::delete('catalogos/semestre', 'adminController@deleteSemestre');
-/*_________________________________________________________________*/
 
 Route::get('/catalogos/nivel', 'adminController@tablaNivel');
 Route::post('/catalogos/nivel', 'adminController@nuevoNivel');
@@ -45,12 +43,17 @@ Route::patch('/catalogos/grupo', 'adminController@patchGrupo');
 Route::delete('/catalogos/grupo', 'adminController@deleteGrupo');
 
 Route::get('/catalogos/tipo_practica', 'adminController@tablaTipoPractica');
+Route::post('/catalogos/tipo_practica', 'adminController@nuevoTipoPractica');
+Route::patch('/catalogos/tipo_practica', 'adminController@patchTipoPractica');
+Route::delete('/catalogos/tipo_practica', 'adminController@deleteTipoPractica');
 
-/*_______________________________________________________________________________________*/
 Route::get('/catalogos/entidad_federativa', 'adminController@tablaEntidadFederativa');
-/*_______________________________________________________________________________________*/
+Route::post('/catalogos/entidad_federativa', 'adminController@nuevaEntidadFederativa');
+Route::patch('/catalogos/entidad_federativa', 'adminController@patchEntidadFederativa');
+Route::delete('/catalogos/entidad_federativa', 'adminController@deleteEntidadFederatva');
 
 Route::get('/catalogos/unidad_aprendizaje', 'adminController@tablaUnidadAprendizaje');
+Route::post('catalogos/unidad_aprendizaje', 'adminController@nuevaUnidadAprendizaje');
 
 /*____________________________________________________________________*/
 Route::get('/catalogos/profesor', 'adminController@tablaProfesor');

@@ -14,22 +14,21 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
+            {!!Form::open(array('url'=>'/catalogos/tipo_practica','class'=>'form-group', 'method'=>'post'))!!}
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="entfed">Tipo de práctica</label><!- Viene de catalogo->
-                    <!input type="text" name="tipo_prac" id="tipo_prac" class="form-control">
-                    {!!Form::text( 'tipo_prac', null, ['id'=>'tipo_prac', 'class'=>'form-control'])!!}
+                    <label for="tipo_prac1">Tipo de práctica</label>
+                    {!!Form::text('tipoPrac1', null, ['id'=>'tipoPrac1', 'class'=>'form-control'])!!}
                 </div>
                 <div class="form-group">
-                    <label for="comentario">Comentarios</label>
-                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                    <label for="comentario1">Comentarios</label>
+                    {!!Form::textarea('comentario1',null,['id'=>'comentario1','class'=>'form-control', 'rows' => 3])!!}
                 </div>
             </div>
-            {!!Form::close()!!}
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Añadir</button>
+                <button type="submit" class="btn btn-primary">Añadir</button>
             </div>
+            {!!Form::close()!!}
         </div>
     </div>
 </div>
@@ -47,22 +46,22 @@
                 </button>
             </div>
 
-            {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
+            {!!Form::open(array('url'=>'/catalogos/tipo_practica','class'=>'form-group', 'method'=>'patch'))!!}
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="entfed">Tipo de práctica</label><!- Viene de catalogo->
-                    <!input type="text" name="tipo_prac" id="tipo_prac" class="form-control">
-                    {!!Form::text( 'tipo_prac', null, ['id'=>'tipo_prac', 'class'=>'form-control'])!!}
+                    <label for="tipoPrac2">Tipo de práctica</label>
+                    {!!Form::text( 'tipoPrac2', null, ['id'=>'tipoPrac2', 'class'=>'form-control'])!!}
                 </div>
                 <div class="form-group">
-                    <label for="comentario">Comentarios</label>
-                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                    <label for="comentario2">Comentarios</label>
+                    {!!Form::textarea('comentario2',null,['id'=>'comentario2','class'=>'form-control', 'rows' => 3])!!}
                 </div>
             </div>
-            {!!Form::close()!!}
+            <input type="hidden" name="tipoPracID" id="tipoPracID">
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Guardar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
+            {!!Form::close()!!}
 
         </div>
     </div>
@@ -80,15 +79,16 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
+            {!!Form::open(array('url'=>'/catalogos/tipo_practica', 'class'=>'form-group', 'method'=>'delete'))!!}
             <div class="modal-body">
-                ¿Está seguro de eliminar este elemento permanentemente?
+                <label class="modal-label" style="text-align:center" id="mensaje">Eliminar</label>
             </div>
+            <input type="hidden" name="elmTipoPractica" id="elmTipoPractica">
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" class="close" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-danger">Borrar</button>
+                <button type="submit" class="btn btn-danger">Borrar</button>
             </div>
-
+            {!!Form::close()!!}
         </div>
     </div>
 </div>
@@ -128,12 +128,16 @@
                                 <td>{{$cont}}</td>
                                 <td>{{$t->tipo}}</td>
                                 <td>
-                                    <button class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#exampleModalCenter2">
+                                    <button class="btn btn-primary btn-sm"  data-toggle="modal"
+                                    data-target="#exampleModalCenter2"
+                                    onclick="modificarTipoPractica({{$t->id}},'{{$t->tipo}}','{{$t->comentario}}');">
                                         <span class="glyphicon glyphicon-pencil"></span>
                                     </button>
                                 </td>
                                 <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
+                                    <button class="btn btn-danger btn-sm" data-toggle="modal"
+                                    data-target="#exampleModalCenter3"
+                                    onclick="eliminarTipoPractica({{$t->id}},'{{$t->tipo}}')">
                                         <span class="glyphicon glyphicon-trash"></span>
                                     </button>
                                 </td>
@@ -148,6 +152,10 @@
             </section>
         </div>
     </div>
+
+    <script src="{{asset('/Template/js/custom/catalogo.js')}}"></script>
+    <script src="{{asset('/Template/js/lib/select2/select2.full.min.js')}}"></script>
+    <script src="{{asset('/Template/js/lib/colorpicker/bootstrap-colorpicker.min.js')}}"></script>
 
     <script>
         $(function () {
