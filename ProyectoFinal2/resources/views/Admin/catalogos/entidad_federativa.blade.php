@@ -14,22 +14,21 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
+            {!!Form::open(array('url'=>'/catalogos/entidad_federativa','class'=>'form-group', 'method'=>'post'))!!}
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="entfed">Entidad federativa</label><!- Viene de catalogo->
-                    <!input type="text" name="entfed" id="entfed" class="form-control">
-                    {!!Form::text( 'entfed', null, ['id'=>'entfed', 'class'=>'form-control'])!!}
+                    <label for="entfed1">Entidad federativa</label>
+                    {!!Form::text('entfed1', null, ['id'=>'entfed1', 'class'=>'form-control'])!!}
                 </div>
                 <div class="form-group">
-                    <label for="comentario">Comentarios</label>
-                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                    <label for="comentario1">Comentarios</label>
+                    {!!Form::textarea('comentario1',null,['id'=>'comentario1','class'=>'form-control', 'rows' => 3])!!}
                 </div>
             </div>
-            {!!Form::close()!!}
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Añadir</button>
+                <button type="submit" class="btn btn-primary">Añadir</button>
             </div>
+            {!!Form::close()!!}
         </div>
     </div>
 </div>
@@ -47,22 +46,22 @@
                 </button>
             </div>
 
-            {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
+            {!!Form::open(array('url'=>'/catalogos/entidad_federativa','class'=>'form-group', 'method'=>'patch'))!!}
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="entfed">Entidad federativa</label><!- Viene de catalogo->
-                    <!input type="text" name="entfed" id="entfed" class="form-control">
-                    {!!Form::text( 'entfed', null, ['id'=>'entfed', 'class'=>'form-control'])!!}
+                    <label for="entfed2">Entidad federativa</label>
+                    {!!Form::text( 'entfed2', null, ['id'=>'entfed2', 'class'=>'form-control'])!!}
                 </div>
                 <div class="form-group">
-                    <label for="comentario">Comentarios</label>
-                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                    <label for="comentario2">Comentarios</label>
+                    {!!Form::textarea('comentario2',null,['id'=>'comentario2','class'=>'form-control', 'rows' => 3])!!}
                 </div>
             </div>
-            {!!Form::close()!!}
+            <input type="hidden" name="entidadID" id="entidadID">
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Guardar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
+            {!!Form::close()!!}
 
         </div>
     </div>
@@ -80,15 +79,16 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
+            {!!Form::open(array('url'=>'/catalogos/entidad_federativa', 'class'=>'form-group', 'method'=>'delete'))!!}
             <div class="modal-body">
-                ¿Está seguro de eliminar este elemento permanentemente?
+                <label class="modal-label" style="text-align:center" id="mensaje">Eliminar</label>
             </div>
+            <input type="hidden" name="elmEntidad" id="elmEntidad">
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" class="close" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-danger">Borrar</button>
+                <button type="submit" class="btn btn-danger">Borrar</button>
             </div>
-
+            {!!Form::close()!!}
         </div>
     </div>
 </div>
@@ -128,12 +128,16 @@
                                 <td>{{$cont}}</td>
                                 <td>{{$e->entidad}}</td>
                                 <td>
-                                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalCenter2">
+                                    <button class="btn btn-primary btn-sm" data-toggle="modal"
+                                    data-target="#exampleModalCenter2"
+                                    onclick="modificarEntidadFederativa({{$e->id}},'{{$e->entidad}}','{{$e->comentario}}');">
                                         <span class="glyphicon glyphicon-pencil"></span>
                                     </button>
                                 </td>
                                 <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
+                                    <button class="btn btn-danger btn-sm" data-toggle="modal"
+                                    data-target="#exampleModalCenter3"
+                                    onclick="eliminarEntidadFederativa({{$e->id}},'{{$e->entidad}}');">
                                         <span class="glyphicon glyphicon-trash"></span>
                                     </button>
                                 </td>
@@ -148,6 +152,10 @@
             </section>
         </div>
     </div>
+
+    <script src="{{asset('/Template/js/custom/catalogo.js')}}"></script>
+    <script src="{{asset('/Template/js/lib/select2/select2.full.min.js')}}"></script>
+    <script src="{{asset('/Template/js/lib/colorpicker/bootstrap-colorpicker.min.js')}}"></script>
 
     <script>
         $(function () {

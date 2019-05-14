@@ -43,12 +43,17 @@ Route::patch('/catalogos/grupo', 'adminController@patchGrupo');
 Route::delete('/catalogos/grupo', 'adminController@deleteGrupo');
 
 Route::get('/catalogos/tipo_practica', 'adminController@tablaTipoPractica');
+Route::post('/catalogos/tipo_practica', 'adminController@nuevoTipoPractica');
+Route::patch('/catalogos/tipo_practica', 'adminController@patchTipoPractica');
+Route::delete('/catalogos/tipo_practica', 'adminController@deleteTipoPractica');
 
-/*_______________________________________________________________________________________*/
 Route::get('/catalogos/entidad_federativa', 'adminController@tablaEntidadFederativa');
-/*_______________________________________________________________________________________*/
+Route::post('/catalogos/entidad_federativa', 'adminController@nuevaEntidadFederativa');
+Route::patch('/catalogos/entidad_federativa', 'adminController@patchEntidadFederativa');
+Route::delete('/catalogos/entidad_federativa', 'adminController@deleteEntidadFederatva');
 
 Route::get('/catalogos/unidad_aprendizaje', 'adminController@tablaUnidadAprendizaje');
+Route::post('catalogos/unidad_aprendizaje', 'adminController@nuevaUnidadAprendizaje');
 
 /*____________________________________________________________________*/
 Route::get('/catalogos/profesor', 'adminController@tablaProfesor');
