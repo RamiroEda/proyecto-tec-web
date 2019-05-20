@@ -1,3 +1,9 @@
+<?php
+    $prof = array();
+    foreach($profesor as $p) {
+        $prof[] = $p->usuario;
+    }
+?>
 
 <!-- ---------------------------- MODALS ---------------------------------------------- -->
 
@@ -14,30 +20,29 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            {!!Form::open(array ('class'=>'form-group', 'method'=>'get'))!!}
+            {!!Form::open(array('url'=>'/catalogos/unidad_aprendizaje','class'=>'form-group', 'method'=>'post'))!!}
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="entfed">Nombre</label><!- Viene de catalogo->
-                    <!input type="text" name="nombre" id="nombre" class="form-control">
-                    {!!Form::text( 'nombre', null, ['id'=>'nombre', 'class'=>'form-control'])!!}
+                    <label for="unidadAprendizaje1">Nombre</label>
+                    {!!Form::text( 'nombre1', null, ['id'=>'nombre1', 'class'=>'form-control'])!!}
                 </div>
                 <div class="form-group">
-                    <label for="entfed">Grupo</label><!- Viene de catalogo->
-                    {!!Form::select('grupo', array('1' => 'XEJEX', '2' => 'XEJEX2'), '1', ['class'=>'form-control', 'id'=>'grupo'] );!!}
+                    <label for="unidadAprendizaje1">Grupo</label>
+                    {!!Form::select('grupo1', $grupo, 0, ['class'=>'form-control', 'id'=>'grupo1'] );!!}
                 </div>
                 <div class="form-group">
-                    <label for="entfed">Profesor</label><!- Viene de catalogo->
-                    {!!Form::select('profe', array('1' => 'Profe 1', '2' => 'Profe 2'), 'F', ['class'=>'form-control', 'id'=>'profe'] );!!}
+                    <label for="unidadAprendizaje1">Profesor</label>
+                    {!!Form::select('profe1', $prof, 0, ['class'=>'form-control', 'id'=>'profe1'] );!!}
                 </div>
                 <div class="form-group">
-                    <label for="comentario">Comentarios</label>
-                    {!!Form::textarea('comentario',null,['id'=>'comentario','class'=>'form-control', 'rows' => 3])!!}
+                    <label for="unidadAprendizaje1">Comentarios</label>
+                    {!!Form::textarea('comentario1',null,['id'=>'comentario1','class'=>'form-control', 'rows' => 3])!!}
                 </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Añadir</button>
             </div>
             {!!Form::close()!!}
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Añadir</button>
-            </div>
         </div>
     </div>
 </div>

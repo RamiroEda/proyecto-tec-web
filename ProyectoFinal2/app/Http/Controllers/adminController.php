@@ -186,24 +186,6 @@ class adminController extends Controller
         return redirect('/inicio');
     }
 
-    public function nuevoGrupo(Request $request) {
-        $this->validate($request, [
-            'grupo1' => 'required',
-            'nivel1' => 'required',
-            'semestre1' => 'required',
-            'comentario1',
-        ]);
-
-        $grupo = \App\grupos::create([
-            'grupo' => $request->grupo1,
-            'semestre_id' => $request->semestre1+1,
-            'nivel_id' => $request->nivel1+1,
-            'comentario' => $request->comentario1
-        ]);
-
-        return redirect('/inicio');
-    }
-
     public function tablaGrupo() {
         $grupo = \App\grupos::all();
         $nivel = \App\nivel::lists('nivel','id');
@@ -230,35 +212,6 @@ class adminController extends Controller
             'semestre_id' => $request->semestre,
             'comentario' => $request->comentario1
         ]);
-
-        return redirect('/inicio');
-    }
-
-    public function patchGrupo(Request $request) {
-        $this->validate($request, [
-            'Id' => 'required',
-            'grupo2' => 'required',
-            'nivel2' => 'required',
-            'semestre2' => 'required',
-            'comentario2',
-        ]);
-
-        $grupos = \App\grupos::find($request->Id);
-        $grupos->update([
-            'grupo'=> $request->grupo2,
-            'id_nivel' => $request->nivel2,
-            'id_semestre' => $request->semestre2,
-            'comentario' => $request->comentario2,
-
-        ]);
-
-
-        return redirect('/inicio');
-    }
-
-    public function deleteGrupo(Request $request) {
-        $grupos = \App\grupos::find($request->grupoElmID);
-        $grupos->delete();
 
         return redirect('/inicio');
     }
