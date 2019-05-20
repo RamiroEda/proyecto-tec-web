@@ -15,7 +15,7 @@ class realizaSeeder extends Seeder
         for($i=1;$i<=4;$i++) {
             DB::table('realiza')->insert([
                 'grupo_id' => '1',
-                'unidadAprendizaje_id' => 1,
+                'practica_id' => 1,
             ]);
         }
     }

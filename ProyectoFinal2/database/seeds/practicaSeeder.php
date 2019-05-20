@@ -12,17 +12,23 @@ class practicaSeeder extends Seeder
     public function run()
     {
         //
-        for($i=1;$i<=10;$i++) {
-            DB::table('practica')->insert([
-                'nombre' => 'practica '.$i,
-                'fechaEntrega' => rand(1,30)."/".rand(1,12)."/2019",
-                'edc' => 'edc ejemplo',
-                'objetivo' => 'objetivo ejemplo',
-                'tipo' => rand(1,3),
-                'descripcion' => 'descripcion de ejemlo',
-                'unidadAprendizaje_id' => rand(1,4),
-            ]);
-
-        }
+        DB::table('practica')->insert([
+            'noPractica' => 1,
+            'nombre' => 'practica 1',
+            'tipo' => rand(1,3),
+            'objetivo' => 'objetivo ejemplo',
+            'descripcion' => 'descripcion de ejemlo',
+            'competencias' => 'competencias ejemplo',
+            'edc' => 'edc ejemplo',
+            'fechaEntrega' => rand(1,30)."/".rand(1,12)."/2019",
+            'presupuesto' => 2500,
+            'institucion' => 'UPIIZ',
+            'programaAcademico_id' => 1,
+            'unidadAprendizaje_id' => rand(1,4),
+            'profesor_id' => 1,
+            'semestre_id' => 1,
+            'noAlumnos' => 14,
+            'entidadFederativa_id' => 1,
+        ]);
     }
 }

@@ -14,13 +14,22 @@ class practica extends Model
 
     protected $fillable = [
         'id',
+        'noPractica',
         'nombre',
-        'fechaEntrega',
-        'edc',
-        'objetivo',
         'tipo',
+        'objetivo',
         'descripcion',
+        'competencias',
+        'edc',
+        'fechaEntrega',
+        'presupuesto',
+        'institucion',
+        'programaAcademico_id',
         'unidadAprendizaje_id',
+        'profesor_id',
+        'semestre_id',
+        'noAlumnos',
+        'entidadFederativa_id',
     ];
 
     public function __toString() {

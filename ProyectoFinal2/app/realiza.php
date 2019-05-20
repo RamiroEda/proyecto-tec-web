@@ -15,7 +15,7 @@ class realiza extends Model
     protected $fillable = [
         'id',
         'grupo_id',
-        'unidadAprendizaje_id',
+        'practica_id',
     ];
 
     public function grupo() {
