@@ -32,12 +32,6 @@ class usuarioSeeder extends Seeder
             $apP = substr(str_shuffle($word), 0, rand (5,10));
             $apM = substr(str_shuffle($word), 0, rand (5,10));
             $email = substr(str_shuffle($word), 0, rand (5,10)).'@gmail.com';
-            $t = rand(0,5);
-
-            if($t==1)
-                $t = 2;
-            else
-                $t = 3;
 
             for($j = 1; $j <= 2;$j++){
                 $nombre .= substr(str_shuffle($word), 0, rand (5 , 10)).' ';
@@ -51,7 +45,7 @@ class usuarioSeeder extends Seeder
                 'email' => $email,
                 'programaAcademico_id' => rand(1,2),
                 'password' => bcrypt('12345'),
-                'tipo' => $t,
+                'tipo' => 3,
                 'localidad' => rand(1,3),
             ]);
         }

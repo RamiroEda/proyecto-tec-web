@@ -36,6 +36,14 @@ class practica extends Model
         return $this->nombre;
     }
 
+    public function profesor() {
+        return $this->belongsTo(profesor::class, 'profesor_id');
+    }
+
+    public function programaAcademico() {
+        return $this->belongsTo(programaAcademico::class, 'programaAcademico_id');
+    }
+
     public function ua() {
         return $this->belongsTo(unidadAprendizaje::class, 'unidadAprendizaje_id');
     }

@@ -7,25 +7,26 @@
 
 	@yield('title')
 
-	<link href="{{asset('Template/img/favicon.144x144.png')}}" rel="apple-touch-icon" type="image/png" sizes="144x144">
-	<link href="{{asset('Template/img/favicon.114x114.png')}}" rel="apple-touch-icon" type="image/png" sizes="114x114">
-	<link href="{{asset('Template/img/favicon.72x72.png')}}" rel="apple-touch-icon" type="image/png" sizes="72x72">
-	<link href="{{asset('Template/img/favicon.57x57.png')}}" rel="apple-touch-icon" type="image/png">
-	<link href="{{asset('Template/img/favicon.png')}}" rel="icon" type="image/png">
-	<link href="{{asset('Template/img/favicon.ico')}}" rel="shortcut icon">
+	<link href="{{asset('/Template/img/favicon.144x144.png')}}" rel="apple-touch-icon" type="image/png" sizes="144x144">
+	<link href="{{asset('/Template/img/favicon.114x114.png')}}" rel="apple-touch-icon" type="image/png" sizes="114x114">
+	<link href="{{asset('/Template/img/favicon.72x72.png')}}" rel="apple-touch-icon" type="image/png" sizes="72x72">
+	<link href="{{asset('/Template/img/favicon.57x57.png')}}" rel="apple-touch-icon" type="image/png">
+	<link href="{{asset('/Template/img/favicon.png')}}" rel="icon" type="image/png">
+	<link href="{{asset('/Template/img/favicon.ico')}}" rel="shortcut icon">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
-  <link rel="stylesheet" href="{{asset('Template/css/lib/font-awesome/font-awesome.min.css')}}">
-	<link rel="stylesheet" href="{{asset('Template/css/main.css')}}">
-	<link rel="stylesheet" href="{{asset('Template/css/tablas.css')}}">
-	<link rel="stylesheet" href="{{asset('Template/css/lib/datatables-net/datatables.min.css')}}">
-	<link rel="stylesheet" href="{{asset('Template/css/lib/fullcalendar/fullcalendar.min.css')}}">
-	<link rel="stylesheet" href="{{asset('Template/css/lib/bootstrap-sweetalert/sweetalert.css')}}"/>
-	<link rel="stylesheet" href="{{asset('Template/css/lib/clockpicker/bootstrap-clockpicker.min.css')}}"/>
+  	<link rel="stylesheet" href="{{asset('/Template/css/lib/font-awesome/font-awesome.min.css')}}">
+	<link rel="stylesheet" href="{{asset('/Template/css/main.css')}}">
+	<link rel="stylesheet" href="{{asset('/Template/css/tablas.css')}}">
+	<link rel="stylesheet" href="{{asset('/Template/css/lib/datatables-net/datatables.min.css')}}">
+	<link rel="stylesheet" href="{{asset('/Template/css/lib/fullcalendar/fullcalendar.min.css')}}">
+	<link rel="stylesheet" href="{{asset('/Template/css/lib/bootstrap-sweetalert/sweetalert.css')}}"/>
+	<link rel="stylesheet" href="{{asset('/Template/css/lib/clockpicker/bootstrap-clockpicker.min.css')}}"/>
+	<link rel="stylesheet" href="{{asset('/Template/css/lib/daterangepicker/daterangepicker.css')}}">
     @yield('css')
 </head>
 @yield('popUp')
@@ -45,7 +46,7 @@
 
 										<div class="dropdown user-menu">
 												<button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-														<img src="{{asset('Template/img/avatar-2-64.png')}}" alt="">
+														<img src="{{asset('/Template/img/avatar-2-64.png')}}" alt="">
 												</button>
 												<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
 														<a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-user"></span>Perfil</a>
@@ -79,13 +80,13 @@
 	<nav class="side-menu">
 	    <div class="side-menu-avatar">
 	        <div class="avatar-preview avatar-preview-100">
-	            <img src="{{asset('Template/img/avatar-1-256.png')}}" alt="">
+	            <img src="{{asset('/Template/img/avatar-1-256.png')}}" alt="">
 	        </div>
 	    </div>
 
 	    <ul class="side-menu-list">
 				<li class="blue">
-						<a onclick="cambiarPagina('/tabla')">
+						<a onclick="cambiarPagina('/practicas')">
 								<i class="font-icon font-icon-chart-2"></i>
 								<span class="lsl">Alta de prácticas escolares</span>
 						</a>
@@ -149,15 +150,21 @@
 
 </body>
 
-<script src="{{asset('Template/js/lib/jquery/jquery.min.js')}}"></script>
-<script src="{{asset('Template/js/lib/tether/tether.min.js')}}"></script>
-<script src="{{asset('Template/js/lib/bootstrap/bootstrap.min.js')}}"></script>
-<script src="{{asset('Template/js/lib/datatables-net/datatables.min.js')}}"></script>
-<script src="{{asset('Template/js/lib/moment/moment.min.js')}}"></script>
-<script src="{{asset('Template/js/lib/fullcalendar/fullcalendar.min.js')}}"></script>
-<script src="{{asset('Template/js/plugins.js')}}"></script>
-<script src="{{asset('Template/js/app.js')}}"></script>
-<script src="{{asset('Template/js/spa.js')}}"></script>
+<script src="{{asset('/Template/js/lib/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('/Template/js/lib/tether/tether.min.js')}}"></script>
+<script src="{{asset('/Template/js/lib/bootstrap/bootstrap.min.js')}}"></script>
+<script src="{{asset('/Template/js/plugins.js')}}"></script>
+
+<script src="{{asset('/Template/js/lib/input-mask/jquery.mask.min.js')}}"></script>
+<script src="{{asset('/Template/js/lib/input-mask/input-mask-init.js')}}"></script>
+
+<script src="{{asset('/Template/js/lib/datatables-net/datatables.min.js')}}"></script>
+<script src="{{asset('/Template/js/lib/moment/moment.min.js')}}"></script>
+<script src="{{asset('/Template/js/lib/fullcalendar/fullcalendar.min.js')}}"></script>
+<script src="{{asset('/Template/js/app.js')}}"></script>
+<script src="{{asset('/Template/js/spa.js')}}"></script>
+
+
 
 @yield('scripts')
 

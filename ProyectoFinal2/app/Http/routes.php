@@ -19,8 +19,10 @@ Route::get('/logout', 'Auth\AuthController@getLogout');
 
 /*-------------------------------------------Admin------------------------------------------------------------*/
 Route::get('/inicio', 'adminController@index');
-Route::get('/tabla', 'adminController@tablas');
 Route::get('/home', 'adminController@home');
+
+Route::get('/practicas', 'adminController@practicas');
+Route::post('/practicas', 'adminController@nuevaPractica');
 
 Route::get('/catalogos/plantel', 'adminController@panel');
 Route::post('/catalogos/plantel', 'adminController@nuevoPlantel');

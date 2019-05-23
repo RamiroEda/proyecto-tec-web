@@ -14,6 +14,8 @@ use App\admin; //usuario tipo 1
 use App\profesor; //usuario tipo 2
 use App\alumno; //usuario tipo 3
 
+use Carbon\Carbon;
+
 class adminController extends Controller
 {
     //
@@ -39,8 +41,89 @@ class adminController extends Controller
         return view('Admin.home');
     }
 
-    public function tablas() {
-        return view('Admin.tablas');
+    public function nuevaPractica(Request $request) {
+        /*$this->validate($request, [
+            'nombre1' => 'required',//
+            'descripcion1' => 'required',//
+            'programa1' => 'required',//
+            'semestre1' => 'required',//
+            'grupo1' => 'required',
+            'tipo1' => 'required',//
+            'estrategia1' => 'required',//
+            'competencia1' => 'required',//
+            'ua1' => 'required',//
+            'noPractica1' => 'required',//
+            'objetivo1' => 'required',//
+            'entidad1' => 'required',//
+            'institucion1' => 'required',//
+            'profesor1' => 'required',//
+            'fecha1' => 'required',//
+            'alumnos1' => 'required',//
+            'presupuesto1' => 'required',//
+        ]);*/
+
+        $id = $request->profesor1;
+        $profesor = \App\profesor::where('usuario_id',$id)->get();
+
+        $dateInput = 'd/m/Y';
+        $date = $request->fecha1;
+        $dateOutput = 'Y-m-d';
+        $dateFormated = Carbon::createFromFormat($dateInput,$date)->format($dateOutput);
+
+        $prof_id;
+        foreach ($profesor as $p) {
+            $prof_id = $p->id;
+        }
+
+        $practica = \App\practica::create([
+            'noPractica' => $request->noPractica1,
+            'nombre' => $request->nombre1,
+            'tipo' => $request->tipo1,
+            'objetivo' => $request->objetivo1,
+            'descripcion' => $request->descripcion1,
+            'compentencias' => $request->competencia1,
+            'edc' => $request->estrategia1,
+            'fechaEntrega' => $dateFormated,
+            'presupuesto' => $request->presupuesto1,
+            'institucion' => $request->institucion1,
+            'programaAcademico_id' => $request->programa1,
+            'unidadAprendizaje_id' => $request->ua1,
+            'profesor_id' => $prof_id,
+            'semestre_id' => $request->semestre1,
+            'noAlumnos' => $request->alumnos1,
+            'entidadFederativa_id' => $request->entidad1
+        ]);
+
+        $reliza = \App\realiza::create([
+            'grupo_id' => $request->grupo1,
+            'practica_id' => $practica->id,
+        ]);
+
+        return redirect('/inicio');
+    }
+
+    public function practicas() {
+        $practica = \App\practica::all();
+        $programaAcademico = \App\programaAcademico::lists('programa','id');
+        $semestre = \App\semestre::lists('semestre', 'id');
+        $grupo = \App\grupos::lists('grupo','id');
+        $tPractica = \App\tipoPractica::lists('tipo','id');
+        $unidadAprendizaje = \App\unidadAprendizaje::lists('nombre','id');
+        $entidadFederativa = \App\entidadFederativa::lists('entidad','id');
+        $profesor = \App\User::where('tipo','<=','2')->lists('nombre','id');
+
+        $data = [
+            'practica' => $practica,
+            'programa' => $programaAcademico,
+            'semestre' => $semestre,
+            'grupo'    => $grupo,
+            'tipo'     => $tPractica,
+            'ua'       => $unidadAprendizaje,
+            'entidad'  => $entidadFederativa,
+            'profesor' => $profesor,
+        ];
+
+        return view('Admin.tablas', $data);
     }
 
     public function panel() {
