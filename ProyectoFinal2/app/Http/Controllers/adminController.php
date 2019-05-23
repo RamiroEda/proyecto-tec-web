@@ -425,55 +425,154 @@ class adminController extends Controller
             'nombre1' => 'required',
             'grupo1' => 'required',
             'profe1' =>'required',
-            'comentario',
+            'comentario1',
         ]);
 
-        $usuario = \App\User::where('nombre','like','%'.$request->profe1.'%');
-        $id = $usuario->id;
-        $profesor = \App\profesor::where('usuario_id', $id);
+        $profedes= \App\profesor::where('usuario_id', $request->profe1)->get();
+        $profeID;
 
-        $grupo = \App\grupos::where('grupo','like','%'.$request->grupo1.'%');
+        foreach ($profedes as  $value) {
+          $profeID = $value->id;
+        }
 
         $ua = \App\unidadAprendizaje::create([
             'nombre' => $request->nombre1,
             'comentario' => $request->comentario1,
         ]);
 
+
         $imparte = \App\imparte::create([
             'unidadAprendizaje_id' => $ua->id,
-            'profesor_id' => $profesor_id,
+            'profesor_id' => $profeID,
         ]);
 
-        $reliza = \App\realiza::create([
-            'unidadAprendizaje_id' => $ua->id,
-            'grupo_id' => $grupo->id,
+        return redirect('/inicio');
+    }
+
+    public function patchUnidadAprendizaje(Request $request) {
+      $this->validate($request, [
+          'UnidadID' => 'required',
+          'ImparteID' => 'required',
+          'nombre2' => 'required',
+          'grupo2' => 'required',
+          'profe2' =>'required',
+          'comentario2',
+      ]);
+
+      $profedes= \App\profesor::where('usuario_id', $request->profe2)->get();
+      $profeID;
+      foreach ($profedes as  $value) {
+        $profeID = $value->id;
+      }
+
+      $impartio = \App\imparte::find($request->ImparteID);
+      $impartio->delete();
+
+      $imparte = \App\imparte::create([
+          'unidadAprendizaje_id' => $request->UnidadID,
+          'profesor_id' => $profeID,
+      ]);
+
+        $unidadap = \App\unidadAprendizaje::find($request->UnidadID);
+        $unidadap->update([
+            'nombre' => $request->nombre2,
+            'comentrio' => $request->comentario2,
         ]);
 
-        return redirec('/inicio');
+        return redirect('/inicio');
+    }
+
+    public function deleteUnidadAprendizaje(Request $request) {
+        $impartio = \App\imparte::find($request->ImparteIDel);
+        $impartio->delete();
+        $unidadA = \App\unidadAprendizaje::find($request->UnidadIDel);
+        $unidadA->delete();
+
+        return redirect('/inicio');
     }
 
     public function tablaUnidadAprendizaje() {
+
         $unidad = \App\unidadAprendizaje::all();
-        $grupo = \App\grupos::all();
-        $profesor = \App\profesor::all();
+        $grupo = \App\grupos::lists('grupo','id');
+        $profesor = \App\User::where('tipo','<=','2')->lists('nombre','id');
 
         $data = [
             'unidad' => $unidad,
             'grupo' => $grupo,
-            'profesor' => $profesor,
+            'prof' => $profesor,
         ];
         return view('Admin.catalogos.unidad_aprendizaje', $data);
     }
 
+
+    public function newProfesor(Request $request) {
+      $this->validate($request, [
+          'nombre1' => 'required',
+          'clave1' => 'required',
+          'comentario1',
+      ]);
+
+      $usuario = \App\user::find($request->clave1);
+      $usuario->update([
+          'nombre' => $request->nombre1,
+          'comentario' => $request->comentario1,
+          'tipo' => 2,
+      ]);
+
+      $profe = \App\profesor::create([
+          'usuario_id' => $request->clave1,
+      ]);
+
+      return redirect('/inicio');
+
+    }
+
+    public function patchProfesor(Request $request) {
+      $this->validate($request, [
+          'wop' => 'required',
+          'nombre2' => 'required',
+          'clave2' => 'required',
+          'comentario2',
+      ]);
+
+      $usuario = \App\user::find($request->wop);
+      $usuario->update([
+          'nombre' => $request->nombre2,
+          'usuario' => $request->clave2,
+          'comentario' => $request->comentario2,
+      ]);
+
+      return redirect('/inicio');
+
+    }
+
+    public function delProfesor(Request $request) {
+
+        $profe = \App\profesor::find($request->porfeDel);
+        $profe->delete();
+
+        $usuario = \App\user::find($request->UserDel);
+        $usuario->update([
+            'tipo' => 3,
+        ]);
+
+        return redirect('/inicio');
+    }
+
     public function tablaProfesor() {
         $profesor = \App\profesor::all();
-
+        $user = \App\user::where('tipo','>','2')->lists('usuario','id');
         $data = [
-            'profesor' => $profesor
+            'profesor' => $profesor,
+            'usuario' => $user,
         ];
 
         return view('Admin.catalogos.profesor', $data);
     }
+
+
+
 
     public function nomina() {
         return view('Admin.Nomina');

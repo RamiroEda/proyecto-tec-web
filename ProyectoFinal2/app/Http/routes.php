@@ -55,11 +55,16 @@ Route::patch('/catalogos/entidad_federativa', 'adminController@patchEntidadFeder
 Route::delete('/catalogos/entidad_federativa', 'adminController@deleteEntidadFederatva');
 
 Route::get('/catalogos/unidad_aprendizaje', 'adminController@tablaUnidadAprendizaje');
-Route::post('catalogos/unidad_aprendizaje', 'adminController@nuevaUnidadAprendizaje');
+Route::post('/catalogos/unidad_aprendizaje', 'adminController@nuevaUnidadAprendizaje');
+Route::patch('/catalogos/unidad_aprendizaje', 'adminController@patchUnidadAprendizaje');
+Route::delete('/catalogos/unidad_aprendizaje', 'adminController@deleteUnidadAprendizaje');
 
-/*____________________________________________________________________*/
+
 Route::get('/catalogos/profesor', 'adminController@tablaProfesor');
-/*____________________________________________________________________*/
+Route::post('/catalogos/profesor', 'adminController@newProfesor');
+Route::patch('/catalogos/profesor', 'adminController@patchProfesor');
+Route::delete('/catalogos/profesor', 'adminController@delProfesor');
+
 Route::get('/nomina', 'adminController@nomina');
 Route::get('/informes', 'adminController@informesAcademicos');
 Route::get('/configuracion', 'adminController@configuracion');

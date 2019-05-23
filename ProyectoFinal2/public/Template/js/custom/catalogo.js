@@ -77,3 +77,31 @@ function eliminarEntidadFederativa(id,entidad) {
     document.getElementById('elmEntidad').value = id;
     document.getElementById('mensaje').innerHTML = mensaje;
 }
+/*------------------------------UnidadAprendizaje--------------------------------------------*/
+function UA(idUa,idIM,nombre,comentario) {
+    document.getElementById('UnidadID').value = idUa;
+    document.getElementById('ImparteID').value = idIM;
+    document.getElementById('nombre2').value = nombre;
+    document.getElementById('comentario2').value = comentario;
+}
+
+function eUA(idUA,idIM,entidad) {
+    var mensaje = "¿Estas seguro de eliminar la unida de aprendizaje "+entidad+" permanentemente?";
+    document.getElementById('UnidadIDel').value = idUA ;
+    document.getElementById('ImparteIDel').value = idIM ;
+    document.getElementById('wop').innerHTML = mensaje;
+}
+/*------------------------------Profesor--------------------------------------------*/
+function modificarProfesor(usuario,id,nombre,comentario) {
+    document.getElementById('clave2').value = usuario;
+    document.getElementById('nombre2').value = nombre;
+    document.getElementById('comentario2').value = comentario;
+    document.getElementById('wop').value = id;
+}
+
+function eliminarProfe(idUA,idIM,entidad) {
+    var mensaje = "¿Estas seguro de eliminar al profesor "+entidad+" permanentemente?";
+    document.getElementById('porfeDel').value = idUA ;
+    document.getElementById('UserDel').value = idIM ;
+    document.getElementById('mensaje').innerHTML = mensaje;
+}

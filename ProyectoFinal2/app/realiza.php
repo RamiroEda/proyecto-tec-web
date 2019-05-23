@@ -23,6 +23,6 @@ class realiza extends Model
     }
 
     public function ua() {
-        return $this->belongsTo(unidadAprendizaje::class, 'unidadAprendizaje_id');
+        return $this->belongsTo(practica::class, 'practica_id');
     }
 }

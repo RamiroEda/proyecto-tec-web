@@ -26,7 +26,4 @@ class unidadAprendizaje extends Model
         return $this->hasOne(imparte::class, 'unidadAprendizaje_id');
     }
 
-    public function realizado() {
-        return $this->hasMany(realiza::class, 'unidadAprendizaje_id');
-    }
 }
