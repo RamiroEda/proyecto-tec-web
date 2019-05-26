@@ -126,7 +126,88 @@ class adminController extends Controller
         return view('Admin.tablas', $data);
     }
 
-    public function panel() {
+    public function patchPractica(Request $request) {
+        $this->validate($request, [
+            'practicaID' => 'required', //
+            'nombre2' => 'required', //
+            'descripcion2' => 'required', //
+            'programa2' => 'required', //
+            'semestre2' => 'required', //
+            'grupo2' => 'required', //
+            'tipo2' => 'required', //
+            'estrategia2' => 'required', //
+            'compentencia2' => 'required', //
+            'ua2' => 'required', //
+            'noPractica2' => 'required', //
+            'objetivo2' => 'required', //
+            'entidad2' => 'required', //
+            'institucion2' => 'required', //
+            'profesor2' => 'required', //
+            'fecha2' => 'required', //
+            'alumnos2' => 'required', //
+            'presupuesto2' => 'required' //
+        ]);
+
+        $profesor = \App\profesor::where('usuario_id', $request->profesor2)->get();
+        $practica = \App\practica::find($request->practicaID);
+        $realiza = \App\realiza::where('practica_id',$request->practicaID)->get();
+
+        $dateInput = 'd/m/Y';
+        $date = $request->fecha2;
+        $dateOutput = 'Y-m-d';
+        $dateFormated = Carbon::createFromFormat($dateInput,$date)->format($dateOutput);
+
+        $profesor_id;
+        foreach ($profesor as $p) {
+            $profesor_id = $p->id;
+        }
+
+        $practica->update([
+            'noPractica' => $request->noPractica2,
+            'nombre' => $request->nombre2,
+            'tipo' => $request->tipo2,
+            'objetivo' => $request->objetivo2,
+            'descripcion' => $request->descripcion2,
+            'compentencias' => $request->competencia2,
+            'edc' => $request->estrategia2,
+            'fechaEntrega' => $dateFormated,
+            'presupuesto' => $request->presupuesto2,
+            'institucion' => $request->institucion2,
+            'programaAcademico_id' => $request->programa2,
+            'unidadAprendizaje_id' => $request->ua2,
+            'profesor_id' => $profesor_id,
+            'semestre_id' => $request->semestre2,
+            'noAlumnos' => $request->alumnos2,
+            'entidadFederativa_id' => $request->entidad2
+        ]);
+
+        foreach($realiza as $r) {
+            $r->update([
+                'grupo_id' => $request->grupo2
+            ]);
+        }
+
+        return redirect('/inicio');
+    }
+
+    public function deletePractica(Request $request) {
+        $this->validate($request, [
+            'practicaElmID' => 'required',
+        ]);
+
+        $practica = \App\practica::find($request->practicaElmID);
+        $realiza = \App\realiza::where('practica_id',$practica->id)->get();
+
+        foreach($realiza as $r) {
+            $r->delete();
+        }
+
+        $practica->delete();
+
+        return redirect('/inicio');
+    }
+
+    public function plantel() {
         $planteles = \App\programaAcademico::all();
 
         $data = [

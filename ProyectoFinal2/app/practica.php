@@ -36,6 +36,9 @@ class practica extends Model
         return $this->nombre;
     }
 
+    public function realizado() {
+        return $this->hasOne(realiza::class, 'practica_id');
+    }
     public function profesor() {
         return $this->belongsTo(profesor::class, 'profesor_id');
     }

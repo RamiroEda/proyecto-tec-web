@@ -23,8 +23,10 @@ Route::get('/home', 'adminController@home');
 
 Route::get('/practicas', 'adminController@practicas');
 Route::post('/practicas', 'adminController@nuevaPractica');
+Route::patch('/practicas', 'adminController@patchPractica');
+Route::delete('/practicas', 'adminController@deletePractica');
 
-Route::get('/catalogos/plantel', 'adminController@panel');
+Route::get('/catalogos/plantel', 'adminController@plantel');
 Route::post('/catalogos/plantel', 'adminController@nuevoPlantel');
 Route::patch('/catalogos/plantel', 'adminController@patchPlantel');
 Route::delete('/catalogos/plantel', 'adminController@deletePlantel');

@@ -76,7 +76,7 @@
 
 				<div class="form-group">
                         <label class="form-label" for="date-mask-input">Fecha de realización</label>
-                        {!!Form::text('fecha1', null, ['class'=>'form-control', 'placeholder'=>'DD/MM/AAAA', 'id'=>'date-mask-input'])!!}
+                        {!!Form::text('fecha1', null, ['class'=>'form-control','id'=>'date-mask-input'])!!}
                         <small class="text-muted">Formato de fecha: DD/MM/AAAA</small>
 				</div>
 
@@ -110,48 +110,87 @@
                 </button>
             </div>
 
+            {!!Form::open(array('url'=>'/practicas','class'=>'form-group', 'method'=>'patch'))!!}
             <div class="modal-body">
+                <input type="hidden" name="practicaID" id="practicaID">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Nombre de la practica</label>
+                    {!!Form::text('nombre2', null, ['class'=>'form-control', 'id'=>'nombre2'])!!}
+                </div>
+                <div class="form-group">
+                    <label>descripción</label>
+                    {!!Form::textarea('descripcion2', null, ['id'=>'descripcion2', 'class'=>'form-control', 'rows'=>'3'])!!}
+                </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Programa académico</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option value="SIS">Sistemas Computacionales</option>
-                        <option value="MEC">Mecatrónica</option>
-                        <option value="ALI">Alimentos</option>
-                        <option value="AMB">Ambiental</option>
-                        <option value="MET">Metalúrgica</option>
-                    </select>
+                    {!!Form::select('programa2',$programa, 0, ['class'=>'form-control', 'id'=>'programa2'])!!}
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Nombre de la razón social</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label for="sems">Semestre</label>
+                    {!!Form::select('semestre2',$semestre, 1, ['class'=>'form-control', 'id'=>'semestre2'])!!}
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Nombre del profesor responsable</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1">
+                    <label for="grupo">Grupo(S)</label>
+                    {!!Form::select('grupo2',$grupo, 1, ['class'=>'form-control', 'id'=>'grupo2'])!!}
                 </div>
                 <div class="form-group">
-                    <fieldset class="form-group">
-                        <label for="date-mask-input">Date</label>
-                        <input type="text" class="form-control" id="date-mask-input">
-                        <small class="text-muted">Date mask input: 00/00/0000</small>
-                    </fieldset>
+                    <label for="tipo">Tipo</label>
+                    {!!Form::select('tipo2',$tipo, 1, ['class'=>'form-control', 'id'=>'tipo2'])!!}
                 </div>
+                <div class="form-group">
+                    <label for="estrategia">Estrategia a Desarrollar</label>
+                    {!!Form::textarea('estrategia2', null, ['id'=>'estrategia2', 'class'=>'form-control', 'rows'=>'3'])!!}
+
+                </div>
+                <div class="form-group">
+                    <label for="compentencia">Competencias a Desarrollar</label>
+                    {!!Form::text( 'compentencia2', null, ['id'=>'compentencia2', 'class'=>'form-control']) !!}
+
+                </div>
+                <div class="form-group">
+                    <label for="Unidad">Unidad de aprendizaje</label>
+                    {!!Form::select('ua2',$ua, 1, ['class'=>'form-control', 'id'=>'ua2'])!!}
+                </div>
+                <div class="form-group">
+                    <label for="no_practica">No. Práctica y visita escolar</label>
+                    {!!Form::number('noPractica2', 0, ['id'=>'noPractica2', 'class'=>'form-control'])!!}
+                </div>
+                <div class="form-group">
+                    <label for="objetivo">Objetivo</label>
+                    {!!Form::textarea('objetivo2', null, ['id'=>'objetivo2', 'class'=>'form-control', 'rows'=>'3'])!!}
+                </div>
+                <div class="formgroup">
+                    <label for="entidad">Entidad</label>
+                    {!!Form::select('entidad2',$entidad, 1, ['class'=>'form-control', 'id'=>'entidad2'])!!}
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Nombre de la Empresa, Institución o Razón Social</label>
+                    {!!Form::text('institucion2',null,['id'=>'institucion2', 'class'=>'form-control'])!!}
+                </div>
+                <div class="form-group">
+                    <label for="name_profesor">Nombre del profesor responsable</label>
+                    {!!Form::select('profesor2',$profesor, 1, ['class'=>'form-control', 'id'=>'profesor2'])!!}
+                </div>
+
+				<div class="form-group">
+                        <label class="form-label" for="date-mask-input">Fecha de realización</label>
+                        {!!Form::text('fecha2', null, ['class'=>'form-control', 'id'=>'fecha2'])!!}
+                        <small class="text-muted">Formato de fecha: DD/MM/AAAA</small>
+				</div>
+
                 <div class="form-group">
                     <label for="exampleFormControlInput2">Numero total de alumnos</label>
-                    <input type="number" class="form-control" id="exampleFormControlInput2" min="0" value="0">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput3" >Numero total de profesores</label>
-                    <input type="number" class="form-control" id="exampleFormControlInput3" min="0" value="0">
+                    {!!Form::number('alumnos2', '0', ['id'=>'alumnos2', 'min'=>'0', 'value'=>'0', 'class'=>'form-control'])!!}
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput4" >Presupuesto</label>
-                    <input type="number" class="form-control" id="exampleFormControlInput4" min="0" value="0" step="0.1">
+                    {!!Form::number('presupuesto2', '0', ['id'=>'presupuesto2', 'min'=>'0', 'value'=>'0', 'class'=>'form-control'])!!}
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Guardar</button>
-            </div>
+            {!!Form::close()!!}
 
         </div>
     </div>
@@ -169,14 +208,16 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
+            {!!Form::open(array('url'=>'/practicas', 'class'=>'form-group', 'method'=>'delete'))!!}
             <div class="modal-body">
-                ¿Está seguro de eliminar este elemento permanentemente?
+                <label class="modal-label" style="text-align:center" id="mensaje">Eliminar</label>
             </div>
+            <input type="hidden" name="practicaElmID" id="practicaElmID">
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" class="close" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-danger">Borrar</button>
+                <button type="submit" class="btn btn-danger">Borrar</button>
             </div>
+            {!!Form::close()!!}
 
         </div>
     </div>
@@ -224,12 +265,24 @@
                                 <td>{{$p->noAlumnos}}</td>
                                 <td>{{$p->presupuesto}}</td>
                                 <td>
-                                    <button class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#exampleModalCenter2">
+                                    <button class="btn btn-primary btn-sm" data-toggle="modal"
+                                    data-target="#exampleModalCenter2"
+                                    onclick="modificarPractica({{$p->id}},'{{$p->nombre}}',
+                                            '{{$p->descripcion}}',{{$p->programaAcademico_id}},
+                                            {{$p->semestre_id}},{{$p->realizado->grupo_id}},
+                                            {{$p->tipo}},'{{$p->edc}}','{{$p->competencias}}',
+                                            {{$p->unidadAprendizaje_id}},{{$p->noPractica}},
+                                            '{{$p->objetivo}}',{{$p->entidadFederativa_id}},
+                                            '{{$p->institucion}}',{{$p->profesor_id}},
+                                            '{{$p->fechaEntrega}}',{{$p->noAlumnos}},
+                                            {{$p->presupuesto}});">
                                         <span class="glyphicon glyphicon-pencil"></span>
                                     </button>
                                 </td>
                                 <td>
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">
+                                    <button class="btn btn-danger btn-sm" data-toggle="modal"
+                                    data-target="#exampleModalCenter3"
+                                    onclick="eliminarPractica({{$p->id}},'{{$p->nombre}}');">
                                         <span class="glyphicon glyphicon-trash"></span>
                                     </button>
                                 </td>
@@ -241,6 +294,8 @@
             </section>
         </div>
     </div>
+
+<script src="{{asset('/Template/js/custom/catalogo.js')}}"></script>
 
 <script>
         $(function () {

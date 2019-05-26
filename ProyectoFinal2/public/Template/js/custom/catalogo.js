@@ -105,3 +105,39 @@ function eliminarProfe(idUA,idIM,entidad) {
     document.getElementById('UserDel').value = idIM ;
     document.getElementById('mensaje').innerHTML = mensaje;
 }
+
+/*----------------------------------Prcticas----------------------------------*/
+function modificarPractica(id,nombre,descripcion,programa,semestre,grupo,tipo,
+                           estrategias,competencia,ua,noPractica,objetivo,
+                           entidad,institucion,profesor,fecha,alumnos,presupesto) {
+    //window.alert(grupo);
+    document.getElementById('practicaID').value = id;
+    document.getElementById('nombre2').value = nombre;
+    document.getElementById('descripcion2').value = descripcion;
+    document.getElementById('programa2').value = programa;
+    document.getElementById('semestre2').value = semestre;
+    document.getElementById('grupo2').value = grupo;
+    document.getElementById('tipo2').value = tipo;
+    document.getElementById('estrategia2').value = estrategias;
+    document.getElementById('compentencia2').value = competencia;
+    document.getElementById('ua2').value = ua;
+    document.getElementById('noPractica2').value = noPractica;
+    document.getElementById('objetivo2').value = objetivo;
+    document.getElementById('entidad2').value = entidad;
+    document.getElementById('institucion2').value = institucion;
+    document.getElementById('profesor2').value = profesor;
+    document.getElementById('fecha2').value = formatoFecha(fecha);;
+    document.getElementById('alumnos2').value = alumnos;
+    document.getElementById('presupuesto2').value = presupesto;
+}
+
+function eliminarPractica(id,practica) {
+    var mensaje = "¿Estas seguro de eliminar la practica "+practica+" permanentemente?";
+    document.getElementById('practicaElmID').value = id ;
+    document.getElementById('mensaje').innerHTML = mensaje;
+}
+
+function formatoFecha(fecha) {
+    var info = fecha.split('-');
+    return info[2] + '/' + info[1] + '/' + info[0];
+ }
