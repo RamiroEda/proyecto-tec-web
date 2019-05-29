@@ -376,14 +376,14 @@ class adminController extends Controller
     }
     public function nuevoGrupo(Request $request) {
         $this->validate($request, [
-            'grupo' => 'required',
+            'grupo1' => 'required',
             'semestre'=>'required',
             'nivel'=>'required',
             'comentario1'
         ]);
 
         $grupos = \App\grupos::create([
-            'grupo' => $request->grupo,
+            'grupo' => $request->grupo1,
             'nivel_id' => $request->nivel,
             'semestre_id' => $request->semestre,
             'comentario' => $request->comentario1
