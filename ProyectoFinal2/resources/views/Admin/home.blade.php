@@ -9,9 +9,6 @@
                     <h3 class="card-title">{{$total}}</h3>
                         <span class="card-title">Practicas programadas</span>
                     </div>
-                    <div class="card-footer text-center text-white">
-                        <a href="#">Ver mas</a>
-                    </div>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -19,9 +16,6 @@
                     <div class="card-block">
                     <h3 class="card-title">{{$porcRealizado}}%</h3>
                         <span class="card-title">Practicas realizadas</span>
-                    </div>
-                    <div class="card-footer text-center text-white">
-                        <a href="#">Ver mas</a>
                     </div>
                 </div>
             </div>
@@ -31,9 +25,6 @@
                     <h3 class="card-title">{{$pendientes}}</h3>
                         <span class="card-title">Pendientes</span>
                     </div>
-                    <div class="card-footer text-center text-white">
-                        <a href="#">Ver mas</a>
-                    </div>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -41,9 +32,6 @@
                     <div class="card-block">
                     <h3 class="card-title">{{$terminados}}</h3>
                         <span class="card-title">Terminadas</span>
-                    </div>
-                    <div class="card-footer text-center text-white">
-                        <a href="#">Ver mas</a>
                     </div>
                 </div>
             </div>

@@ -668,9 +668,11 @@ class adminController extends Controller
 
     public function nomina() {
         $practicas = \App\practica::all();
+        $alumnos = \App\User::lists('nombre','id');
 
         $data = [
-            'practicas' => $practicas
+            'practicas' => $practicas,
+            'alumnos' => $alumnos,
         ];
 
         return view('Admin.Nomina', $data);

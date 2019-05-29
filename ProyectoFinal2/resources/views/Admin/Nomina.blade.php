@@ -13,7 +13,7 @@
 
             
                 <div class="modal-body">
-                    {!!Form::select('nombre', array(), 1, ['class'=>'form-control', 'id'=>'nombre'])!!}</p>
+                    {!!Form::select('nombre', $alumnos, 1, ['class'=>'form-control', 'id'=>'nombre'])!!}</p>
                     <input type="text" class="form-control" name="nss" placeholder="Número de seguro social"></p>
                     <input type="text" class="form-control" name="tel" placeholder="Teléfono"></p>
                     <button type="button" class="btn btn-success">Agregar</button>

@@ -263,7 +263,7 @@
                                 <td>{{$p->profesor->usuario}}</td>
                                 <td>{{$p->fechaEntrega}}</td>
                                 <td>{{$p->noAlumnos}}</td>
-                                <td>{{$p->presupuesto}}</td>
+                                <td>${{$p->presupuesto}}</td>
                                 <td>
                                     <button class="btn btn-primary btn-sm" data-toggle="modal"
                                     data-target="#exampleModalCenter2"
