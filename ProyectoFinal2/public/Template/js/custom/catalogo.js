@@ -141,3 +141,5 @@ function formatoFecha(fecha) {
     var info = fecha.split('-');
     return info[2] + '/' + info[1] + '/' + info[0];
  }
+
+ /*----------------------------------Nominas----------------------------------*/

@@ -14,7 +14,11 @@ function cambiarPagina(url, method, data){
     $.ajax({
         method: method,
         url: url,
-        data: data
+        data: data,
+        error: (jq, status, e) => {
+            console.error(jq, status, e);
+            $("#spa-content").html(jq.responseText);
+        }
     }).done((html) => {
         $("#spa-content").html(html);
     });
