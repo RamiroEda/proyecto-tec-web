@@ -38,7 +38,19 @@ class adminController extends Controller
     }
 
     public function home() {
-        return view('Admin.home');
+        $practicas = \App\practica::all();
+        $total = sizeof($practicas);
+        $terminados = sizeof(\App\practica::where('fechaEntrega', '>=', date("Y-m-d")));
+        $pendientes = $total-$terminados;
+        $porcRealizado = round(100 * $terminados / $total, 2);
+        $data = [
+            'practicas' => $practicas,
+            'total' => $total,
+            'porcRealizado' => $porcRealizado,
+            'terminados' => $terminados,
+            'pendientes' => $pendientes
+        ];
+        return view('Admin.home', $data);
     }
 
     public function nuevaPractica(Request $request) {
@@ -654,9 +666,18 @@ class adminController extends Controller
 
 
 
-
     public function nomina() {
-        return view('Admin.Nomina');
+        $practicas = \App\practica::all();
+
+        $data = [
+            'practicas' => $practicas
+        ];
+
+        return view('Admin.Nomina', $data);
+    }
+
+    public function addAlumnoNomina(){
+        $nombre = $_POST["nombre"];
     }
 
     public function informesAcademicos() {
