@@ -68,6 +68,9 @@ Route::patch('/catalogos/profesor', 'adminController@patchProfesor');
 Route::delete('/catalogos/profesor', 'adminController@delProfesor');
 
 Route::get('/nomina', 'adminController@nomina');
+Route::post('/nomina', 'adminController@addAlumnoNomina');
+Route::delete('/nomina', 'adminController@deleteAlumnoNomina');
+
 Route::get('/informes', 'adminController@informesAcademicos');
 Route::get('/configuracion', 'adminController@configuracion');
 /*------------------------------------------Profesor----------------------------------------------------------*/

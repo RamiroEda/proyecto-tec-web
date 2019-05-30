@@ -38,6 +38,10 @@ class User extends Model implements AuthenticatableContract,
     ];
 
     protected $hidden = ['password'];
+    
+    public function toString(){
+        return parent::__tostring();
+    }
 
     public function __tostring() {
         return $this->nombre.' '.$this->apPaterno.' '.$this->apMaterno;

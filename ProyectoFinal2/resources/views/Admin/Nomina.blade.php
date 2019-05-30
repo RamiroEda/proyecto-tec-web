@@ -11,91 +11,24 @@
                 </button>
             </div>
 
-            
+            {!!Form::open(array ('url'=>'/nomina','class'=>'form-group', 'method'=>'post'))!!}
                 <div class="modal-body">
-                    {!!Form::select('nombre', $alumnos, 1, ['class'=>'form-control', 'id'=>'nombre'])!!}</p>
-                    <input type="text" class="form-control" name="nss" placeholder="Número de seguro social"></p>
-                    <input type="text" class="form-control" name="tel" placeholder="Teléfono"></p>
-                    <button type="button" class="btn btn-success">Agregar</button>
+                    {!!Form::select('id_alumno', $alumnos, 1, ['class'=>'form-control', 'id'=>'nombre'])!!}</p>
+                    <input type="hidden" name="id_practica" id="id_practica">
+                    <button type="submit" class="btn btn-success">Agregar</button>
                 </div>
-        
+            {!!Form::close()!!}
             <div class="modal-body">
                 <table id="seguro" class="display table table-bordered">
                     <thead>
                         <tr>
                             <th>Nombre</th>
-                            <th>No.Seguro social</th>
-                            <th>Teléfono</th>
+                            <th>Correo</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
-
+                    
                     <tbody>
-                        <tr>
-                            <td>Juan Ejemplo Lopez Lopez</td>
-                            <td>#FormatoNoSeguros</td>
-                            <td>(492)-123-1234</td>
-                            <td>
-                                <center>
-                                    <button class="btn btn-primary btn-danger" data-toggle="modal"
-                                        data-target="#exampleModalCenter">
-                                        <span class="glyphicon glyphicon-trash">Eliminar</span>
-                                    </button>
-                                </center>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Juan Ejemplo Lopez Lopez</td>
-                            <td>#FormatoNoSeguros</td>
-                            <td>(492)-123-1234</td>
-                            <td>
-                                <center>
-                                    <button class="btn btn-primary btn-danger" data-toggle="modal"
-                                        data-target="#exampleModalCenter">
-                                        <span class="glyphicon glyphicon-trash">Eliminar</span>
-                                    </button>
-                                </center>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Juan Ejemplo Lopez Lopez</td>
-                            <td>#FormatoNoSeguros</td>
-                            <td>(492)-123-1234</td>
-                            <td>
-                                <center>
-                                    <button class="btn btn-primary btn-danger" data-toggle="modal"
-                                        data-target="#exampleModalCenter">
-                                        <span class="glyphicon glyphicon-trash">Eliminar</span>
-                                    </button>
-                                </center>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Juan Ejemplo Lopez Lopez</td>
-                            <td>#FormatoNoSeguros</td>
-                            <td>(492)-123-1234</td>
-                            <td>
-                                <center>
-                                    <button class="btn btn-primary btn-danger" data-toggle="modal"
-                                        data-target="#exampleModalCenter">
-                                        <span class="glyphicon glyphicon-trash">Eliminar</span>
-                                    </button>
-                                </center>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Juan Ejemplo Lopez Lopez</td>
-                            <td>#FormatoNoSeguros</td>
-                            <td>(492)-123-1234</td>
-                            <td>
-                                <center>
-                                    <button class="btn btn-primary btn-danger" data-toggle="modal"
-                                        data-target="#exampleModalCenter">
-                                        <span class="glyphicon glyphicon-trash">Eliminar</span>
-                                    </button>
-                                </center>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -143,7 +76,7 @@
                                 <td>
                                     <center>
                                         <button class="btn btn-primary btn-success" data-toggle="modal"
-                                            data-target="#exampleModalCenter">
+                                            data-target="#exampleModalCenter" onclick="displayNomina({{$p->id}}, [{{implode($asistencias[$p->id], ',')}}])">
                                             <span class="glyphicon glyphicon-cd">Agregar</span>
                                         </button>
                                     </center>
@@ -159,6 +92,10 @@
     </div>
 </div>
 
+{!!Form::open(array ('url'=>'/nomina','class'=>'form-group', 'method'=>'delete', 'id'=>'delForm'))!!}
+    <input type="hidden" name="del_practica" id="delPractica">
+    <input type="hidden" name="del_usuario" id="delUsuario">
+{!!Form::close()!!}
 
 <script>
     $(function () {
