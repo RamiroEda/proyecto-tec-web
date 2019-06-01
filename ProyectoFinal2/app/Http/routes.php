@@ -69,7 +69,10 @@ Route::delete('/catalogos/profesor', 'adminController@delProfesor');
 
 Route::get('/nomina', 'adminController@nomina');
 Route::get('/informes', 'adminController@informesAcademicos');
+
 Route::get('/configuracion', 'adminController@configuracion');
+Route::post('/configuracion/UPIIZ', 'adminController@configuracionUPIIZ');
+Route::post('configuracion/DES', 'adminController@configuracionDES');
 /*------------------------------------------Profesor----------------------------------------------------------*/
 
 /*-------------------------------------------Alumno-----------------------------------------------------------*/

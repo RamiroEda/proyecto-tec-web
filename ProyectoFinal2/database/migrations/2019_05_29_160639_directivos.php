@@ -16,6 +16,7 @@ class Directivos extends Migration
         Schema::create('directivos', function(Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre')->nullable();
+            $table->string('sexo')->nullable();
             $table->timestamps();
         });
     }

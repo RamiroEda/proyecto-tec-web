@@ -43,6 +43,7 @@ class adminController extends Controller
         $terminados = sizeof(\App\practica::where('fechaEntrega', '>=', date("Y-m-d")));
         $pendientes = $total-$terminados;
         $porcRealizado = round(100 * $terminados / $total, 2);
+
         $data = [
             'practicas' => $practicas,
             'total' => $total,
@@ -50,6 +51,7 @@ class adminController extends Controller
             'terminados' => $terminados,
             'pendientes' => $pendientes
         ];
+        
         return view('Admin.home', $data);
     }
 
@@ -687,6 +689,97 @@ class adminController extends Controller
     }
 
     public function configuracion() {
-        return view('Admin.configuraciones.configuracion');
+        $director = \App\directivos::find(1);
+        $SAc = \App\directivos::find(2);
+        $SAd = \App\directivos::find(3);
+        $SSEIS = \App\directivos::find(4);
+        $EPVE = \App\directivos::find(5);
+        $JDGA = \App\directivos::find(6);
+        $DES = \App\directivos::find(7);
+        $JDGCE = \App\directivos::find(8);
+
+        $data = [
+            'director' => $director,
+            'SAc' => $SAc,
+            'SAd' => $SAd,
+            'SSEIS' => $SSEIS,
+            'EPVE' => $EPVE,
+            'JDGA' => $JDGA,
+            'DES' => $DES,
+            'JDGCE' => $JDGCE,
+        ];
+
+        return view('Admin.configuraciones.configuracion', $data);
+    }
+
+    public function configuracionUPIIZ(Request $request) {
+
+        $director = \App\directivos::updateOrCreate(
+            ['id' => 1],
+            ['nombre' => $request->nombreDirector],
+            ['sexo' => $request->sexoDirector]
+        );
+
+        $SAc = \App\directivos::updateOrCreate(
+            ['id' => 2],
+            ['nombre' => $request->nombreSac],
+            ['sexo' => $request->sexoSAc]
+        );
+
+        $SAd = \App\directivos::updateOrCreate(
+            ['id' => 3],
+            ['nombre' => $request->nombreSAd],
+            ['sexo' => $request->sexoSAd]
+        );
+
+        $SSEIS = \App\directivos::updateOrCreate(
+            ['id' => 4],
+            ['nombre' => $request->nombreSSEIS],
+            ['sexo' => $request->sexoSSEIS]
+        );
+
+        $EPVE = \App\directivos::updateOrCreate(
+            ['id' => 5],
+            ['nombre' => $request->nombreEPVE],
+            ['sexo' => $request->sexoEPVE]
+        );
+
+        $data = [
+            $director,
+            $SAc,
+            $SAd,
+            $SSEIS,
+            $EPVE
+        ];
+
+        return Response::json($data);
+    }
+
+    public function configuracionDES(Request $request) {
+        $JDGA = \App\directivos::updateOrCreate(
+            ['id' => 6],
+            ['nombre' => $request->nombreJDGA],
+            ['sexo' => $request->sexoJDGA]
+        );
+
+        $DES = \App\directivos::updateOrCreate(
+            ['id' => 7],
+            ['nombre' => $request->nombreDES],
+            ['sexo' => $request->sexoDES]
+        );
+
+        $JDGCE = \App\directivos::updateOrCreate(
+            ['id' => 8],
+            ['nombre' => $request->nombreJDGCE],
+            ['sexo' => $request->sexoJDGCE]
+        );
+
+        $data = [
+            $JDGA,
+            $DES,
+            $JDGCE
+        ];
+
+        return Response::json($data);
     }
 }
