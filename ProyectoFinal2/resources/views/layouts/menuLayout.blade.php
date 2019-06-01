@@ -184,6 +184,7 @@
 <script src="{{asset('/Template/js/lib/fullcalendar/fullcalendar.min.js')}}"></script>
 <script src="{{asset('/Template/js/app.js')}}"></script>
 <script src="{{asset('/Template/js/spa.js')}}"></script>
+<script src="{{asset('/Template/js/custom/catalogo.js')}}"></script>
 
 
 

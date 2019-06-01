@@ -143,3 +143,27 @@ function formatoFecha(fecha) {
  }
 
  /*----------------------------------Nominas----------------------------------*/
+
+ function displayNomina(id, alumnos){
+    $("#id_practica").val(id);
+    let tabla = $("#seguro").DataTable();
+    tabla.clear();
+
+    tabla.rows.add(alumnos.map((val) => {
+        console.log(val);
+        
+        return [val.nombre, val.email, '<button type="submit" class="btn btn-primary btn-danger" data-toggle="modal"'+
+                            'data-target="#exampleModalCenter" onclick="deleteAlumnoNomina(\''+val.id+'\', \''+id+'\')">'+
+                            '<span class="glyphicon glyphicon-trash">Eliminar</span>'+
+                        '</button>'];
+    }));
+
+    tabla.draw();
+ }
+
+ function deleteAlumnoNomina(idAlumno, idPractica){
+    $("#delPractica").val(idPractica);
+    $("#delUsuario").val(idAlumno);
+
+    $("#delForm").submit();
+ }

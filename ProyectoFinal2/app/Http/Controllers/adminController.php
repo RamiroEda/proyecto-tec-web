@@ -666,22 +666,66 @@ class adminController extends Controller
         return view('Admin.catalogos.profesor', $data);
     }
 
+    private function mapAsistencias($asistencias){
+        $res = array();
+        foreach ($asistencias as $key => $val) {
+            if(isset($res[$val->practica_id])){
+                array_push($res[$val->practica_id], $val->alumno->usuario->toString());
+            }else{
+                $res[$val->practica_id] = [$val->alumno->usuario->toString()];
+            }
+        }
 
+        return $res;
+    }
+
+    private function mapAlumnos($alumnos){
+        $res = array();
+
+        foreach ($alumnos as $key => $value) {
+            $res[$value->id] = $value->usuario->nombre;
+        }
+
+        return $res;
+    }
 
     public function nomina() {
         $practicas = \App\practica::all();
-        $alumnos = \App\User::lists('nombre','id');
+        $alumnos = $this->mapAlumnos(\App\alumno::all());
+        $asistencias  = $this->mapAsistencias(\App\asiste::all());
 
         $data = [
             'practicas' => $practicas,
             'alumnos' => $alumnos,
+            'asistencias' => $asistencias
         ];
 
         return view('Admin.Nomina', $data);
     }
 
-    public function addAlumnoNomina(){
-        $nombre = $_POST["nombre"];
+    public function addAlumnoNomina(Request $request){
+        $this->validate($request, [
+            'id_alumno' => 'required',
+            'id_practica' => 'required'
+        ]);
+
+        $profe = \App\asiste::create([
+            'alumno_id' => $request->id_alumno,
+            'asiste' => 1,
+            'practica_id' => $request->id_practica,
+        ]);
+  
+        return redirect('/inicio');
+    }
+
+
+    public function deleteAlumnoNomina(Request $request){
+        var_dump($request->del_usuario);
+        $alumno = \App\alumno::where('usuario_id', '=', $request->del_usuario)->first();
+        $asistencia = \App\asiste::where('alumno_id', '=', $alumno->id);
+        $asistencia->delete();
+
+        return redirect('/inicio');
     }
 
     public function informesAcademicos() {
