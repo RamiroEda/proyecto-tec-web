@@ -51,7 +51,7 @@ class adminController extends Controller
             'terminados' => $terminados,
             'pendientes' => $pendientes
         ];
-        
+
         return view('Admin.home', $data);
     }
 
@@ -714,7 +714,7 @@ class adminController extends Controller
             'asiste' => 1,
             'practica_id' => $request->id_practica,
         ]);
-  
+
         return redirect('/inicio');
     }
 
@@ -760,32 +760,42 @@ class adminController extends Controller
 
         $director = \App\directivos::updateOrCreate(
             ['id' => 1],
-            ['nombre' => $request->nombreDirector],
-            ['sexo' => $request->sexoDirector]
+            [
+                'nombre' => $request->nombreDirector,
+                'sexo' => $request->sexoDirector
+            ]
         );
 
         $SAc = \App\directivos::updateOrCreate(
             ['id' => 2],
-            ['nombre' => $request->nombreSac],
-            ['sexo' => $request->sexoSAc]
+            [
+                'nombre' => $request->nombreSAc,
+                'sexo' => $request->sexoSAc
+            ]
         );
 
         $SAd = \App\directivos::updateOrCreate(
             ['id' => 3],
-            ['nombre' => $request->nombreSAd],
-            ['sexo' => $request->sexoSAd]
+            [
+                'nombre' => $request->nombreSAd,
+                'sexo' => $request->sexoSAd
+            ]
         );
 
         $SSEIS = \App\directivos::updateOrCreate(
             ['id' => 4],
-            ['nombre' => $request->nombreSSEIS],
-            ['sexo' => $request->sexoSSEIS]
+            [
+                'nombre' => $request->nombreSSEIS,
+                'sexo' => $request->sexoSSEIS
+            ]
         );
 
         $EPVE = \App\directivos::updateOrCreate(
             ['id' => 5],
-            ['nombre' => $request->nombreEPVE],
-            ['sexo' => $request->sexoEPVE]
+            [
+                'nombre' => $request->nombreEPVE,
+                'sexo' => $request->sexoEPVE
+            ]
         );
 
         $data = [
@@ -796,26 +806,32 @@ class adminController extends Controller
             $EPVE
         ];
 
-        return Response::json($data);
+        return redirect('/inicio');
     }
 
     public function configuracionDES(Request $request) {
         $JDGA = \App\directivos::updateOrCreate(
             ['id' => 6],
-            ['nombre' => $request->nombreJDGA],
-            ['sexo' => $request->sexoJDGA]
+            [
+                'nombre' => $request->nombreJDGA,
+                'sexo' => $request->sexoJDGA
+            ]
         );
 
         $DES = \App\directivos::updateOrCreate(
             ['id' => 7],
-            ['nombre' => $request->nombreDES],
-            ['sexo' => $request->sexoDES]
+            [
+                'nombre' => $request->nombreDES,
+                'sexo' => $request->sexoDES
+            ]
         );
 
         $JDGCE = \App\directivos::updateOrCreate(
             ['id' => 8],
-            ['nombre' => $request->nombreJDGCE],
-            ['sexo' => $request->sexoJDGCE]
+            [
+                'nombre' => $request->nombreJDGCE,
+                'sexo' => $request->sexoJDGCE
+            ]
         );
 
         $data = [
@@ -824,6 +840,6 @@ class adminController extends Controller
             $JDGCE
         ];
 
-        return Response::json($data);
+        return redirect('/inicio');
     }
 }

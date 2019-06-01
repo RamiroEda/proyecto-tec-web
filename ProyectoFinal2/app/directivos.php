@@ -8,7 +8,7 @@ use Sofa\Eloquence\Eloquence;
 class directivos extends Model
 {
     //
-    use Eloquent;
+    use Eloquence;
 
     protected $table = 'directivos';
 
