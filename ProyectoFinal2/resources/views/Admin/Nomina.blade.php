@@ -76,7 +76,11 @@
                                 <td>
                                     <center>
                                         <button class="btn btn-primary btn-success" data-toggle="modal"
-                                            data-target="#exampleModalCenter" onclick="displayNomina({{$p->id}}, [{{implode($asistencias[$p->id], ',')}}])">
+                                            data-target="#exampleModalCenter" onclick="displayNomina({{$p->id}}, [
+                                                @if (isset($asistencias[$p->id]))
+                                                    {{implode($asistencias[$p->id], ',')}}
+                                                @endif
+                                            ])">
                                             <span class="glyphicon glyphicon-cd">Agregar</span>
                                         </button>
                                     </center>

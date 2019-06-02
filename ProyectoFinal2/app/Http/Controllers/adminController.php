@@ -39,10 +39,19 @@ class adminController extends Controller
 
     public function home() {
         $practicas = \App\practica::all();
-        $total = sizeof($practicas);
-        $terminados = sizeof(\App\practica::where('fechaEntrega', '>=', date("Y-m-d")));
-        $pendientes = $total-$terminados;
-        $porcRealizado = round(100 * $terminados / $total, 2);
+
+        try{
+            $total = count($practicas);
+            $terminados = count(\App\practica::whereDate('fechaEntrega', '>=', date("Y-m-d")));
+            $pendientes = $total-$terminados;
+            $porcRealizado = round(100 * $terminados / $total, 2);
+        }catch(\Exception $e){
+            $total = 0;
+            $terminados = 0;
+            $pendientes = 0;
+            $porcRealizado = 0;
+        }
+        
         $data = [
             'practicas' => $practicas,
             'total' => $total,
@@ -718,7 +727,6 @@ class adminController extends Controller
 
 
     public function deleteAlumnoNomina(Request $request){
-        var_dump($request->del_usuario);
         $alumno = \App\alumno::where('usuario_id', '=', $request->del_usuario)->first();
         $asistencia = \App\asiste::where('alumno_id', '=', $alumno->id);
         $asistencia->delete();
