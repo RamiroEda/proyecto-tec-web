@@ -72,7 +72,10 @@ Route::post('/nomina', 'adminController@addAlumnoNomina');
 Route::delete('/nomina', 'adminController@deleteAlumnoNomina');
 
 Route::get('/informes', 'adminController@informesAcademicos');
+
 Route::get('/configuracion', 'adminController@configuracion');
+Route::post('/configuracion/UPIIZ', 'adminController@configuracionUPIIZ');
+Route::post('configuracion/DES', 'adminController@configuracionDES');
 /*------------------------------------------Profesor----------------------------------------------------------*/
 
 /*-------------------------------------------Alumno-----------------------------------------------------------*/
