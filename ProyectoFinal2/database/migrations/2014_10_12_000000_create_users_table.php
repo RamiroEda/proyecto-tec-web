@@ -25,8 +25,9 @@ class CreateUsersTable extends Migration
             $table->integer('tipo');
             $table->unsignedBigInteger('localidad');
             $table->string('comentario')->nullable();
-            $table->foreign('localidad')->references('id')->on('entidadFederativa')->ondelete('cascade');
-            $table->foreign('programaAcademico_id')->references('id')->on('programaAcademico')->ondelete('cascade');
+
+            $table->foreign('localidad')->references('id')->on('entidadFederativa')->onDelete('CASCADE');
+            $table->foreign('programaAcademico_id')->references('id')->on('programaAcademico')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

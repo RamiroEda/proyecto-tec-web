@@ -17,8 +17,9 @@ class Imparte extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('profesor_id');
             $table->unsignedBigInteger('unidadAprendizaje_id');
-            $table->foreign('profesor_id')->references('id')->on('profesor')->ondelete('cascade');
-            $table->foreign('unidadAprendizaje_id')->references('id')->on('unidadAprendizaje')->ondelete('cascade');
+
+            $table->foreign('profesor_id')->references('id')->on('profesor')->onDelete('CASCADE');
+            $table->foreign('unidadAprendizaje_id')->references('id')->on('unidadAprendizaje')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

@@ -19,8 +19,9 @@ class Grupos extends Migration
             $table->string('comentario')->nullable();
             $table->unsignedBigInteger('semestre_id');
             $table->unsignedBigInteger('nivel_id');
-            $table->foreign('semestre_id')->references('id')->on('semestre')->ondelete('cascade');
-            $table->foreign('nivel_id')->references('id')->on('nivel')->ondelete('cascade');
+
+            $table->foreign('semestre_id')->references('id')->on('semestre')->onDelete('CASCADE');
+            $table->foreign('nivel_id')->references('id')->on('nivel')->onDelete('CASCADE');
             $table->timestamps();
         });
         //

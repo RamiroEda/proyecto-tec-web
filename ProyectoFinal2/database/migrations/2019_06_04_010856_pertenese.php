@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Atiende extends Migration
+class Pertenese extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class Atiende extends Migration
     public function up()
     {
         //
-        Schema::create('atiende', function(Blueprint $table) {
+        Schema::create('pertenece', function(Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('profesor_id');
+            $table->unsignedBigInteger('alumno_id');
             $table->unsignedBigInteger('grupo_id');
 
-            $table->foreign('profesor_id')->references('id')->on('profesor')->ondelete('CASCADE');
-            $table->foreign('grupo_id')->references('id')->on('grupos')->ondelete('CASCADE');
+            $table->foreign('alumno_id')->references('id')->on('alumno')->onDelete('CASCADE');
+            $table->foreign('grupo_id')->references('id')->on('grupos')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

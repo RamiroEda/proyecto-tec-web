@@ -16,7 +16,8 @@ class Profesor extends Migration
         Schema::create('profesor', function(Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('usuario_id');
-            $table->foreign('usuario_id')->references('id')->on('User')->ondelete('cascade');
+
+            $table->foreign('usuario_id')->references('id')->on('User')->onDelete('CASCADE');
             $table->timestamps();
         });
         //

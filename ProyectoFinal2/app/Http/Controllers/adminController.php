@@ -9,10 +9,6 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Collection;
 
-use App\usuario;
-use App\admin; //usuario tipo 1
-use App\profesor; //usuario tipo 2
-use App\alumno; //usuario tipo 3
 
 use Carbon\Carbon;
 
@@ -608,7 +604,7 @@ class adminController extends Controller
           'comentario1',
       ]);
 
-      $usuario = \App\user::find($request->clave1);
+      $usuario = \App\User::find($request->clave1);
       $usuario->update([
           'nombre' => $request->nombre1,
           'comentario' => $request->comentario1,
@@ -631,7 +627,7 @@ class adminController extends Controller
           'comentario2',
       ]);
 
-      $usuario = \App\user::find($request->wop);
+      $usuario = \App\User::find($request->wop);
       $usuario->update([
           'nombre' => $request->nombre2,
           'usuario' => $request->clave2,
@@ -647,7 +643,7 @@ class adminController extends Controller
         $profe = \App\profesor::find($request->porfeDel);
         $profe->delete();
 
-        $usuario = \App\user::find($request->UserDel);
+        $usuario = \App\User::find($request->UserDel);
         $usuario->update([
             'tipo' => 3,
         ]);
@@ -657,7 +653,7 @@ class adminController extends Controller
 
     public function tablaProfesor() {
         $profesor = \App\profesor::all();
-        $user = \App\user::where('tipo','>','2')->lists('usuario','id');
+        $user = \App\User::where('tipo','>','2')->lists('usuario','id');
         $data = [
             'profesor' => $profesor,
             'usuario' => $user,

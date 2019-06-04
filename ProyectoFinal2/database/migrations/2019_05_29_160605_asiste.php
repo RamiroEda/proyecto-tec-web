@@ -19,8 +19,8 @@ class Asiste extends Migration
             $table->boolean('asiste');
             $table->unsignedBigInteger('practica_id');
 
-            $table->foreign('alumno_id')->references('id')->on('alumno')->ondelete('cascade');
-            $table->foreign('practica_id')->references('id')->on('practica')->ondelete('cascade');
+            $table->foreign('alumno_id')->references('id')->on('alumno')->onDelete('CASCADE');
+            $table->foreign('practica_id')->references('id')->on('practica')->onDelete('CASCADE');
 
             $table->timestamps();
         });

@@ -37,12 +37,12 @@ class Practica extends Migration
             $table->Integer('noAlumnos');
             $table->unsignedBigInteger('entidadFederativa_id');
 
-            $table->foreign('tipo')->references('id')->on('tipoPractica')->ondelete('cascade');
-            $table->foreign('programaAcademico_id')->references('id')->on('programaAcademico')->ondelete('cascade');
-            $table->foreign('unidadAprendizaje_id')->references('id')->on('unidadAprendizaje')->ondelete('cascade');
-            $table->foreign('profesor_id')->references('id')->on('profesor')->ondelete('cascade');
-            $table->foreign('semestre_id')->references('id')->on('semestre')->ondelete('cascade');
-            $table->foreign('entidadFederativa_id')->references('id')->on('entidadFederativa')->ondelete('cascade');
+            $table->foreign('tipo')->references('id')->on('tipoPractica')->onDelete('CASCADE');
+            $table->foreign('programaAcademico_id')->references('id')->on('programaAcademico')->onDelete('CASCADE');
+            $table->foreign('unidadAprendizaje_id')->references('id')->on('unidadAprendizaje')->onDelete('CASCADE');
+            $table->foreign('profesor_id')->references('id')->on('profesor')->ondelete('CASCADE');
+            $table->foreign('semestre_id')->references('id')->on('semestre')->ondelete('CASCADE');
+            $table->foreign('entidadFederativa_id')->references('id')->on('entidadFederativa')->onDelete('CASCADE');
 
             $table->timestamps();
         });

@@ -17,8 +17,9 @@ class Realiza extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('grupo_id');
             $table->unsignedBigInteger('practica_id');
-            $table->foreign('grupo_id')->references('id')->on('grupos')->ondelete('cascade');
-            $table->foreign('practica_id')->references('id')->on('practica')->ondelete('cascade');
+
+            $table->foreign('grupo_id')->references('id')->on('grupos')->onDelete('CASCADE');
+            $table->foreign('practica_id')->references('id')->on('practica')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

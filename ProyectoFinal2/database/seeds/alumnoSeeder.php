@@ -14,7 +14,6 @@ class alumnoSeeder extends Seeder
         for($i=1;$i<=9;$i++) {
             DB::table('alumno')->insert([
                 'usuario_id' => $i,
-                'grupo_id' => rand(1,4),
             ]);
         }
         //
